@@ -1,17 +1,23 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { toast } from "sonner";
-import { CheckCircle, ChevronRight, Slack, Zap, Server, Cloud, Settings, ArrowRight } from "lucide-react";
+import { 
+  CheckCircle, ChevronRight, Zap, 
+  Server, Cloud, Settings, ArrowRight 
+} from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { supabase } from "@/integrations/supabase/client";
+import WorkflowInfographic from "@/components/WorkflowInfographic";
+import BenefitCard from "@/components/BenefitCard";
 
 const Index = () => {
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isValid, setIsValid] = useState(true);
   const howItWorksRef = useRef<HTMLDivElement>(null);
+  const benefitsRef = useRef<HTMLDivElement>(null);
 
   // Animation for sections as they come into view
   useEffect(() => {
@@ -83,14 +89,14 @@ const Index = () => {
     }
   };
 
-  const scrollToHowItWorks = () => {
-    howItWorksRef.current?.scrollIntoView({ behavior: "smooth" });
+  const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center px-4 py-20">
+      <section className="relative min-h-screen flex flex-col items-center justify-center px-4 py-20 section-transition">
         {/* Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-black to-blue-900/20 z-0" />
         
@@ -99,12 +105,12 @@ const Index = () => {
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl z-0" />
         
         <div className="container mx-auto relative z-10 max-w-5xl">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 stagger-fade-in">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-              Bring AI Agents to Slack
+              One Click to Use AI in Slack
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Manage local & cloud agents in one place. Connect, configure, and use from Slack.
+              Genie lets you connect your AI tools to Slack in seconds, so your team can use them with simple chat commands.
             </p>
 
             {/* Email Signup Form */}
@@ -134,55 +140,19 @@ const Index = () => {
                 className="h-12 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 transition-all"
                 disabled={isLoading}
               >
-                {isLoading ? "Signing up..." : "Get Early Access"}
+                {isLoading ? "Signing up..." : "Join Early Access – Limited Spots!"}
               </Button>
             </form>
           </div>
 
-          {/* Visual Element */}
-          <div className="mt-8 max-w-3xl mx-auto relative py-4">
-            <div className="glass-card p-6 rounded-lg bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl">
-              <div className="flex justify-between items-center gap-4 flex-col md:flex-row">
-                <div className="flex flex-col items-center text-center md:text-left md:items-start">
-                  <div className="flex items-center gap-2">
-                    <Server className="h-8 w-8 text-purple-400" />
-                    <Cloud className="h-8 w-8 text-blue-400" />
-                  </div>
-                  <h3 className="text-lg font-semibold mt-2">Your AI Agents</h3>
-                </div>
-                
-                <div className="flex items-center gap-4">
-                  <ArrowRight className="h-6 w-6 text-gray-400 hidden md:block" />
-                  <div className="h-8 w-px bg-white/10 hidden md:block"></div>
-                </div>
-                
-                <div className="flex flex-col items-center text-center md:text-left md:items-start">
-                  <div className="p-2 rounded-lg bg-white/5 backdrop-blur-sm">
-                    <Settings className="h-6 w-6 text-blue-400" />
-                  </div>
-                  <h3 className="text-lg font-semibold mt-2">Genie</h3>
-                </div>
-                
-                <div className="flex items-center gap-4">
-                  <ArrowRight className="h-6 w-6 text-gray-400 hidden md:block" />
-                  <div className="h-8 w-px bg-white/10 hidden md:block"></div>
-                </div>
-                
-                <div className="flex flex-col items-center text-center md:text-left md:items-start">
-                  <div className="p-2 rounded-lg bg-white/5 backdrop-blur-sm">
-                    <Slack className="h-6 w-6 text-blue-400" />
-                  </div>
-                  <h3 className="text-lg font-semibold mt-2">Slack</h3>
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* Visual Workflow Element */}
+          <WorkflowInfographic />
 
           <div className="mt-12">
             <Button 
               variant="ghost" 
               className="text-gray-300 hover:text-white flex items-center gap-2 mx-auto group"
-              onClick={scrollToHowItWorks}
+              onClick={() => scrollToSection(howItWorksRef)}
             >
               Learn How It Works
               <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -194,14 +164,14 @@ const Index = () => {
       {/* How It Works Section */}
       <section 
         ref={howItWorksRef}
-        className="py-20 bg-black relative overflow-hidden animate-on-scroll opacity-0"
+        className="py-20 bg-black relative overflow-hidden animate-on-scroll opacity-0 section-transition"
       >
         <div className="absolute inset-0 bg-gradient-to-t from-blue-900/10 via-black to-black z-0" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">How It Works</h2>
             <p className="text-gray-300 text-xl max-w-2xl mx-auto">
-              Connect your AI agents to Slack in just a few simple steps
+              Connect your AI tools to Slack in three simple steps
             </p>
           </div>
 
@@ -209,18 +179,18 @@ const Index = () => {
             {[
               {
                 icon: <Server className="w-8 h-8 text-purple-400" />,
-                title: "Connect Your Agents",
-                description: "Connect local agents or cloud-hosted agents easily through a simple interface."
+                title: "Connect Your Tools",
+                description: "Link your AI tools to Genie with a simple click - no coding needed."
               },
               {
                 icon: <Settings className="w-8 h-8 text-blue-400" />,
-                title: "Configure in One Place",
-                description: "Manage permissions, workflows, and agent settings from a central dashboard."
+                title: "Set Up Quick Commands",
+                description: "Create easy-to-remember chat commands your team can use right away."
               },
               {
-                icon: <Slack className="w-8 h-8 text-blue-400" />,
-                title: "Use from Slack",
-                description: "Access all your agents directly from Slack with simple commands or UI."
+                icon: <Zap className="w-8 h-8 text-yellow-400" />,
+                title: "Use in Slack",
+                description: "Your team can now use powerful AI tools without leaving their chat."
               }
             ].map((step, index) => (
               <Card 
@@ -238,55 +208,42 @@ const Index = () => {
             ))}
           </div>
 
-          <div className="mt-16 text-center animate-on-scroll opacity-0">
+          <div className="mt-16 text-center animate-on-scroll opacity-0" ref={benefitsRef}>
             <h3 className="text-2xl font-semibold mb-6">Benefits</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-              {[
-                {
-                  icon: <Zap className="w-6 h-6 text-yellow-400" />,
-                  title: "Increased Productivity",
-                  description: "Access AI capabilities without context switching."
-                },
-                {
-                  icon: <Server className="w-6 h-6 text-purple-400" />,
-                  title: "Unified Management",
-                  description: "Manage all your agents in one place."
-                },
-                {
-                  icon: <CheckCircle className="w-6 h-6 text-green-400" />,
-                  title: "Team Collaboration",
-                  description: "Share agents with your entire team."
-                },
-                {
-                  icon: <Cloud className="w-6 h-6 text-blue-400" />,
-                  title: "Flexible Deployment",
-                  description: "Works with both local and cloud agents."
-                }
-              ].map((benefit, index) => (
-                <div 
-                  key={index} 
-                  className="p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 transition-all"
-                >
-                  <div className="flex items-center gap-3 mb-2">
-                    {benefit.icon}
-                    <h4 className="font-medium">{benefit.title}</h4>
-                  </div>
-                  <p className="text-gray-300 text-sm">{benefit.description}</p>
-                </div>
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              <BenefitCard
+                icon={<Zap className="w-6 h-6" />}
+                title="Save Time"
+                description="Your team can use AI tools right in Slack without switching apps."
+              />
+              <BenefitCard
+                icon={<Server className="w-6 h-6" />}
+                title="Easy Setup"
+                description="Connect all your tools in one place with no coding required."
+              />
+              <BenefitCard
+                icon={<CheckCircle className="w-6 h-6" />}
+                title="Team Friendly"
+                description="Everyone can use AI tools with simple chat commands they already know."
+              />
+              <BenefitCard
+                icon={<Cloud className="w-6 h-6" />}
+                title="Works Anywhere"
+                description="Use with cloud tools or your own private AI models - your choice."
+              />
             </div>
           </div>
         </div>
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-16 relative animate-on-scroll opacity-0">
+      <section className="py-16 relative animate-on-scroll opacity-0 section-transition">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-purple-900/20 z-0" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to supercharge your Slack workspace?</h2>
             <p className="text-xl text-gray-300 mb-8">
-              Join the waitlist to get early access to Genie and be the first to connect your AI agents to Slack.
+              Join the waitlist today - early users get special features and priority support!
             </p>
             <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-3 max-w-md mx-auto">
               <div className="flex-grow">
@@ -309,7 +266,7 @@ const Index = () => {
                 className="h-12 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 transition-all"
                 disabled={isLoading}
               >
-                {isLoading ? "Signing up..." : "Get Early Access"}
+                {isLoading ? "Signing up..." : "Join Early Access – Limited Spots!"}
               </Button>
             </form>
           </div>
