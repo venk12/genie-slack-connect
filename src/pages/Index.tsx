@@ -124,7 +124,9 @@ const Index = () => {
           <div className="text-center mb-12 stagger-fade-in">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                Summon your AI Agents from {" "}
+                Summon your AI Agents from 
+                <br/>
+                {" "}
               </span>
               <span className="inline-flex">
                 <MessagingPlatformAnimation />

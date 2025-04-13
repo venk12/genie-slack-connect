@@ -94,7 +94,7 @@ const WorkflowInfographic = () => {
               </div>
             </div>
             <h3 className="text-xl font-semibold mb-2">Genie</h3>
-            <p className="text-sm text-gray-300">One-stop shop for all your agents</p>
+            <p className="text-sm text-gray-300"> Manage all the agents across your organization in one place </p>
           </div>
           
           {/* Arrow 2 */}
