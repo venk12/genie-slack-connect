@@ -11,8 +11,8 @@ interface BenefitCardProps {
 const BenefitCard = ({ icon, title, description }: BenefitCardProps) => {
   return (
     <div className="benefit-card p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
-      <div className="flex items-start gap-3">
-        <div className="mt-1 text-blue-400">
+      <div className="flex items-center gap-4">
+        <div className="flex-shrink-0 p-2 bg-white/10 rounded-lg">
           {icon}
         </div>
         <div>

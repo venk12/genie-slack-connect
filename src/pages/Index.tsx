@@ -3,7 +3,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { toast } from "sonner";
 import { 
   CheckCircle, ChevronRight, Zap, 
-  Server, Cloud, Settings, ArrowRight 
+  Server, Cloud, Settings, ArrowRight,
+  Users, Shield, Database 
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -12,6 +13,8 @@ import { supabase } from "@/integrations/supabase/client";
 import WorkflowInfographic from "@/components/WorkflowInfographic";
 import BenefitCard from "@/components/BenefitCard";
 import MessagingPlatformAnimation from "@/components/MessagingPlatformAnimation";
+import IMSelector from "@/components/IMSelector";
+import { useIMContext } from "@/contexts/IMContext";
 
 const Index = () => {
   const [email, setEmail] = useState("");
@@ -19,6 +22,15 @@ const Index = () => {
   const [isValid, setIsValid] = useState(true);
   const howItWorksRef = useRef<HTMLDivElement>(null);
   const benefitsRef = useRef<HTMLDivElement>(null);
+  const { selectedIM, otherIMName } = useIMContext();
+
+  // Get the display name for the selected IM
+  const getIMDisplayName = () => {
+    if (selectedIM.id === "other" && otherIMName) {
+      return otherIMName;
+    }
+    return selectedIM.name;
+  };
 
   // Animation for sections as they come into view
   useEffect(() => {
@@ -65,7 +77,7 @@ const Index = () => {
     try {
       const { error } = await supabase
         .from("signups")
-        .insert([{ email }]);
+        .insert([{ email, platform: getIMDisplayName() }]);
 
       if (error) throw error;
       
@@ -106,6 +118,9 @@ const Index = () => {
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl z-0" />
         
         <div className="container mx-auto relative z-10 max-w-5xl">
+          {/* IM Selector */}
+          <IMSelector />
+          
           <div className="text-center mb-12 stagger-fade-in">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
@@ -116,7 +131,7 @@ const Index = () => {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Genie lets you connect your AI tools to messaging platforms in seconds, so your team can use them with simple chat commands.
+              Genie lets you connect your AI tools to {getIMDisplayName()} in seconds, so your team can use them with simple chat commands.
             </p>
 
             {/* Email Signup Form */}
@@ -177,7 +192,7 @@ const Index = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">How It Works</h2>
             <p className="text-gray-300 text-xl max-w-2xl mx-auto">
-              Connect your AI tools to Slack in three simple steps
+              Connect your AI tools to {getIMDisplayName()} in three simple steps
             </p>
           </div>
 
@@ -186,17 +201,17 @@ const Index = () => {
               {
                 icon: <Server className="w-8 h-8 text-purple-400" />,
                 title: "Connect Your Tools",
-                description: "Link your AI tools to Genie with a simple click - no coding needed."
+                description: `Link your AI tools to Genie with a simple click - no coding needed.`
               },
               {
                 icon: <Settings className="w-8 h-8 text-blue-400" />,
                 title: "Set Up Quick Commands",
-                description: "Create easy-to-remember chat commands your team can use right away."
+                description: `Create easy-to-remember chat commands your team can use right away.`
               },
               {
                 icon: <Zap className="w-8 h-8 text-yellow-400" />,
-                title: "Use in Slack",
-                description: "Your team can now use powerful AI tools without leaving their chat."
+                title: `Use in ${getIMDisplayName()}`,
+                description: `Your team can now use powerful AI tools without leaving their chat.`
               }
             ].map((step, index) => (
               <Card 
@@ -218,22 +233,22 @@ const Index = () => {
             <h3 className="text-2xl font-semibold mb-6">Benefits</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               <BenefitCard
-                icon={<Zap className="w-6 h-6" />}
+                icon={<Zap className="w-8 h-8 text-yellow-400" />}
                 title="Save Time"
-                description="Your team can use AI tools right in Slack without switching apps."
+                description="Your team can use AI tools right in their chat without switching apps."
               />
               <BenefitCard
-                icon={<Server className="w-6 h-6" />}
+                icon={<Shield className="w-8 h-8 text-green-400" />}
                 title="Easy Setup"
                 description="Connect all your tools in one place with no coding required."
               />
               <BenefitCard
-                icon={<CheckCircle className="w-6 h-6" />}
+                icon={<Users className="w-8 h-8 text-blue-400" />}
                 title="Team Friendly"
                 description="Everyone can use AI tools with simple chat commands they already know."
               />
               <BenefitCard
-                icon={<Cloud className="w-6 h-6" />}
+                icon={<Database className="w-8 h-8 text-purple-400" />}
                 title="Works Anywhere"
                 description="Use with cloud tools or your own private AI models - your choice."
               />
@@ -247,7 +262,9 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-purple-900/20 z-0" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to supercharge your Slack workspace?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Ready to supercharge your {getIMDisplayName()} workspace?
+            </h2>
             <p className="text-xl text-gray-300 mb-8">
               Join the waitlist today - early users get special features and priority support!
             </p>
