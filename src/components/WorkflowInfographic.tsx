@@ -1,7 +1,7 @@
 
 import React, { useRef, useEffect } from "react";
-import { Server, Cloud, Settings, ArrowRight } from "lucide-react";
-import MessagingPlatformAnimation from "./MessagingPlatformAnimation";
+import { Server, Cloud, Settings, ArrowRight, MessageSquare } from "lucide-react";
+import { BrandDiscord, BrandTelegram } from "./icons/BrandIcons";
 
 const WorkflowInfographic = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -64,17 +64,26 @@ const WorkflowInfographic = () => {
           {/* Arrow 2 */}
           <ArrowRight className="h-8 w-8 text-gray-400 hidden md:block opacity-0 animate-step" />
           
-          {/* Step 3: Messaging Platform */}
+          {/* Step 3: Messaging Platforms (Static Icons) */}
           <div className="flex flex-col items-center text-center opacity-0 animate-step">
-            <div className="mb-4">
-              <MessagingPlatformAnimation />
+            <div className="flex space-x-3 mb-4">
+              <div className="bg-white/10 p-2 rounded-lg">
+                <MessageSquare className="h-6 w-6 text-blue-400" />
+              </div>
+              <div className="bg-white/10 p-2 rounded-lg">
+                <BrandDiscord className="h-6 w-6 text-indigo-400" />
+              </div>
+              <div className="bg-white/10 p-2 rounded-lg">
+                <BrandTelegram className="h-6 w-6 text-sky-400" />
+              </div>
+              <div className="bg-white/10 p-2 rounded-lg">
+                <MessageSquare className="h-6 w-6 text-purple-400" />
+              </div>
             </div>
+            <h3 className="text-xl font-semibold mb-2">Messaging Platforms</h3>
             <p className="text-sm text-gray-300">Access everywhere</p>
           </div>
         </div>
-        
-        {/* Animated connection lines */}
-        <div className="absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-purple-500/30 via-blue-500/30 to-green-500/30 transform -translate-y-1/2 hidden md:block opacity-0 animate-step"></div>
       </div>
     </div>
   );

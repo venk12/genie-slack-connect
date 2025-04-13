@@ -11,6 +11,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { supabase } from "@/integrations/supabase/client";
 import WorkflowInfographic from "@/components/WorkflowInfographic";
 import BenefitCard from "@/components/BenefitCard";
+import MessagingPlatformAnimation from "@/components/MessagingPlatformAnimation";
 
 const Index = () => {
   const [email, setEmail] = useState("");
@@ -106,11 +107,16 @@ const Index = () => {
         
         <div className="container mx-auto relative z-10 max-w-5xl">
           <div className="text-center mb-12 stagger-fade-in">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-              One Click to Use AI in Slack
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                One Click to Use AI in{" "}
+              </span>
+              <span className="inline-flex">
+                <MessagingPlatformAnimation />
+              </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Genie lets you connect your AI tools to Slack in seconds, so your team can use them with simple chat commands.
+              Genie lets you connect your AI tools to messaging platforms in seconds, so your team can use them with simple chat commands.
             </p>
 
             {/* Email Signup Form */}
