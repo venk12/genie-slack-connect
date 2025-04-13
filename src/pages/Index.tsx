@@ -191,45 +191,6 @@ const Index = () => {
       >
         <div className="absolute inset-0 bg-gradient-to-t from-blue-900/10 via-black to-black z-0" />
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">How It Works</h2>
-            <p className="text-gray-300 text-xl max-w-2xl mx-auto">
-              Connect your AI tools to {getIMDisplayName()} in three simple steps
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {[
-              {
-                icon: <Server className="w-8 h-8 text-purple-400" />,
-                title: "Connect Your Tools",
-                description: `Link your AI tools to Genie with a simple click - no coding needed.`
-              },
-              {
-                icon: <Settings className="w-8 h-8 text-blue-400" />,
-                title: "Set Up Quick Commands",
-                description: `Create easy-to-remember chat commands your team can use right away.`
-              },
-              {
-                icon: <Zap className="w-8 h-8 text-yellow-400" />,
-                title: `Use in ${getIMDisplayName()}`,
-                description: `Your team can now use powerful AI tools without leaving their chat.`
-              }
-            ].map((step, index) => (
-              <Card 
-                key={index} 
-                className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all group"
-              >
-                <CardContent className="p-6 flex flex-col items-center text-center">
-                  <div className="mb-4 p-3 rounded-full bg-white/5 group-hover:bg-white/10 transition-all">
-                    {step.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
-                  <p className="text-gray-300">{step.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
 
           <div className="mt-16 text-center animate-on-scroll opacity-0" ref={benefitsRef}>
             <h3 className="text-2xl font-semibold mb-6">Benefits</h3>
