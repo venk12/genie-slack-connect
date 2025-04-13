@@ -170,17 +170,6 @@ const Index = () => {
 
           {/* Visual Workflow Element */}
           <WorkflowInfographic />
-
-          <div className="mt-12">
-            <Button 
-              variant="ghost" 
-              className="text-gray-300 hover:text-white flex items-center gap-2 mx-auto group"
-              onClick={() => scrollToSection(howItWorksRef)}
-            >
-              Learn How It Works
-              <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </div>
         </div>
       </section>
 
