@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { 
   Select, 
@@ -69,10 +68,7 @@ const IMSelector = () => {
       <div className="flex flex-col gap-3">
         <Select onValueChange={handleIMChange} defaultValue={selectedIM.id}>
           <SelectTrigger className="w-full bg-white/10 border-white/20">
-            <div className="flex items-center gap-2">
-              {selectedIM.logo}
-              <SelectValue placeholder="Select your messaging app" />
-            </div>
+            <SelectValue placeholder="Select your messaging app" />
           </SelectTrigger>
           <SelectContent className="bg-gray-900 border-white/20 text-white">
             {imOptions.map((im) => (

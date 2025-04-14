@@ -107,10 +107,28 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
-      {/* Logo */}
-      <div className="absolute top-4 right-4 z-10">
-        <img src="/genie-os-logo.png" alt="Genie OS" className="h-12" />
-      </div>
+      {/* Navbar */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-white/10">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
+            <h1 className="text-2xl font-playfair text-center text-white">Genie</h1>
+            <div className="flex gap-6">
+              <button
+                onClick={() => scrollToSection(howItWorksRef)}
+                className="text-gray-300 hover:text-white transition-colors"
+              >
+                How it Works
+              </button>
+              <button
+                onClick={() => scrollToSection(benefitsRef)}
+                className="text-gray-300 hover:text-white transition-colors"
+              >
+                Benefits
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center justify-center px-4 py-20 section-transition">
