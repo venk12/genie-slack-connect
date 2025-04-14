@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -160,3 +159,19 @@
 .stagger-fade-in > *:nth-child(4) { animation: fadeIn 0.5s ease-out 0.4s forwards; }
 .stagger-fade-in > *:nth-child(5) { animation: fadeIn 0.5s ease-out 0.5s forwards; }
 
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-shift {
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}

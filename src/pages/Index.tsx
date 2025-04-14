@@ -107,18 +107,18 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      {/* Animated gradient background */}
+      <div className="fixed inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-black to-blue-900/20 animate-gradient-shift" />
+      </div>
+
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-white/10">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            <h1 className="text-2xl font-playfair text-center text-white">Genie</h1>
-            <div className="flex gap-6">
-              <button
-                onClick={() => scrollToSection(howItWorksRef)}
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                How it Works
-              </button>
+            <div className="flex-1" /> {/* Spacer */}
+            <h1 className="text-2xl font-playfair text-center text-white">genie-os</h1>
+            <div className="flex-1 flex justify-end">
               <button
                 onClick={() => scrollToSection(benefitsRef)}
                 className="text-gray-300 hover:text-white transition-colors"
@@ -131,28 +131,24 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center px-4 py-20 section-transition">
-        {/* Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-black to-blue-900/20 z-0" />
-        
-        {/* Glassmorphic elements */}
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-purple-500/10 blur-3xl z-0" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl z-0" />
-        
+      <section className="relative min-h-screen flex flex-col items-center justify-center px-4 py-32 section-transition">
         <div className="container mx-auto relative z-10 max-w-5xl">
-          <div className="text-center mb-12 stagger-fade-in">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <div className="text-center mb-12 stagger-fade-in space-y-12">
+            <h1 className="text-4xl md:text-6xl font-bold">
               <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
                 Summon your AI Agents from
                 <br />
               </span>
-              <span className="inline-flex mt-4">
+              <span className="inline-flex mt-8 justify-center w-full">
                 <MessagingPlatformAnimation />
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Genie lets you connect your AI tools to {getIMDisplayName()} in seconds, so your team can use them with simple chat commands.
+              genie-os lets you connect your AI tools to {getIMDisplayName()} in seconds, so your team can use them with simple chat commands.
             </p>
+
+            {/* IM Selector moved above email signup */}
+            <IMSelector />
 
             {/* Email Signup Form */}
             <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-3 max-w-md mx-auto">
@@ -178,28 +174,28 @@ const Index = () => {
               </div>
               <Button
                 type="submit"
-                className="h-12 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 transition-all"
+                className="h-12 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 transition-all flex flex-col items-center justify-center py-1"
                 disabled={isLoading}
               >
-                {isLoading ? "Signing up..." : "Join Early Access – Limited Spots!"}
+                <span>Join Early Access</span>
+                <span className="text-xs opacity-75">Limited Spots!</span>
               </Button>
             </form>
-
-            {/* IM Selector moved below signup form */}
-            <IMSelector />
           </div>
 
           {/* Visual Workflow Element */}
-          <WorkflowInfographic />
+          <div className="mt-20">
+            <h2 className="text-3xl font-bold text-center mb-12">How It Works</h2>
+            <WorkflowInfographic />
+          </div>
         </div>
       </section>
 
-      {/* How It Works Section */}
+      {/* Benefits Section */}
       <section 
-        ref={howItWorksRef}
+        ref={benefitsRef}
         className="py-20 bg-black relative overflow-hidden animate-on-scroll opacity-0 section-transition"
       >
-        <div className="absolute inset-0 bg-gradient-to-t from-blue-900/10 via-black to-black z-0" />
         <div className="container mx-auto px-4 relative z-10">
 
           <div className="mt-16 text-center animate-on-scroll opacity-0" ref={benefitsRef}>
@@ -259,10 +255,11 @@ const Index = () => {
               </div>
               <Button
                 type="submit"
-                className="h-12 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 transition-all"
+                className="h-12 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 transition-all flex flex-col items-center justify-center py-1"
                 disabled={isLoading}
               >
-                {isLoading ? "Signing up..." : "Join Early Access – Limited Spots!"}
+                <span>Join Early Access</span>
+                <span className="text-xs opacity-75">Limited Spots!</span>
               </Button>
             </form>
           </div>
@@ -270,13 +267,13 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 border-t border-white/10">
+      <section className="py-8 border-t border-white/10">
         <div className="container mx-auto px-4">
           <div className="text-center text-gray-400 text-sm">
-            <p>© {new Date().getFullYear()} Genie. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} genie-os. All rights reserved.</p>
           </div>
         </div>
-      </footer>
+      </section>
     </div>
   );
 };

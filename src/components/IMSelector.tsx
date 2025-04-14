@@ -61,7 +61,7 @@ const IMSelector = () => {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto mt-12 mb-8">
+    <div className="w-full max-w-md mx-auto">
       <div className="text-center mb-2">
         <h3 className="text-lg font-semibold text-white">Which messaging app does your organization use?</h3>
       </div>
@@ -77,10 +77,7 @@ const IMSelector = () => {
                 value={im.id}
                 className="flex items-center gap-2 focus:bg-white/10 focus:text-white"
               >
-                <div className="flex items-center gap-2">
-                  {im.logo}
-                  <span>{im.name}</span>
-                </div>
+                <span>{im.name}</span>
               </SelectItem>
             ))}
           </SelectContent>
