@@ -1,18 +1,28 @@
 
 import React, { useState, useEffect } from "react";
-import { Slack, MessageSquare } from "lucide-react";
-import { BrandDiscord, BrandTelegram } from "./icons/BrandIcons";
 
 type Platform = {
   name: string;
-  icon: React.ReactNode;
+  icon: string;
 };
 
 const platforms: Platform[] = [
-  { name: "Slack", icon: <Slack className="h-6 w-6" /> },
-  { name: "Discord", icon: <BrandDiscord className="h-6 w-6" /> },
-  { name: "Telegram", icon: <BrandTelegram className="h-6 w-6" /> },
-  { name: "Teams", icon: <MessageSquare className="h-6 w-6" /> },
+  { 
+    name: "Slack", 
+    icon: "https://freepnglogo.com/images/all_img/1707837044slack-icon-png.png"
+  },
+  { 
+    name: "Discord", 
+    icon: "https://freepnglogo.com/images/all_img/1708701355discord-icon-png.png"
+  },
+  { 
+    name: "Telegram", 
+    icon: "https://freepnglogo.com/images/all_img/telegram-logo-fc05.png"
+  },
+  { 
+    name: "Teams", 
+    icon: "https://freepnglogo.com/images/all_img/microsoft-teams-83e6.png"
+  },
 ];
 
 const MessagingPlatformAnimation = () => {
@@ -43,7 +53,11 @@ const MessagingPlatformAnimation = () => {
         }`}
       >
         <div className="bg-white/10 p-2 rounded-lg">
-          {platforms[currentIndex].icon}
+          <img 
+            src={platforms[currentIndex].icon} 
+            alt={platforms[currentIndex].name}
+            className="h-6 w-6"
+          />
         </div>
         <h3 className="text-lg font-semibold">{platforms[currentIndex].name}</h3>
       </div>

@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from "react";
 import { toast } from "sonner";
 import { 
@@ -124,8 +123,8 @@ const Index = () => {
           <div className="text-center mb-12 stagger-fade-in">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                Summon your AI Agents from 
-                <br/>
+                Summon your AI Agents from
+                <br />
                 {" "}
               </span>
               <span className="inline-flex">
@@ -182,7 +181,7 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10">
 
           <div className="mt-16 text-center animate-on-scroll opacity-0" ref={benefitsRef}>
-            <h3 className="text-2xl font-semibold mb-6">Benefits</h3>
+            <h3 className="text-2xl font-semibold mb-6 text-white">Benefits</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               <BenefitCard
                 icon={<Zap className="w-8 h-8 text-yellow-400" />}

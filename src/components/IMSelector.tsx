@@ -8,8 +8,6 @@ import {
   SelectValue 
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
-import { Slack, MessageSquare } from "lucide-react";
-import { BrandDiscord, BrandTelegram } from "./icons/BrandIcons";
 import { useIMContext, IMType } from "@/contexts/IMContext";
 
 const IMSelector = () => {
@@ -20,27 +18,27 @@ const IMSelector = () => {
     {
       name: "Slack",
       id: "slack",
-      logo: <Slack className="h-5 w-5 text-blue-400" />,
+      logo: <img src="https://freepnglogo.com/images/all_img/1707837044slack-icon-png.png" alt="Slack" className="h-5 w-5" />,
     },
     {
       name: "Discord",
       id: "discord",
-      logo: <BrandDiscord className="h-5 w-5 text-indigo-400" />,
+      logo: <img src="https://freepnglogo.com/images/all_img/1708701355discord-icon-png.png" alt="Discord" className="h-5 w-5" />,
     },
     {
       name: "Teams",
       id: "teams",
-      logo: <MessageSquare className="h-5 w-5 text-blue-500" />,
+      logo: <img src="https://freepnglogo.com/images/all_img/microsoft-teams-83e6.png" alt="Teams" className="h-5 w-5" />,
     },
     {
       name: "Telegram",
       id: "telegram",
-      logo: <BrandTelegram className="h-5 w-5 text-sky-400" />,
+      logo: <img src="https://freepnglogo.com/images/all_img/telegram-logo-fc05.png" alt="Telegram" className="h-5 w-5" />,
     },
     {
       name: "Other",
       id: "other",
-      logo: <MessageSquare className="h-5 w-5 text-gray-400" />,
+      logo: null,
     },
   ];
 
@@ -71,10 +69,7 @@ const IMSelector = () => {
       <div className="flex flex-col gap-3">
         <Select onValueChange={handleIMChange} defaultValue={selectedIM.id}>
           <SelectTrigger className="w-full bg-white/10 border-white/20">
-            <div className="flex items-center gap-2">
-              {selectedIM.logo}
-              <SelectValue placeholder="Select your messaging app" />
-            </div>
+            <SelectValue placeholder="Select your messaging app" />
           </SelectTrigger>
           <SelectContent className="bg-gray-900 border-white/20 text-white">
             {imOptions.map((im) => (
