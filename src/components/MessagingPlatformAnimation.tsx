@@ -48,18 +48,18 @@ const MessagingPlatformAnimation = () => {
   return (
     <div className="flex items-center transition-all duration-500">
       <div 
-        className={`transition-opacity duration-500 flex items-center gap-2 ${
+        className={`transition-opacity duration-500 flex items-center gap-4 ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}
       >
-        <div className="bg-white/10 p-2 rounded-lg">
+        <div className="bg-white/10 p-3 rounded-lg">
           <img 
             src={platforms[currentIndex].icon} 
             alt={platforms[currentIndex].name}
-            className="h-6 w-6"
+            className="h-8 w-8"
           />
         </div>
-        <h3 className="text-lg font-semibold">{platforms[currentIndex].name}</h3>
+        <h3 className="text-2xl font-semibold">{platforms[currentIndex].name}</h3>
       </div>
     </div>
   );

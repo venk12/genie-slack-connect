@@ -62,14 +62,17 @@ const IMSelector = () => {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto mb-8">
+    <div className="w-full max-w-md mx-auto mt-12 mb-8">
       <div className="text-center mb-2">
-        <h3 className="text-lg font-semibold">Which messaging app does your organization use?</h3>
+        <h3 className="text-lg font-semibold text-white">Which messaging app does your organization use?</h3>
       </div>
       <div className="flex flex-col gap-3">
         <Select onValueChange={handleIMChange} defaultValue={selectedIM.id}>
           <SelectTrigger className="w-full bg-white/10 border-white/20">
-            <SelectValue placeholder="Select your messaging app" />
+            <div className="flex items-center gap-2">
+              {selectedIM.logo}
+              <SelectValue placeholder="Select your messaging app" />
+            </div>
           </SelectTrigger>
           <SelectContent className="bg-gray-900 border-white/20 text-white">
             {imOptions.map((im) => (

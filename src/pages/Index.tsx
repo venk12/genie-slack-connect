@@ -107,6 +107,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      {/* Logo */}
+      <div className="absolute top-4 right-4 z-10">
+        <img src="/genie-os-logo.png" alt="Genie OS" className="h-12" />
+      </div>
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center justify-center px-4 py-20 section-transition">
         {/* Gradient Background */}
@@ -117,17 +122,13 @@ const Index = () => {
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl z-0" />
         
         <div className="container mx-auto relative z-10 max-w-5xl">
-          {/* IM Selector */}
-          <IMSelector />
-          
           <div className="text-center mb-12 stagger-fade-in">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
                 Summon your AI Agents from
                 <br />
-                {" "}
               </span>
-              <span className="inline-flex">
+              <span className="inline-flex mt-4">
                 <MessagingPlatformAnimation />
               </span>
             </h1>
@@ -165,6 +166,9 @@ const Index = () => {
                 {isLoading ? "Signing up..." : "Join Early Access – Limited Spots!"}
               </Button>
             </form>
+
+            {/* IM Selector moved below signup form */}
+            <IMSelector />
           </div>
 
           {/* Visual Workflow Element */}
