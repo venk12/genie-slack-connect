@@ -52,13 +52,13 @@ const MessagingPlatformAnimation = () => {
           isVisible ? "opacity-100" : "opacity-0"
         }`}
       >
-        <div className="bg-white/10 p-3 rounded-lg">
+        {/* <div className="bg-white/10 p-3 rounded-lg"> */}
           <img 
             src={platforms[currentIndex].icon} 
             alt={platforms[currentIndex].name}
-            className="h-8 w-8"
+            className="h-16 w-16"
           />
-        </div>
+        {/* </div> */}
         <h3 className="text-2xl font-semibold">{platforms[currentIndex].name}</h3>
       </div>
     </div>

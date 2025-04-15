@@ -63,7 +63,7 @@ const IMSelector = () => {
   return (
     <div className="w-full max-w-md mx-auto">
       <div className="text-center mb-2">
-        <h3 className="text-lg font-semibold text-white">Which messaging app does your organization use?</h3>
+        <h3 className="text-lg font-semibold text-white pb-4">Which messaging app does your organization use?</h3>
       </div>
       <div className="flex flex-col gap-3">
         <Select onValueChange={handleIMChange} defaultValue={selectedIM.id}>

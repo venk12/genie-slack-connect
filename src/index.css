@@ -105,7 +105,8 @@
     @apply backdrop-blur-xl bg-white/5 border border-white/10 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)];
   }
   
-  .animate-fade-in {
+  /* Scope animations to hero section */
+  .hero-section .animate-fade-in {
     animation: fadeIn 0.8s ease-out forwards;
   }
   
@@ -148,16 +149,17 @@
   animation: pulse 3s ease-in-out infinite;
 }
 
-.stagger-fade-in > * {
+/* Scope stagger animations to hero section */
+.hero-section .stagger-fade-in > * {
   opacity: 0;
   transform: translateY(10px);
 }
 
-.stagger-fade-in > *:nth-child(1) { animation: fadeIn 0.5s ease-out 0.1s forwards; }
-.stagger-fade-in > *:nth-child(2) { animation: fadeIn 0.5s ease-out 0.2s forwards; }
-.stagger-fade-in > *:nth-child(3) { animation: fadeIn 0.5s ease-out 0.3s forwards; }
-.stagger-fade-in > *:nth-child(4) { animation: fadeIn 0.5s ease-out 0.4s forwards; }
-.stagger-fade-in > *:nth-child(5) { animation: fadeIn 0.5s ease-out 0.5s forwards; }
+.hero-section .stagger-fade-in > *:nth-child(1) { animation: fadeIn 0.5s ease-out 0.1s forwards; }
+.hero-section .stagger-fade-in > *:nth-child(2) { animation: fadeIn 0.5s ease-out 0.2s forwards; }
+.hero-section .stagger-fade-in > *:nth-child(3) { animation: fadeIn 0.5s ease-out 0.3s forwards; }
+.hero-section .stagger-fade-in > *:nth-child(4) { animation: fadeIn 0.5s ease-out 0.4s forwards; }
+.hero-section .stagger-fade-in > *:nth-child(5) { animation: fadeIn 0.5s ease-out 0.5s forwards; }
 
 @keyframes gradient-shift {
   0% {
@@ -174,4 +176,39 @@
 .animate-gradient-shift {
   background-size: 400% 400%;
   animation: gradient-shift 15s ease infinite;
+}
+
+/* New animated background gradient */
+@keyframes move-background {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient-background {
+  @apply fixed inset-0 -z-10;
+  background: 
+    radial-gradient(circle at top left, 
+      rgba(124, 58, 237, 0.3),  /* Purple */
+      transparent 60%
+    ),
+    radial-gradient(circle at bottom right,
+      rgba(59, 130, 246, 0.3),  /* Blue */
+      transparent 60%
+    ),
+    radial-gradient(circle at center,
+      rgba(236, 72, 153, 0.2),  /* Pink */
+      transparent 70%
+    );
+  background-size: 200% 200%;
+  animation: move-background 15s ease infinite;
+  filter: blur(80px);
+  opacity: 1;
+  pointer-events: none;
 }

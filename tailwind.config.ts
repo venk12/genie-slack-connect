@@ -61,6 +61,7 @@ export default {
       },
       fontFamily: {
         playfair: ['Playfair Display', 'serif'],
+        'league-spartan': ['League Spartan', 'system-ui', 'sans-serif'],
       },
     },
   },
