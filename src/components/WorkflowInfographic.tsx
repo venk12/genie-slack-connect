@@ -30,9 +30,17 @@ const WorkflowInfographic = () => {
   return (
     <div className="max-w-4xl mx-auto relative py-2">
       {/* Added header */}
-      <h3 className="text-4xl font-bold text-center mb-8 text-transparent bg-clip-text bg-white">
+      {/* <h3 className="text-4xl font-bold text-center mb-8 text-transparent bg-clip-text bg-white">
         How does genie work?
+      </h3> */}
+      <div className="text-center mb-16">
+      <h3 className="text-4xl font-bold mb-4 text-white bg-clip-text text-transparent">
+        Why use genie?
       </h3>
+      <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+        Real work gets done with other humans not in AI Platforms
+      </p>
+    </div>
       
       <div className="glass-card p-6 md:p-8 rounded-lg border border-white/10 shadow-xl">
         <div className="flex flex-col md:flex-row justify-between items-center gap-12 md:gap-4">

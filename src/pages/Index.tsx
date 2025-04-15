@@ -140,7 +140,7 @@ const Index = () => {
         <div className="container mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 items-center">
             {/* Left Side - Text Content */}
-            <div className="text-center lg:text-left mb-12 lg:mb-0 stagger-fade-in space-y-6 animate-on-scroll opacity-0 px-6 lg:px-0">
+            <div className="text-center lg:text-left mb-10 lg:mb-0 stagger-fade-in space-y-6 animate-on-scroll opacity-0 px-6 lg:px-0">
               <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight">
                 <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
                   Summon your AI Assistants from
@@ -347,8 +347,7 @@ const Index = () => {
       </section>
 
       {/* Visual Workflow Element */}
-      <div className="mt-8">
-        {/* <h2 className="text-3xl font-bold text-center mb-12 mt-24">How It Works</h2> */}
+      <div className="mt-2">
         <WorkflowInfographic />
       </div>
 
