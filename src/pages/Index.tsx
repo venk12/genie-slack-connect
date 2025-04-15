@@ -224,7 +224,9 @@ const Index = () => {
                           <span className="font-medium text-white text-sm sm:text-base">Sarah</span>
                           <span className="ml-2 text-[10px] sm:text-xs text-gray-400">11:30 AM</span>
                         </div>
-                        <p className="text-gray-300 mt-1 text-sm sm:text-base">@genie Can you help me analyze this dataset?</p>
+                        <p className="text-gray-300 mt-1 text-sm sm:text-base"><span className="text-yellow-200">@genie - </span>
+                         Can you help me analyze this dataset?
+                        </p>
                       </div>
                     </div>
 
@@ -233,7 +235,7 @@ const Index = () => {
                       <div className="w-6 h-6 sm:w-8 sm:h-8 rounded bg-gradient-to-r from-yellow-600 to-amber-600 flex items-center justify-center">
                         <span className="text-white text-[10px] sm:text-xs">✨</span>
                       </div>
-                      <div className="flex-1 min-w-0">
+                      <div className="flex-1 min-w-0 ">
                         <div className="flex items-center">
                           <span className="font-medium text-amber-500 text-sm sm:text-base">genie</span>
                           <span className="ml-2 text-[10px] sm:text-xs text-gray-400">11:31 AM</span>
@@ -274,7 +276,7 @@ const Index = () => {
                           <span className="font-medium text-white text-sm sm:text-base">Alex</span>
                           <span className="ml-2 text-[10px] sm:text-xs text-gray-400">11:32 AM</span>
                         </div>
-                        <p className="text-gray-300 mt-1 text-sm sm:text-base">That's impressive! @genie can you also generate a summary report?</p>
+                        <p className="text-gray-300 mt-1 text-sm sm:text-base">That's impressive! <span className="text-yellow-200">@genie - </span> can you also generate a summary report?</p>
                       </div>
                     </div>
 
@@ -507,7 +509,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-purple-900/20 z-0" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-medium mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Ready to supercharge your {getIMDisplayName()} workspace?
             </h2>
             <p className="text-xl text-gray-300 mb-8">
