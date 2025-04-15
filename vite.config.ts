@@ -9,6 +9,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
+  base: "/genie-slack-connect",
   plugins: [
     react(),
     mode === 'development' &&
