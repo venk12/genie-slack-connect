@@ -138,7 +138,7 @@ const Index = () => {
       {/* Hero Section */}
       <section className="hero-section relative min-h-screen flex flex-col items-center justify-center px-4 mt-10 py-64 section-transition">
         <div className="container mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 items-center">
             {/* Left Side - Text Content */}
             <div className="text-center lg:text-left mb-12 lg:mb-0 stagger-fade-in space-y-6 animate-on-scroll opacity-0 px-6 lg:px-0">
               <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight">
@@ -252,7 +252,7 @@ const Index = () => {
                                   <path d="m12 7 1.5-1.5c.8-.8 2.2-.8 3 0l1 1c.8.8.8 2.2 0 3L16 11h-4V7z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                 </svg>
                                 <div className="absolute -left-2 top-1/2 -translate-y-1/2 w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-                                <span className="absolute left-full ml-2 px-2 py-1 bg-white/20 rounded text-xs text-purple-300 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap backdrop-blur-sm">
+                                <span className="absolute left-full ml-2 px-2 py-1 bg-white/20 rounded text-xs text-purple-300 opacity-100 transition-opacity whitespace-nowrap backdrop-blur-sm">
                                   Data Analysis Agent
                                 </span>
                               </div>
@@ -301,8 +301,8 @@ const Index = () => {
                                   <path d="M10 9H8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                 </svg>
                                 <div className="absolute -left-2 top-1/2 -translate-y-1/2 w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                                <span className="absolute left-full ml-2 px-2 py-1 bg-white/20 rounded text-xs text-blue-300 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap backdrop-blur-sm">
-                                  Report Generator
+                                <span className="absolute left-full ml-2 px-2 py-1 bg-white/20 rounded text-xs text-blue-300 opacity-100 transition-opacity whitespace-nowrap backdrop-blur-sm">
+                                  Monthly Reporter Agent
                                 </span>
                               </div>
                             </div>
@@ -316,7 +316,7 @@ const Index = () => {
                                   <path d="M9 15V9l3 4 3-4v6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                 </svg>
                                 <div className="absolute -left-2 top-1/2 -translate-y-1/2 w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                                <span className="absolute left-full ml-2 px-2 py-1 bg-white/20 rounded text-xs text-green-300 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap backdrop-blur-sm">
+                                <span className="absolute left-full ml-2 px-2 py-1 bg-white/20 rounded text-xs text-green-300 opacity-100 transition-opacity whitespace-nowrap backdrop-blur-sm">
                                   Visualization Agent
                                 </span>
                               </div>
@@ -531,11 +531,11 @@ const Index = () => {
                 />
               </div>
               <div className="flex flex-col items-center gap-2">
-                <Button
-                  type="submit"
-                  className="h-12 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 transition-all"
-                  disabled={isLoading}
-                >
+                  <Button
+                    type="submit"
+                    className="h-11 sm:h-12 bg-gradient-to-r from-green-600 to-green-600 hover:from-green-800 hover:to-green-800 transition-all text-sm sm:text-base"
+                    disabled={isLoading}
+                  >
                   <span>Join Early Access</span>
                 </Button>
                 <span className="text-xs opacity-75">Limited Spots!</span>

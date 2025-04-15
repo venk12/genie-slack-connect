@@ -62,7 +62,7 @@ const IMSelector = () => {
 
   return (
     <div className="w-full max-w-md mx-auto">
-      <div className="text-center mb-2">
+      <div className="text-left mb-2">
         <h3 className="text-lg font-semibold text-white pb-4">Which messaging app does your organization use?</h3>
       </div>
       <div className="flex flex-col gap-3">
