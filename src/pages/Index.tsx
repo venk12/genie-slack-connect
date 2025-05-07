@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from "react";
 import { toast } from "sonner";
 import { 
@@ -11,6 +12,7 @@ import { Card } from "@/components/ui/card";
 import { supabase } from "@/integrations/supabase/client";
 import WorkflowInfographic from "@/components/WorkflowInfographic";
 import { Message, GenieMessage } from "@/components/ChatMessage";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Index = () => {
   const [email, setEmail] = useState("");
@@ -18,6 +20,7 @@ const Index = () => {
   const [isValid, setIsValid] = useState(true);
   const howItWorksRef = useRef<HTMLDivElement>(null);
   const benefitsRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
 
   // Animation for sections as they come into view
   useEffect(() => {
@@ -107,20 +110,20 @@ const Index = () => {
 
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-white/10">
-        <div className="w-[70%] mx-auto">
+        <div className="container-fluid">
           <div className="flex items-center justify-between h-16">
             <div className="flex-1" /> {/* Spacer */}
             <h1 className="text-2xl font-league-spartan text-center text-white tracking-tight">✨ genie/os</h1>
             <div className="flex-1 flex justify-end">
               <button
                 onClick={() => scrollToSection(howItWorksRef)}
-                className="text-gray-300 hover:text-white transition-colors font-medium mr-6"
+                className="text-gray-300 hover:text-white transition-colors font-medium mr-6 text-sm md:text-base"
               >
                 How it works
               </button>
               <button
                 onClick={() => scrollToSection(benefitsRef)}
-                className="text-gray-300 hover:text-white transition-colors font-medium"
+                className="text-gray-300 hover:text-white transition-colors font-medium text-sm md:text-base"
               >
                 Benefits
               </button>
@@ -130,30 +133,30 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="hero-section relative min-h-screen flex flex-col items-center justify-center py-52 section-transition">
-        <div className="w-[70%] mx-auto relative z-10">
+      <section className="hero-section relative min-h-screen flex flex-col items-center justify-center py-20 md:py-32 lg:py-52 section-transition">
+        <div className="container-fluid relative z-10">
           <div className="grid lg:grid-cols-2 items-center gap-8">
             {/* Left Side - Text Content */}
-            <div className="text-center lg:text-left mb-10 lg:mb-0 stagger-fade-in space-y-6 animate-on-scroll opacity-0 px-6 lg:px-0">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-tight">
+            <div className="text-center lg:text-left mb-10 lg:mb-0 stagger-fade-in space-y-4 md:space-y-6 animate-on-scroll opacity-0 px-4 sm:px-6 lg:px-0">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight">
                 <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
                   Turn Slack into your team's AI command center
                   <span className="text-white"> - in 5 minutes</span>
                 </span>
               </h1>
 
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-xl mx-auto lg:mx-0">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-xl mx-auto lg:mx-0">
                 Bring any model, workflow, or custom agent you own straight into Slack so anyone can @mention insights on demand.
               </p>
 
-              <div className="flex items-center justify-center lg:justify-start gap-4 py-4">
-                <div className="flex items-center px-4 py-2 bg-opacity-10 bg-green-500 rounded-full border border-green-500/20">
-                  <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                  <span className="text-sm text-green-400">Trusted by 28 companies</span>
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 py-4">
+                <div className="flex items-center px-4 py-2 bg-opacity-10 bg-green-500 rounded-full border border-green-500/20 w-full sm:w-auto">
+                  <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                  <span className="text-xs sm:text-sm text-green-400">Trusted by 28 companies</span>
                 </div>
-                <div className="flex items-center px-4 py-2 bg-opacity-10 bg-blue-500 rounded-full border border-blue-500/20">
-                  <CheckCircle className="w-4 h-4 text-blue-500 mr-2" />
-                  <span className="text-sm text-blue-400">32,417 queries answered</span>
+                <div className="flex items-center px-4 py-2 bg-opacity-10 bg-blue-500 rounded-full border border-blue-500/20 w-full sm:w-auto">
+                  <CheckCircle className="w-4 h-4 text-blue-500 mr-2 flex-shrink-0" />
+                  <span className="text-xs sm:text-sm text-blue-400">32,417 queries answered</span>
                 </div>
               </div>
 
@@ -226,7 +229,7 @@ const Index = () => {
                       avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Raj"
                       name="Raj"
                       time="11:04 AM"
-                      text="I downloaded the 2024 report but haven’t read through it yet."
+                      text="I downloaded the 2024 report but haven't read through it yet."
                     />
 
                     {/* Message - Sarah calls genie */}
@@ -254,7 +257,7 @@ const Index = () => {
                       avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Lena"
                       name="Lena"
                       time="11:06 AM"
-                      text="@genie — what’s our latest HubSpot activity with them?"
+                      text="@genie — what's our latest HubSpot activity with them?"
                     />
 
                     {/* genie CRM */}
@@ -293,7 +296,7 @@ const Index = () => {
                       avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah"
                       name="Sarah"
                       time="11:08 AM"
-                      text="Perfect — saved me a deep dive. Let’s move fast on this."
+                      text="Perfect — saved me a deep dive. Let's move fast on this."
                     />
                   </div>
                 </div>
@@ -305,37 +308,37 @@ const Index = () => {
       </section>
 
       {/* Why Teams Choose Section */}
-      <section className="py-16 bg-black/90 relative">
-        <div className="w-[70%] mx-auto">
-          <h2 className="text-3xl font-bold mb-12 text-center">Why teams choose genie/os</h2>
+      <section className="py-12 md:py-16 bg-black/90 relative">
+        <div className="container-fluid">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-center">Why teams choose genie/os</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="glass-card p-6 rounded-lg border border-white/10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
+            <div className="glass-card p-5 md:p-6 rounded-lg border border-white/10">
               <div className="text-green-400 mb-4">
-                <Zap className="w-10 h-10" />
+                <Zap className="w-8 md:w-10 h-8 md:h-10" />
               </div>
-              <h3 className="text-xl font-bold mb-3">6× faster answers</h3>
-              <p className="text-gray-300">
+              <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">6× faster answers</h3>
+              <p className="text-sm md:text-base text-gray-300">
                 Marketing, sales, and product teams solve 80% of data questions without waiting on analysts.
               </p>
             </div>
             
-            <div className="glass-card p-6 rounded-lg border border-white/10">
+            <div className="glass-card p-5 md:p-6 rounded-lg border border-white/10">
               <div className="text-blue-400 mb-4">
-                <Settings className="w-10 h-10" />
+                <Settings className="w-8 md:w-10 h-8 md:h-10" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Zero code setup</h3>
-              <p className="text-gray-300">
+              <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">Zero code setup</h3>
+              <p className="text-sm md:text-base text-gray-300">
                 Connect OpenAI, local models, or internal APIs with an easy interface.
               </p>
             </div>
             
-            <div className="glass-card p-6 rounded-lg border border-white/10">
+            <div className="glass-card p-5 md:p-6 rounded-lg border border-white/10">
               <div className="text-amber-400 mb-4">
-                <Server className="w-10 h-10" />
+                <Server className="w-8 md:w-10 h-8 md:h-10" />
               </div>
-              <h3 className="text-xl font-bold mb-3">One keyboard shortcut</h3>
-              <p className="text-gray-300">
+              <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">One keyboard shortcut</h3>
+              <p className="text-sm md:text-base text-gray-300">
                 Type "@genie" and talk to your AI like a teammate.
               </p>
             </div>
@@ -344,40 +347,40 @@ const Index = () => {
       </section>
       
       {/* Visual Workflow Element */}
-      <section ref={howItWorksRef} className="py-20 bg-black relative">
-        <div className="w-[70%] mx-auto relative z-10">
-          <h2 className="text-3xl font-bold mb-12 text-center">How it works</h2>
+      <section ref={howItWorksRef} className="py-16 md:py-20 bg-black relative">
+        <div className="container-fluid relative z-10">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-center">How it works</h2>
           <WorkflowInfographic />
           
-          <div className="max-w-3xl mx-auto mt-16">
-            <div className="space-y-8">
-              <div className="flex items-start">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center mr-4">
+          <div className="max-w-3xl mx-auto mt-12 md:mt-16 px-4 sm:px-0">
+            <div className="space-y-6 md:space-y-8">
+              <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-0">
+                <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-amber-500/20 flex items-center justify-center mx-auto md:mx-0 md:mr-4">
                   <span className="text-amber-500 font-bold">1</span>
                 </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Connect your AI sources (cloud, on-prem, or local)</h3>
-                  <p className="text-gray-300">Easily integrate with existing models and tools you already use.</p>
+                <div className="text-center md:text-left">
+                  <h3 className="text-lg md:text-xl font-semibold mb-2">Connect your AI sources (cloud, on-prem, or local)</h3>
+                  <p className="text-sm md:text-base text-gray-300">Easily integrate with existing models and tools you already use.</p>
                 </div>
               </div>
               
-              <div className="flex items-start">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center mr-4">
+              <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-0">
+                <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-amber-500/20 flex items-center justify-center mx-auto md:mx-0 md:mr-4">
                   <span className="text-amber-500 font-bold">2</span>
                 </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Pick the Slack channels where @genie should live</h3>
-                  <p className="text-gray-300">Deploy your AI agents to the channels where they're needed most.</p>
+                <div className="text-center md:text-left">
+                  <h3 className="text-lg md:text-xl font-semibold mb-2">Pick the Slack channels where @genie should live</h3>
+                  <p className="text-sm md:text-base text-gray-300">Deploy your AI agents to the channels where they're needed most.</p>
                 </div>
               </div>
               
-              <div className="flex items-start">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center mr-4">
+              <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-0">
+                <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-amber-500/20 flex items-center justify-center mx-auto md:mx-0 md:mr-4">
                   <span className="text-amber-500 font-bold">3</span>
                 </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Watch your team self-serve insights, reports, and content</h3>
-                  <p className="text-gray-300">Team members simply @mention genie and ask questions in natural language.</p>
+                <div className="text-center md:text-left">
+                  <h3 className="text-lg md:text-xl font-semibold mb-2">Watch your team self-serve insights, reports, and content</h3>
+                  <p className="text-sm md:text-base text-gray-300">Team members simply @mention genie and ask questions in natural language.</p>
                 </div>
               </div>
             </div>
@@ -386,27 +389,27 @@ const Index = () => {
       </section>
 
       {/* Security Section - Streamlined */}
-      <section ref={benefitsRef} className="py-16 bg-black/90 relative">
-        <div className="w-[70%] mx-auto">
-          <h2 className="text-3xl font-bold mb-12 text-center">Built for productivity, ease of use & security</h2>
+      <section ref={benefitsRef} className="py-12 md:py-16 bg-black/90 relative">
+        <div className="container-fluid">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-center">Built for productivity, ease of use & security</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
-            <div className="bg-white/5 p-6 rounded-lg border border-white/10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto mb-8 md:mb-16">
+            <div className="bg-white/5 p-5 md:p-6 rounded-lg border border-white/10">
               <div className="text-purple-400 mb-4">
-                <Database className="w-10 h-10" />
+                <Database className="w-8 md:w-10 h-8 md:h-10" />
               </div>
-              <h3 className="text-lg font-bold mb-3">Admin-level audit log</h3>
-              <p className="text-gray-300">
+              <h3 className="text-lg font-bold mb-2 md:mb-3">Admin-level audit log</h3>
+              <p className="text-sm md:text-base text-gray-300">
                 Complete visibility into all interactions and usage.
               </p>
             </div>
             
-            <div className="bg-white/5 p-6 rounded-lg border border-white/10">
+            <div className="bg-white/5 p-5 md:p-6 rounded-lg border border-white/10">
               <div className="text-green-400 mb-4">
-                <Shield className="w-10 h-10" />
+                <Shield className="w-8 md:w-10 h-8 md:h-10" />
               </div>
-              <h3 className="text-lg font-bold mb-3">Enterprise-grade security</h3>
-              <p className="text-gray-300">
+              <h3 className="text-lg font-bold mb-2 md:mb-3">Enterprise-grade security</h3>
+              <p className="text-sm md:text-base text-gray-300">
                 Protection for your most sensitive company data.
               </p>
             </div>
@@ -415,14 +418,14 @@ const Index = () => {
       </section>
       
       {/* Final CTA Section */}
-      <section className="py-20 relative">
+      <section className="py-16 md:py-20 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-purple-900/20 z-0" />
-        <div className="w-[70%] mx-auto relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+        <div className="container-fluid relative z-10">
+          <div className="max-w-3xl mx-auto text-center px-4 sm:px-0">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">
               Get Early Access
             </h2>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-base md:text-lg lg:text-xl text-gray-300 mb-6 md:mb-8">
               Limited to 100 workspaces! Receive concierge onboarding, priority support, and lifetime 20% discount.
             </p>
             <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-3 max-w-md mx-auto">
@@ -435,7 +438,7 @@ const Index = () => {
                     setEmail(e.target.value);
                     if (!isValid) setIsValid(validateEmail(e.target.value));
                   }}
-                  className={`bg-white/10 border-white/20 text-white h-12 ${
+                  className={`bg-white/10 border-white/20 text-white h-11 sm:h-12 ${
                     !isValid ? "border-red-500" : ""
                   }`}
                   required
@@ -451,9 +454,9 @@ const Index = () => {
               </Button>
             </form>
             
-            <div className="mt-16">
+            <div className="mt-12 md:mt-16">
               <p className="text-gray-400 mb-4">Already powering:</p>
-              <div className="flex flex-wrap justify-center items-center gap-8">
+              <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
                 <span className="text-gray-300 font-semibold">Atlassian</span>
                 <span className="text-gray-300 font-semibold">TechStartup</span>
                 <span className="text-gray-300 font-semibold">+ more</span>
@@ -465,9 +468,9 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <section className="py-8 border-t border-white/10">
-        <div className="w-[70%] mx-auto">
-          <div className="text-center text-gray-400 text-sm">
+      <section className="py-6 md:py-8 border-t border-white/10">
+        <div className="container-fluid">
+          <div className="text-center text-gray-400 text-xs md:text-sm">
             <p>© {new Date().getFullYear()} genie/os. All rights reserved.</p>
           </div>
         </div>
