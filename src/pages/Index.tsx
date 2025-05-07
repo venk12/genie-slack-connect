@@ -108,36 +108,34 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-tr from-rose-900/5 via-transparent to-amber-900/5" />
       </div>
 
-      {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-white/10">
-      <div className="container-fluid">
-        <div className="flex items-center justify-between h-16">
-          {/* Left - Nav buttons */}
-          <div className="flex flex-1">
-            <button
-              onClick={() => scrollToSection(howItWorksRef)}
-              className="text-gray-300 hover:text-white transition-colors font-medium mr-6 text-sm md:text-base"
-            >
-              How it works
-            </button>
-            <button
-              onClick={() => scrollToSection(benefitsRef)}
-              className="text-gray-300 hover:text-white transition-colors font-medium text-sm md:text-base"
-            >
-              Benefits
-            </button>
-          </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex flex-1 space-x-4">
+              <button
+                onClick={() => scrollToSection(howItWorksRef)}
+                className="text-gray-300 hover:text-white transition-colors font-medium text-sm md:text-base"
+              >
+                How it works
+              </button>
+              <button
+                onClick={() => scrollToSection(benefitsRef)}
+                className="text-gray-300 hover:text-white transition-colors font-medium text-sm md:text-base"
+              >
+                Benefits
+              </button>
+            </div>
 
-          {/* Center - Title */}
-          <div className="flex-1 flex justify-center">
-            <h1 className="text-2xl font-league-spartan text-white tracking-tight">✨ genie/os</h1>
-          </div>
+            {/* Center - Title */}
+            <div className="absolute left-1/2 transform -translate-x-1/2">
+              <h1 className="text-xl sm:text-2xl font-league-spartan text-white tracking-tight">✨ genie/os</h1>
+            </div>
 
-          {/* Right - Empty for spacing */}
-          <div className="flex-1" />
+            {/* Right - Empty to balance layout on larger screens */}
+            <div className="flex-1 hidden sm:block" />
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
 
       {/* Hero Section */}
       <section className="hero-section relative min-h-screen flex flex-col items-center justify-center py-20 md:py-32 lg:py-52 section-transition">
