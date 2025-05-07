@@ -132,7 +132,7 @@ const Index = () => {
             </div>
 
             {/* Right - Empty to balance layout on larger screens */}
-            <div className="flex-1 hidden sm:block" />
+            {/* <div className="flex-1 hidden sm:block" /> */}
           </div>
         </div>
       </nav>
