@@ -1,7 +1,6 @@
-import React, { useRef, useEffect } from "react";
+
+import React from "react";
 import { Server, Cloud, Database, MessageSquare } from "lucide-react";
-import { BrandDiscord, BrandTelegram } from "./icons/BrandIcons";
-import { useIMContext } from "@/contexts/IMContext";
 
 // Custom Genie logo
 const GenieLogo = () => (
@@ -10,55 +9,51 @@ const GenieLogo = () => (
   </div>
 );
 
+// Integration logos
+const IntegrationLogos = () => (
+  <div className="flex flex-wrap justify-center gap-4">
+    <div className="bg-white/10 p-3 rounded-lg">
+      <img src="https://cdn.zapier.com/zapier/images/logos/zapier-logo.svg" alt="Zapier" className="h-6 w-6" />
+    </div>
+    <div className="bg-white/10 p-3 rounded-lg">
+      <img src="https://assets.website-files.com/62d79b591cae4a93e02d5213/6466327a5bfaa4f5162fda30_make-logo.svg" alt="Make" className="h-6 w-6" />
+    </div>
+    <div className="bg-white/10 p-3 rounded-lg">
+      <img src="https://n8n.io/favicon.ico" alt="n8n" className="h-6 w-6" />
+    </div>
+    <div className="bg-white/10 p-3 rounded-lg">
+      <Server className="h-6 w-6 text-purple-400" />
+    </div>
+  </div>
+);
+
 const WorkflowInfographic = () => {
-  const { selectedIM } = useIMContext();
-
-  const messagingPlatformIcon = () => {
-    switch(selectedIM.id) {
-      case 'discord':
-        return <BrandDiscord className="h-6 w-6 text-indigo-400" />;
-      case 'telegram':
-        return <BrandTelegram className="h-6 w-6 text-sky-400" />;
-      case 'teams':
-        return <MessageSquare className="h-6 w-6 text-blue-500" />;
-      case 'slack':
-      default:
-        return <MessageSquare className="h-6 w-6 text-blue-400" />;
-    }
-  };
-
   return (
     <div className="max-w-4xl mx-auto relative py-2">
-      {/* Added header */}
-      {/* <h3 className="text-4xl font-bold text-center mb-8 text-transparent bg-clip-text bg-white">
-        How does genie work?
-      </h3> */}
       <div className="text-center mb-16">
-      <h3 className="text-4xl font-bold mb-4 text-white bg-clip-text text-transparent">
-        Why use genie?
-      </h3>
-      <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-        Real work gets done with other humans not in AI Platforms
-      </p>
-    </div>
+        <h3 className="text-4xl font-bold mb-4 text-white bg-clip-text text-transparent">
+          Why use genie?
+        </h3>
+        <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          Real work gets done with other humans in Slack, not in AI Platforms
+        </p>
+      </div>
       
       <div className="glass-card p-6 md:p-8 rounded-lg border border-white/10 shadow-xl">
         <div className="flex flex-col md:flex-row justify-between items-center gap-12 md:gap-4">
-          {/* Step 1: AI Agents */}
+          {/* Step 1: Slack (previously Step 3) */}
           <div className="flex flex-col items-center text-center flex-1">
-            <div className="flex flex-row md:flex-col items-center gap-4 md:gap-2 mb-6">
+            <div className="mb-6">
               <div className="bg-white/10 p-3 rounded-lg">
-                <Server className="h-6 w-6 text-purple-400" />
-              </div>
-              <div className="bg-white/10 p-3 roundedi-lg">
-                <Cloud className="h-6 w-6 text-blue-400" />
-              </div>
-              <div className="bg-white/10 p-3 rounded-lg">
-                <Database className="h-6 w-6 text-green-400" />
+                <img 
+                  src="https://freepnglogo.com/images/all_img/1707837044slack-icon-png.png" 
+                  alt="Slack" 
+                  className="h-6 w-6"
+                />
               </div>
             </div>
-            <h3 className="text-xl font-semibold mb-3">Bring your agents from anywhere</h3>
-            <p className="text-sm text-gray-300 max-w-[250px]">Whether they are running locally, on internal servers or on cloud service providers</p>
+            <h3 className="text-xl font-semibold mb-3">Slack</h3>
+            <p className="text-sm text-gray-300 max-w-[250px]">Where your team already collaborates and gets work done</p>
           </div>
           
           {/* Arrow 1 */}
@@ -82,7 +77,7 @@ const WorkflowInfographic = () => {
             <div className="w-1.5 h-1.5 rounded-full bg-gray-600"></div>
           </div>
           
-          {/* Step 2: Genie */}
+          {/* Step 2: Genie (remains in middle) */}
           <div className="flex flex-col items-center text-center flex-1">
             <div className="mb-6">
               <div className="p-3 rounded-lg bg-gradient-to-br from-yellow-500/5 via-amber-500/5 to-yellow-500/5 border border-yellow-500/20 shadow-[0_0_15px_rgba(234,179,8,0.1)]">
@@ -90,7 +85,7 @@ const WorkflowInfographic = () => {
               </div>
             </div>
             <h3 className="text-xl font-semibold mb-3 bg-gradient-to-r from-yellow-400 to-amber-400 bg-clip-text text-transparent">genie</h3>
-            <p className="text-sm text-gray-300 max-w-[250px]">Manage all the agents across your organization in one place</p>
+            <p className="text-sm text-gray-300 max-w-[250px]">Manage all your AI agents in one place and make them available in Slack</p>
           </div>
           
           {/* Arrow 2 */}
@@ -114,24 +109,11 @@ const WorkflowInfographic = () => {
             <div className="w-1.5 h-1.5 rounded-full bg-gray-600"></div>
           </div>
           
-          {/* Step 3: Messaging Platforms */}
+          {/* Step 3: AI Agents (previously Step 1) */}
           <div className="flex flex-col items-center text-center flex-1">
-            <div className="flex flex-wrap justify-center gap-4 mb-6">
-              <div className="bg-white/10 p-3 rounded-lg">
-                <MessageSquare className="h-6 w-6 text-blue-400" />
-              </div>
-              <div className="bg-white/10 p-3 rounded-lg">
-                <BrandDiscord className="h-6 w-6 text-indigo-400" />
-              </div>
-              <div className="bg-white/10 p-3 rounded-lg">
-                <BrandTelegram className="h-6 w-6 text-sky-400" />
-              </div>
-              <div className="bg-white/10 p-3 rounded-lg">
-                <MessageSquare className="h-6 w-6 text-purple-400" />
-              </div>
-            </div>
-            <h3 className="text-xl font-semibold mb-3">Messaging Platforms</h3>
-            <p className="text-sm text-gray-300 max-w-[250px]">Summon them from any IM/workspace at will</p>
+            <IntegrationLogos />
+            <h3 className="text-xl font-semibold mb-3 mt-6">Bring your agents from anywhere</h3>
+            <p className="text-sm text-gray-300 max-w-[250px]">Whether they are running on Zapier, Make, n8n, or your own servers</p>
           </div>
         </div>
       </div>

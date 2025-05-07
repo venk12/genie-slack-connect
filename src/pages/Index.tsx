@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from "react";
 import { toast } from "sonner";
 import { 
@@ -12,8 +13,6 @@ import { supabase } from "@/integrations/supabase/client";
 import WorkflowInfographic from "@/components/WorkflowInfographic";
 import BenefitCard from "@/components/BenefitCard";
 import MessagingPlatformAnimation from "@/components/MessagingPlatformAnimation";
-import IMSelector from "@/components/IMSelector";
-import { useIMContext } from "@/contexts/IMContext";
 
 const Index = () => {
   const [email, setEmail] = useState("");
@@ -21,15 +20,6 @@ const Index = () => {
   const [isValid, setIsValid] = useState(true);
   const howItWorksRef = useRef<HTMLDivElement>(null);
   const benefitsRef = useRef<HTMLDivElement>(null);
-  const { selectedIM, otherIMName } = useIMContext();
-
-  // Get the display name for the selected IM
-  const getIMDisplayName = () => {
-    if (selectedIM.id === "other" && otherIMName) {
-      return otherIMName;
-    }
-    return selectedIM.name;
-  };
 
   // Animation for sections as they come into view
   useEffect(() => {
@@ -80,7 +70,7 @@ const Index = () => {
     try {
       const { error } = await supabase
         .from("signups")
-        .insert([{ email, platform: getIMDisplayName() }]);
+        .insert([{ email, platform: "Slack" }]);
 
       if (error) throw error;
       
@@ -147,23 +137,23 @@ const Index = () => {
                   <br />
                 </span>
                 <span className="inline-flex mt-8 justify-center lg:justify-start w-full">
-                  <MessagingPlatformAnimation />
+                  <div className="flex items-center gap-4">
+                    <img 
+                      src="https://freepnglogo.com/images/all_img/1707837044slack-icon-png.png" 
+                      alt="Slack" 
+                      className="h-16 w-16"
+                    />
+                    <h3 className="text-2xl font-semibold">Slack</h3>
+                  </div>
                 </span>
               </h1>
 
               <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-xl mx-auto lg:mx-0">
-                genie/os makes it easy to bring your AI tools into your IMs, so your team can use them as a trusted colleague
+                genie/os makes it easy to bring your AI tools into Slack, so your team can use them as trusted colleagues
               </p>
 
-              {/* IM Selector moved above email signup */}
-              <div className="lg:text-left mb-8 md:mb-0">
-                <div className="max-w-md mx-auto lg:mx-0">
-                  <IMSelector />
-                </div>
-              </div>
-
               {/* Email Signup Form */}
-              <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-3 max-w-md mx-auto lg:mx-0">
+              <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-3 max-w-md mx-auto lg:mx-0 mt-8">
                 <div className="flex-grow pb-2">
                   <Input
                     type="email"
@@ -366,17 +356,17 @@ const Index = () => {
               <BenefitCard
                 icon={<Zap className="w-8 h-8 text-yellow-400" />}
                 title="Save Time"
-                description="Your team can use AI tools right in their chat without switching apps."
+                description="Your team can use AI tools right in Slack without switching apps."
               />
               <BenefitCard
                 icon={<Shield className="w-8 h-8 text-green-400" />}
                 title="Easy Setup"
-                description="Connect all your tools in one place with no coding required."
+                description="Connect all your AI tools in one place with no coding required."
               />
               <BenefitCard
                 icon={<Users className="w-8 h-8 text-blue-400" />}
                 title="Team Friendly"
-                description="Everyone can use AI tools with simple chat commands they already know."
+                description="Everyone can use AI tools with simple Slack commands they already know."
               />
               <BenefitCard
                 icon={<Database className="w-8 h-8 text-purple-400" />}
@@ -390,118 +380,109 @@ const Index = () => {
       
 
       {/* Social Proof Section */}
-<section className="py-24 bg-gradient-to-b from-black to-gray-900/50 relative overflow-hidden">
-  <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] bg-repeat opacity-10"></div>
-  <div className="container mx-auto px-4 relative z-10">
-    <div className="text-center mb-16">
-      <h3 className="text-4xl font-bold mb-4 text-white bg-clip-text text-transparent">
-        Requests from the community
-      </h3>
-      <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-        Real challenges voiced by tech leaders that genie/os solves
-      </p>
-    </div>
+      <section className="py-24 bg-gradient-to-b from-black to-gray-900/50 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] bg-repeat opacity-10"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h3 className="text-4xl font-bold mb-4 text-white bg-clip-text text-transparent">
+              Requests from the community
+            </h3>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              Real challenges voiced by tech leaders that genie/os solves
+            </p>
+          </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      {/* Testimonial 1 - Twitter */}
-      <div className="glass-card p-6 rounded-xl border border-white/10 hover:border-amber-400/30 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10">
-        <div className="flex items-start mb-4">
-          <img 
-            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" 
-            alt="Alex Chen" 
-            className="w-12 h-12 rounded-full mr-3 border-2 border-amber-400/50"
-          />
-          <div>
-            <div className="flex items-center">
-              <span className="font-semibold text-white">Alex Chen</span>
-              <svg className="w-4 h-4 ml-2 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
-              </svg>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Testimonial 1 - Twitter */}
+            <div className="glass-card p-6 rounded-xl border border-white/10 hover:border-amber-400/30 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10">
+              <div className="flex items-start mb-4">
+                <img 
+                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" 
+                  alt="Alex Chen" 
+                  className="w-12 h-12 rounded-full mr-3 border-2 border-amber-400/50"
+                />
+                <div>
+                  <div className="flex items-center">
+                    <span className="font-semibold text-white">Alex Chen</span>
+                    <svg className="w-4 h-4 ml-2 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                    </svg>
+                  </div>
+                  <span className="text-gray-400 text-sm">CTO @TechStartup</span>
+                </div>
+              </div>
+              <p className="text-gray-300 mb-6 italic">
+                "We have 5 different AI tools but my team keeps asking me how to access them. Would be amazing if they could just @mention them in Slack like a teammate!"
+              </p>
+              <div className="flex items-center text-amber-400 bg-amber-400/10 px-3 py-2 rounded-lg">
+                <CheckCircle className="w-5 h-5 mr-2" />
+                <span className="text-sm font-medium">genie/os provides unified access</span>
+              </div>
             </div>
-            <span className="text-gray-400 text-sm">CTO @TechStartup</span>
+
+            {/* Testimonial 2 - LinkedIn */}
+            <div className="glass-card p-6 rounded-xl border border-white/10 hover:border-amber-400/30 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10">
+              <div className="flex items-start mb-4">
+                <img 
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" 
+                  alt="Sarah Johnson" 
+                  className="w-12 h-12 rounded-full mr-3 border-2 border-amber-400/50"
+                />
+                <div>
+                  <div className="flex items-center">
+                    <span className="font-semibold text-white">Sarah Johnson</span>
+                    <svg className="w-4 h-4 ml-2 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                  </div>
+                  <span className="text-gray-400 text-sm">AI Product Lead @Fortune500</span>
+                </div>
+              </div>
+              <p className="text-gray-300 mb-6 italic">
+                "Our data science team built amazing models but adoption is low because non-technical teams don't know how to use them. Need a way to make AI accessible through Slack where people already work."
+              </p>
+              <div className="flex items-center text-amber-400 bg-amber-400/10 px-3 py-2 rounded-lg">
+                <CheckCircle className="w-5 h-5 mr-2" />
+                <span className="text-sm font-medium">genie/os bridges this gap</span>
+              </div>
+            </div>
+
+            {/* Testimonial 3 - Forum */}
+            <div className="glass-card p-6 rounded-xl border border-white/10 hover:border-amber-400/30 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10">
+              <div className="flex items-start mb-4">
+                <img 
+                  src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" 
+                  alt="Jamal Wright" 
+                  className="w-12 h-12 rounded-full mr-3 border-2 border-amber-400/50"
+                />
+                <div>
+                  <div className="flex items-center">
+                    <span className="font-semibold text-white">Jamal Wright</span>
+                    <svg className="w-4 h-4 ml-2 text-purple-500" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                    </svg>
+                  </div>
+                  <span className="text-gray-400 text-sm">Engineering Manager @AIscale</span>
+                </div>
+              </div>
+              <p className="text-gray-300 mb-6 italic">
+                "Managing multiple AI services is becoming a full-time job. Looking for a unified Slack interface that works with our custom tools."
+              </p>
+              <div className="flex items-center text-amber-400 bg-amber-400/10 px-3 py-2 rounded-lg">
+                <CheckCircle className="w-5 h-5 mr-2" />
+                <span className="text-sm font-medium">genie/os consolidates everything</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-16 text-center">
+            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-amber-500/10 to-amber-600/10 rounded-full border border-amber-400/20 backdrop-blur-sm">
+              <Users className="w-5 h-5 text-amber-600 mr-2" />
+              <span className="text-amber-600 font-medium text-sm tracking-wider">JOINED BY 20+ TEAMS</span>
+            </div>
           </div>
         </div>
-        <p className="text-gray-300 mb-6 italic">
-          "We have 5 different AI tools but my team keeps asking me how to access them. Would be amazing if they could just @mention them in Slack like a teammate!"
-        </p>
-        <div className="flex items-center text-amber-400 bg-amber-400/10 px-3 py-2 rounded-lg">
-          <CheckCircle className="w-5 h-5 mr-2" />
-          <span className="text-sm font-medium">genie/os provides unified access</span>
-        </div>
-      </div>
-
-      {/* Testimonial 2 - LinkedIn */}
-      <div className="glass-card p-6 rounded-xl border border-white/10 hover:border-amber-400/30 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10">
-        <div className="flex items-start mb-4">
-          <img 
-            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" 
-            alt="Sarah Johnson" 
-            className="w-12 h-12 rounded-full mr-3 border-2 border-amber-400/50"
-          />
-          <div>
-            <div className="flex items-center">
-              <span className="font-semibold text-white">Sarah Johnson</span>
-              <svg className="w-4 h-4 ml-2 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-              </svg>
-            </div>
-            <span className="text-gray-400 text-sm">AI Product Lead @Fortune500</span>
-          </div>
-        </div>
-        <p className="text-gray-300 mb-6 italic">
-          "Our data science team built amazing models but adoption is low because non-technical teams don't know how to use them. Need a way to make AI accessible through tools people already use daily."
-        </p>
-        <div className="flex items-center text-amber-400 bg-amber-400/10 px-3 py-2 rounded-lg">
-          <CheckCircle className="w-5 h-5 mr-2" />
-          <span className="text-sm font-medium">genie/os bridges this gap</span>
-        </div>
-      </div>
-
-      {/* Testimonial 3 - Forum */}
-      <div className="glass-card p-6 rounded-xl border border-white/10 hover:border-amber-400/30 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10">
-        <div className="flex items-start mb-4">
-          <img 
-            src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" 
-            alt="Jamal Wright" 
-            className="w-12 h-12 rounded-full mr-3 border-2 border-amber-400/50"
-          />
-          <div>
-            <div className="flex items-center">
-              <span className="font-semibold text-white">Jamal Wright</span>
-              <svg className="w-4 h-4 ml-2 text-purple-500" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-              </svg>
-            </div>
-            <span className="text-gray-400 text-sm">Engineering Manager @AIscale</span>
-          </div>
-        </div>
-        <p className="text-gray-300 mb-6 italic">
-          "Managing multiple AI services is becoming a full-time job. Looking for a unified interface that works across Slack, Teams, and our custom tools."
-        </p>
-        <div className="flex items-center text-amber-400 bg-amber-400/10 px-3 py-2 rounded-lg">
-          <CheckCircle className="w-5 h-5 mr-2" />
-          <span className="text-sm font-medium">genie/os consolidates everything</span>
-        </div>
-      </div>
-    </div>
-
-    <div className="mt-16 text-center">
-      <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-amber-500/10 to-amber-600/10 rounded-full border border-amber-400/20 backdrop-blur-sm">
-        <Users className="w-5 h-5 text-amber-600 mr-2" />
-        <span className="text-amber-600 font-medium text-sm tracking-wider">JOINED BY 20+ TEAMS</span>
-      </div>
-      
-      {/* <div className="flex justify-center mt-8 space-x-4">
-        {[1, 2, 3, 4, 5].map((star) => (
-          <svg key={star} className="w-6 h-6 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-          </svg>
-        ))}
-        <span className="text-gray-400 text-sm ml-2">4.8/5 from 286 reviews</span>
-      </div> */}
-    </div>
-  </div>
-</section>
+      </section>
       
 
       {/* Final CTA Section */}
@@ -510,7 +491,7 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to supercharge your {getIMDisplayName()} workspace?
+              Ready to supercharge your Slack workspace?
             </h2>
             <p className="text-xl text-gray-300 mb-8">
               Join the waitlist today - early users get preview features and priority support!
@@ -532,11 +513,11 @@ const Index = () => {
                 />
               </div>
               <div className="flex flex-col items-center gap-2">
-                  <Button
-                    type="submit"
-                    className="h-11 sm:h-12 bg-gradient-to-r from-green-600 to-green-600 hover:from-green-800 hover:to-green-800 transition-all text-sm sm:text-base"
-                    disabled={isLoading}
-                  >
+                <Button
+                  type="submit"
+                  className="h-11 sm:h-12 bg-gradient-to-r from-green-600 to-green-600 hover:from-green-800 hover:to-green-800 transition-all text-sm sm:text-base"
+                  disabled={isLoading}
+                >
                   <span>Join Early Access</span>
                 </Button>
                 <span className="text-xs opacity-75">Limited Spots!</span>
