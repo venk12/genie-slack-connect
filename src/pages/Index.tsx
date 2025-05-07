@@ -319,41 +319,7 @@ const Index = () => {
       </section>
       
       {/* Proof Section */}
-      <section className="py-16 bg-black relative">
-        <div className="container mx-auto px-8">
-          {/* <h2 className="text-3xl font-bold mb-12 text-center">Proof it works</h2> */}
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="bg-white/5 p-6 rounded-lg border border-white/10 text-center">
-              <h3 className="text-3xl font-bold text-amber-400 mb-2">32,417</h3>
-              <p className="text-gray-300">questions answered last month for 28 companies</p>
-            </div>
-            
-            <div className="bg-white/5 p-6 rounded-lg border border-white/10 text-center">
-              <h3 className="text-3xl font-bold text-blue-400 mb-2">85%</h3>
-              <p className="text-gray-300">of users say they'd be "very disappointed" if genie/os disappeared</p>
-            </div>
-          </div>
-          
-          {/* Testimonial */}
-          <div className="glass-card p-8 rounded-lg border border-white/10 mt-12 max-w-3xl mx-auto">
-            <p className="text-xl italic text-gray-300 mb-6">
-              "genie/os turned five scattered AI tools into one Slack command. Adoption jumped from 12% to 79% in two weeks."
-            </p>
-            <div className="flex items-center">
-              <img 
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" 
-                alt="Sarah Johnson" 
-                className="w-12 h-12 rounded-full mr-4 border-2 border-amber-400/50"
-              />
-              <div>
-                <p className="font-semibold text-white">Sarah Johnson</p>
-                <p className="text-gray-400 text-sm">AI Product Lead, Fortune 500 retailer</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+ 
 
       {/* Visual Workflow Element */}
       <section ref={howItWorksRef} className="py-20 bg-black relative">
