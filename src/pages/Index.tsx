@@ -110,27 +110,34 @@ const Index = () => {
 
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-white/10">
-        <div className="container-fluid">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex-1" /> {/* Spacer */}
-            <h1 className="text-2xl font-league-spartan text-center text-white tracking-tight">✨ genie/os</h1>
-            <div className="flex-1 flex justify-end">
-              <button
-                onClick={() => scrollToSection(howItWorksRef)}
-                className="text-gray-300 hover:text-white transition-colors font-medium mr-6 text-sm md:text-base"
-              >
-                How it works
-              </button>
-              <button
-                onClick={() => scrollToSection(benefitsRef)}
-                className="text-gray-300 hover:text-white transition-colors font-medium text-sm md:text-base"
-              >
-                Benefits
-              </button>
-            </div>
+      <div className="container-fluid">
+        <div className="flex items-center justify-between h-16">
+          {/* Left - Nav buttons */}
+          <div className="flex flex-1">
+            <button
+              onClick={() => scrollToSection(howItWorksRef)}
+              className="text-gray-300 hover:text-white transition-colors font-medium mr-6 text-sm md:text-base"
+            >
+              How it works
+            </button>
+            <button
+              onClick={() => scrollToSection(benefitsRef)}
+              className="text-gray-300 hover:text-white transition-colors font-medium text-sm md:text-base"
+            >
+              Benefits
+            </button>
           </div>
+
+          {/* Center - Title */}
+          <div className="flex-1 flex justify-center">
+            <h1 className="text-2xl font-league-spartan text-white tracking-tight">✨ genie/os</h1>
+          </div>
+
+          {/* Right - Empty for spacing */}
+          <div className="flex-1" />
         </div>
-      </nav>
+      </div>
+    </nav>
 
       {/* Hero Section */}
       <section className="hero-section relative min-h-screen flex flex-col items-center justify-center py-20 md:py-32 lg:py-52 section-transition">
@@ -350,7 +357,7 @@ const Index = () => {
       <section ref={howItWorksRef} className="py-16 md:py-20 bg-black relative">
         <div className="container-fluid relative z-10">
           <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-center">How it works</h2>
-          <WorkflowInfographic />
+          {/* <WorkflowInfographic /> */}
           
           <div className="max-w-3xl mx-auto mt-12 md:mt-16 px-4 sm:px-0">
             <div className="space-y-6 md:space-y-8">
