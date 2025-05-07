@@ -196,85 +196,110 @@ const Index = () => {
             <div className="w-full lg:translate-x-8 xl:translate-x-12 lg:max-w-[90%] relative px-4 lg:px-0">
               {/* Background Highlight */}
               <div className="absolute -inset-4 bg-gradient-to-br from-yellow-400/5 via-amber-400/5 to-transparent rounded-2xl blur-3xl"></div>
-              
+
               {/* Animated Chat Interface */}
               <div className="relative w-full max-w-lg mx-auto lg:ml-0 transform lg:scale-90 font-league-spartan">
                 <div className="glass-card rounded-lg overflow-visible shadow-2xl">
+                  
                   {/* Chat Header */}
-                  <div className="bg-[#3F0E40] p-2 sm:p-3 border-b border-white/10">
+                  <div className="bg-[#1d1f23] p-2 sm:p-3 border-b border-white/10">
                     <div className="flex items-center">
-                      <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-red-500 mr-2"></div>
-                      <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-yellow-500 mr-2"></div>
-                      <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-green-500"></div>
-                      <span className="ml-3 text-[10px] sm:text-xs text-gray-400"># research-data</span>
+                      <div className="w-2.5 h-2.5 rounded-full bg-red-500 mr-2"></div>
+                      <div className="w-2.5 h-2.5 rounded-full bg-yellow-500 mr-2"></div>
+                      <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
+                      <span className="ml-3 text-xs text-gray-400">#research-acme</span>
                     </div>
                   </div>
 
-                  {/* Chat Messages */}
-                  <div className="p-3 sm:p-4 space-y-3 sm:space-y-4 bg-[#1A1D21]">
-                    {/* Human Message */}
-                    <div className="flex items-start space-x-2 sm:space-x-3 animate-fade-in opacity-0" style={{ animationDelay: '0.2s' }}>
-                      <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah" alt="User" className="w-6 h-6 sm:w-8 sm:h-8 rounded" />
-                      <div>
-                        <div className="flex items-center">
-                          <span className="font-medium text-white text-sm sm:text-base">Sarah</span>
-                          <span className="ml-2 text-[10px] sm:text-xs text-gray-400">11:30 AM</span>
-                        </div>
-                        <p className="text-gray-300 mt-1 text-sm sm:text-base"><span className="text-yellow-200">@genie - </span>
-                         Can you analyze our customer retention data from Hubspot?
-                        </p>
-                      </div>
-                    </div>
+                  {/* Chat Body */}
+                  <div className="p-4 space-y-4 bg-[#1a1d21]">
+                    {/* Message - Sarah */}
+                    <Message
+                      avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah"
+                      name="Sarah"
+                      time="11:03 AM"
+                      text="Hey @raj @lena — we need to prep for the Acme Corp call tomorrow. Can someone pull highlights from their latest annual report?"
+                    />
 
-                    {/* Genie Response */}
-                    <div className="flex items-start space-x-2 sm:space-x-3 animate-fade-in opacity-0" style={{ animationDelay: '0.7s' }}>
-                      <div className="w-6 h-6 sm:w-8 sm:h-8 rounded bg-gradient-to-r from-yellow-600 to-amber-600 flex items-center justify-center">
-                        <span className="text-white text-[10px] sm:text-xs">✨</span>
-                      </div>
-                      <div className="flex-1 min-w-0 ">
-                        <div className="flex items-center">
-                          <span className="font-medium text-amber-500 text-sm sm:text-base">genie</span>
-                          <span className="ml-2 text-[10px] sm:text-xs text-gray-400">11:31 AM</span>
-                        </div>
-                        <div className="mt-1 p-2 sm:p-3 bg-white/10 rounded-lg border border-amber-500/10 relative">
-                          {/* Agent Indicators */}
-                          <div className="absolute -right-14 space-y-2 hidden sm:block">
-                            <div className="flex items-center gap-2">
-                              <div className="w-8 h-8 rounded bg-purple-500/20 border border-purple-500/20 p-1.5 flex items-center justify-center group relative">
-                                <svg className="w-full h-full text-purple-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M21 5c0 1.1-2 2-2 2s-2-.9-2-2 2-2 2-2 2 .9 2 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                  <path d="M19 9V3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                  <path d="M12 15H3v6h18v-6h-9z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                  <path d="M3 15v-2c0-1.1.9-2 2-2h4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                  <path d="M15 11h4c1.1 0 2 .9 2 2v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                  <path d="m12 7 1.5-1.5c.8-.8 2.2-.8 3 0l1 1c.8.8.8 2.2 0 3L16 11h-4V7z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
-                                <div className="absolute -left-2 top-1/2 -translate-y-1/2 w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-                                <span className="absolute left-full ml-2 px-2 py-1 bg-white/20 rounded text-xs text-purple-300 opacity-100 transition-opacity whitespace-nowrap backdrop-blur-sm">
-                                  Research Agent
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                          <p className="text-gray-300 text-sm sm:text-base">Analyzing Hubspot data for retention patterns...</p>
-                          <div className="mt-2 h-16 sm:h-24 bg-white/5 rounded overflow-hidden">
-                            <div className="h-full w-full bg-gradient-to-r from-yellow-500/20 to-amber-500/20 animate-pulse"></div>
-                          </div>
-                        </div>
-                        <p className="text-xs text-gray-500 mt-2">@genie cut 1 hour of analyst time to 10 seconds</p>
-                      </div>
-                    </div>
+                    {/* Message - Raj */}
+                    <Message
+                      avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Raj"
+                      name="Raj"
+                      time="11:04 AM"
+                      text="I downloaded the 2024 report but haven’t read through it yet."
+                    />
 
-                    {/* Typing Indicator */}
-                    <div className="flex items-center space-x-2 animate-fade-in opacity-0" style={{ animationDelay: '2.2s' }}>
-                      <div className="w-2 h-2 rounded-full bg-amber-500/50 animate-bounce"></div>
-                      <div className="w-2 h-2 rounded-full bg-amber-500/50 animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-                      <div className="w-2 h-2 rounded-full bg-amber-500/50 animate-bounce" style={{ animationDelay: '0.4s' }}></div>
-                    </div>
+                    {/* Message - Sarah calls genie */}
+                    <Message
+                      avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah"
+                      name="Sarah"
+                      time="11:04 AM"
+                      text="@genie can you summarize the key takeaways?"
+                    />
+
+                    {/* genie summary */}
+                    <GenieMessage
+                      time="11:05 AM"
+                      title="Summary (2024 Annual Report):"
+                      bullets={[
+                        'Revenue: $245M (+8% YoY)',
+                        'Focus: automation for logistics',
+                        'Markets: LATAM, Southeast Asia',
+                        'Risks: margin pressure, supply chain'
+                      ]}
+                    />
+
+                    {/* Lena message */}
+                    <Message
+                      avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Lena"
+                      name="Lena"
+                      time="11:06 AM"
+                      text="@genie — what’s our latest HubSpot activity with them?"
+                    />
+
+                    {/* genie CRM */}
+                    <GenieMessage
+                      time="11:06 AM"
+                      title="CRM Activity:"
+                      bullets={[
+                        'Mar 14: Email opened (no reply)',
+                        'Feb 22: Chat — asked about integrations',
+                        'Mar 20: Opp paused (stage 2)'
+                      ]}
+                    />
+
+                    {/* Raj - tech stack */}
+                    <Message
+                      avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Raj"
+                      name="Raj"
+                      time="11:07 AM"
+                      text="Can you confirm their tech stack too?"
+                    />
+
+                    {/* genie tech stack */}
+                    <GenieMessage
+                      time="11:07 AM"
+                      title="Tech Stack:"
+                      bullets={[
+                        'CRM: HubSpot',
+                        'Automation: Tray.io',
+                        'Analytics: Looker, Amplitude',
+                        'Support: Intercom'
+                      ]}
+                    />
+
+                    {/* Sarah - wrap up */}
+                    <Message
+                      avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah"
+                      name="Sarah"
+                      time="11:08 AM"
+                      text="Perfect — saved me a deep dive. Let’s move fast on this."
+                    />
                   </div>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </section>
