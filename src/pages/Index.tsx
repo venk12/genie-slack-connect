@@ -139,12 +139,12 @@ const Index = () => {
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-tight">
                 <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
                   Turn Slack into your team's AI command center
-                  <span className="text-white">—in 5 minutes</span>
+                  <span className="text-white"> - in 5 minutes</span>
                 </span>
               </h1>
 
               <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-xl mx-auto lg:mx-0">
-                Bring every model, chatbot, or custom agent you own straight into Slack so anyone can @mention insights on demand.
+                Bring any model, workflow, or custom agent you own straight into Slack so anyone can @mention insights on demand.
               </p>
 
               <div className="flex items-center justify-center lg:justify-start gap-4 py-4">
@@ -189,7 +189,8 @@ const Index = () => {
                   <ChevronRight className="w-4 h-4" />
                 </Button>
               </form>
-              <span className="text-xs opacity-75 block">Limited to 100 workspaces! Get concierge onboarding, priority support, and lifetime 20% discount.</span>
+              <span className="text-xs opacity-75 block">Currently limited to 100 workspaces!
+                 Get high-touch onboarding, priority slack support, and lifetime 15% discount by signing up here</span>
             </div>
 
             {/* Right Side - Chat Interface */}
@@ -260,7 +261,7 @@ const Index = () => {
                             <div className="h-full w-full bg-gradient-to-r from-yellow-500/20 to-amber-500/20 animate-pulse"></div>
                           </div>
                         </div>
-                        <p className="text-xs text-gray-500 mt-2">@genie cut 6 hours of analyst time to 6 seconds</p>
+                        <p className="text-xs text-gray-500 mt-2">@genie cut 1 hour of analyst time to 10 seconds</p>
                       </div>
                     </div>
 
@@ -300,7 +301,7 @@ const Index = () => {
               </div>
               <h3 className="text-xl font-bold mb-3">Zero code setup</h3>
               <p className="text-gray-300">
-                Connect OpenAI, local models, or internal APIs with a drag-and-drop dashboard.
+                Connect OpenAI, local models, or internal APIs with an easy interface.
               </p>
             </div>
             
@@ -320,7 +321,7 @@ const Index = () => {
       {/* Proof Section */}
       <section className="py-16 bg-black relative">
         <div className="container mx-auto px-8">
-          <h2 className="text-3xl font-bold mb-12 text-center">Proof it works</h2>
+          {/* <h2 className="text-3xl font-bold mb-12 text-center">Proof it works</h2> */}
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="bg-white/5 p-6 rounded-lg border border-white/10 text-center">
@@ -329,12 +330,7 @@ const Index = () => {
             </div>
             
             <div className="bg-white/5 p-6 rounded-lg border border-white/10 text-center">
-              <h3 className="text-3xl font-bold text-green-400 mb-2">4.1 sec</h3>
-              <p className="text-gray-300">average response time</p>
-            </div>
-            
-            <div className="bg-white/5 p-6 rounded-lg border border-white/10 text-center">
-              <h3 className="text-3xl font-bold text-blue-400 mb-2">93%</h3>
+              <h3 className="text-3xl font-bold text-blue-400 mb-2">85%</h3>
               <p className="text-gray-300">of users say they'd be "very disappointed" if genie/os disappeared</p>
             </div>
           </div>
