@@ -4,14 +4,13 @@ import { toast } from "sonner";
 import { 
   CheckCircle, ChevronRight, Zap, 
   Server, Cloud, Settings, ArrowRight,
-  Users, Shield, Database, CheckCircle2 
+  Shield, Database
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { supabase } from "@/integrations/supabase/client";
 import WorkflowInfographic from "@/components/WorkflowInfographic";
-import BenefitCard from "@/components/BenefitCard";
 
 const Index = () => {
   const [email, setEmail] = useState("");
@@ -197,6 +196,7 @@ const Index = () => {
             <div className="w-full lg:translate-x-8 xl:translate-x-12 lg:max-w-[90%] relative px-4 lg:px-0">
               {/* Background Highlight */}
               <div className="absolute -inset-4 bg-gradient-to-br from-yellow-400/5 via-amber-400/5 to-transparent rounded-2xl blur-3xl"></div>
+              
               {/* Animated Chat Interface */}
               <div className="relative w-full max-w-lg mx-auto lg:ml-0 transform lg:scale-90 font-league-spartan">
                 <div className="glass-card rounded-lg overflow-visible shadow-2xl">
@@ -206,7 +206,7 @@ const Index = () => {
                       <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-red-500 mr-2"></div>
                       <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-yellow-500 mr-2"></div>
                       <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-green-500"></div>
-                      <span className="ml-3 text-[10px] sm:text-xs text-gray-400"># ai-playground</span>
+                      <span className="ml-3 text-[10px] sm:text-xs text-gray-400"># research-data</span>
                     </div>
                   </div>
 
@@ -214,14 +214,14 @@ const Index = () => {
                   <div className="p-3 sm:p-4 space-y-3 sm:space-y-4 bg-[#1A1D21]">
                     {/* Human Message */}
                     <div className="flex items-start space-x-2 sm:space-x-3 animate-fade-in opacity-0" style={{ animationDelay: '0.2s' }}>
-                      <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="User" className="w-6 h-6 sm:w-8 sm:h-8 rounded" />
+                      <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah" alt="User" className="w-6 h-6 sm:w-8 sm:h-8 rounded" />
                       <div>
                         <div className="flex items-center">
                           <span className="font-medium text-white text-sm sm:text-base">Sarah</span>
                           <span className="ml-2 text-[10px] sm:text-xs text-gray-400">11:30 AM</span>
                         </div>
                         <p className="text-gray-300 mt-1 text-sm sm:text-base"><span className="text-yellow-200">@genie - </span>
-                         Can you help me analyze this dataset?
+                         Can you analyze our customer retention data from Hubspot?
                         </p>
                       </div>
                     </div>
@@ -251,12 +251,12 @@ const Index = () => {
                                 </svg>
                                 <div className="absolute -left-2 top-1/2 -translate-y-1/2 w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
                                 <span className="absolute left-full ml-2 px-2 py-1 bg-white/20 rounded text-xs text-purple-300 opacity-100 transition-opacity whitespace-nowrap backdrop-blur-sm">
-                                  Data Analysis Agent
+                                  Research Agent
                                 </span>
                               </div>
                             </div>
                           </div>
-                          <p className="text-gray-300 text-sm sm:text-base">I'd be happy to help! I see you have a CSV file. Let me analyze the key trends...</p>
+                          <p className="text-gray-300 text-sm sm:text-base">Analyzing Hubspot data for retention patterns...</p>
                           <div className="mt-2 h-16 sm:h-24 bg-white/5 rounded overflow-hidden">
                             <div className="h-full w-full bg-gradient-to-r from-yellow-500/20 to-amber-500/20 animate-pulse"></div>
                           </div>
@@ -360,22 +360,12 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Combined Security & Benefits Section */}
+      {/* Security Section - Streamlined */}
       <section ref={benefitsRef} className="py-16 bg-black/90 relative">
         <div className="w-[70%] mx-auto">
-          <h2 className="text-3xl font-bold mb-12 text-center">Built for security & productivity</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center">Built for productivity, ease of use & security</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
-            <div className="bg-white/5 p-6 rounded-lg border border-white/10">
-              <div className="text-blue-400 mb-4">
-                <Cloud className="w-10 h-10" />
-              </div>
-              <h3 className="text-lg font-bold mb-3">Data never leaves your cloud</h3>
-              <p className="text-gray-300">
-                Unless you explicitly configure it to do so.
-              </p>
-            </div>
-            
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
             <div className="bg-white/5 p-6 rounded-lg border border-white/10">
               <div className="text-purple-400 mb-4">
                 <Database className="w-10 h-10" />
@@ -395,29 +385,6 @@ const Index = () => {
                 Protection for your most sensitive company data.
               </p>
             </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <BenefitCard
-              icon={<Zap className="w-8 h-8 text-yellow-400" />}
-              title="Save Time"
-              description="Your team can use AI tools right in Slack without switching apps."
-            />
-            <BenefitCard
-              icon={<Shield className="w-8 h-8 text-green-400" />}
-              title="Easy Setup"
-              description="Connect all your AI tools in one place with no coding required."
-            />
-            <BenefitCard
-              icon={<Users className="w-8 h-8 text-blue-400" />}
-              title="Team Friendly"
-              description="Everyone can use AI tools with simple Slack commands they already know."
-            />
-            <BenefitCard
-              icon={<Database className="w-8 h-8 text-purple-400" />}
-              title="Works Anywhere"
-              description="Use with cloud tools or your own private AI models - your choice."
-            />
           </div>
         </div>
       </section>

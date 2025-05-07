@@ -22,16 +22,16 @@ const IntegrationLogos = () => (
       <img src="/lovable-uploads/3dd25075-1a49-4b19-bfc3-830d0274bdb1.png" alt="n8n" className="h-6 w-auto" />
     </div>
     <div className="bg-white p-3 rounded-lg">
+      <img src="/lovable-uploads/d0576a9a-259f-4374-8e19-ce3c0217f161.png" alt="Claude" className="h-6 w-auto" />
+    </div>
+    <div className="bg-white p-3 rounded-lg">
+      <img src="/lovable-uploads/16d4d0e0-1d05-4fae-936e-67a30e7758f7.png" alt="LMstudio" className="h-6 w-auto" />
+    </div>
+    <div className="bg-white p-3 rounded-lg">
+      <img src="/lovable-uploads/5eb51efa-680e-4a02-9d38-a2886a13f9c5.png" alt="Agent.AI" className="h-6 w-auto" />
+    </div>
+    <div className="bg-white p-3 rounded-lg">
       <Server className="h-6 w-6 text-purple-600" />
-    </div>
-    <div className="bg-white p-3 rounded-lg">
-      <span className="text-purple-600 font-semibold">Claude</span>
-    </div>
-    <div className="bg-white p-3 rounded-lg">
-      <span className="text-purple-600 font-semibold">LMstudio</span>
-    </div>
-    <div className="bg-white p-3 rounded-lg">
-      <span className="text-purple-600 font-semibold">Agent.AI</span>
     </div>
   </div>
 );
@@ -132,7 +132,7 @@ const WorkflowInfographic = () => {
           {/* Chat Messages */}
           <div className="p-4 space-y-4 bg-[#1A1D21]">
             {/* Sarah's Message */}
-            <div className="flex items-start space-x-3">
+            <div className="flex items-start space-x-3 animate-fade-in opacity-0" style={{ animationDelay: '0.2s' }}>
               <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah" alt="User" className="w-8 h-8 rounded" />
               <div>
                 <div className="flex items-center">
@@ -146,7 +146,7 @@ const WorkflowInfographic = () => {
             </div>
 
             {/* Mike's Message */}
-            <div className="flex items-start space-x-3">
+            <div className="flex items-start space-x-3 animate-fade-in opacity-0" style={{ animationDelay: '0.4s' }}>
               <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Mike" alt="User" className="w-8 h-8 rounded" />
               <div>
                 <div className="flex items-center">
@@ -154,13 +154,13 @@ const WorkflowInfographic = () => {
                   <span className="ml-2 text-xs text-gray-400">10:17 AM</span>
                 </div>
                 <p className="text-gray-300 mt-1">
-                  I heard they might be shifting from AWS to Azure, but let's ask <span className="text-yellow-300">@genie</span> to confirm with the latest data.
+                  I heard they might be shifting from AWS to Azure, but let's ask <span className="text-yellow-300">@genie</span> to pull data from Hubspot and recent news.
                 </p>
               </div>
             </div>
 
             {/* Team message asking Genie */}
-            <div className="flex items-start space-x-3">
+            <div className="flex items-start space-x-3 animate-fade-in opacity-0" style={{ animationDelay: '0.6s' }}>
               <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Alex" alt="User" className="w-8 h-8 rounded" />
               <div>
                 <div className="flex items-center">
@@ -168,13 +168,13 @@ const WorkflowInfographic = () => {
                   <span className="ml-2 text-xs text-gray-400">10:18 AM</span>
                 </div>
                 <p className="text-gray-300 mt-1">
-                  <span className="text-yellow-300">@genie</span> Can you analyze Acme Corp's tech stack changes in the last quarter and suggest discussion points for our sales pitch tomorrow?
+                  <span className="text-yellow-300">@genie</span> Can you research Acme Corp's tech stack changes in the last quarter and suggest discussion points for Sarah's meeting tomorrow? Check both Hubspot and recent news.
                 </p>
               </div>
             </div>
 
             {/* Genie Response */}
-            <div className="flex items-start space-x-3">
+            <div className="flex items-start space-x-3 animate-fade-in opacity-0" style={{ animationDelay: '0.8s' }}>
               <div className="w-8 h-8 rounded bg-gradient-to-r from-yellow-600 to-amber-600 flex items-center justify-center">
                 <span className="text-white text-xs">✨</span>
               </div>
@@ -184,21 +184,21 @@ const WorkflowInfographic = () => {
                   <span className="ml-2 text-xs text-gray-400">10:19 AM</span>
                 </div>
                 <div className="mt-1 p-3 bg-[#222529] rounded-lg border border-[#565856]/30">
-                  <p className="text-gray-300 text-sm">Based on recent news and our CRM data, Acme Corp is indeed transitioning from AWS to Azure over the next 6 months. Key points for your pitch:</p>
+                  <p className="text-gray-300 text-sm">Based on Hubspot data and recent news, here's what I found about Acme Corp:</p>
                   <ul className="mt-2 text-sm text-gray-300 list-disc pl-5 space-y-1">
-                    <li>They're facing integration challenges with legacy systems</li>
-                    <li>CTO mentioned security concerns in their quarterly report</li>
-                    <li>Budget approved for cloud consulting ($2.4M)</li>
-                    <li>Current pain point: training their team on Azure</li>
+                    <li>Transitioning from AWS to Azure over the next 6 months (confirmed in their Q2 earnings call)</li>
+                    <li>HubSpot notes: 3 meetings with their CTO about integration challenges</li>
+                    <li>Recent press release mentioned a $2.4M budget for cloud consulting</li>
+                    <li>Their LinkedIn shows 5 new Azure engineer hires in the last month</li>
                   </ul>
-                  <p className="mt-3 text-sm text-gray-300">Recommended approach: Focus on how our solution bridges AWS-to-Azure transition with minimal disruption.</p>
+                  <p className="mt-3 text-sm text-gray-300">Recommended approach: Focus on our Azure migration services and training programs. Their CTO (James Wilson) is particularly concerned about security during the transition.</p>
                 </div>
                 <p className="text-xs text-gray-500 mt-2">@genie saved 3 hours of research in 20 seconds</p>
               </div>
             </div>
 
             {/* Sarah's follow-up */}
-            <div className="flex items-start space-x-3">
+            <div className="flex items-start space-x-3 animate-fade-in opacity-0" style={{ animationDelay: '1s' }}>
               <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah" alt="User" className="w-8 h-8 rounded" />
               <div>
                 <div className="flex items-center">
@@ -206,7 +206,7 @@ const WorkflowInfographic = () => {
                   <span className="ml-2 text-xs text-gray-400">10:21 AM</span>
                 </div>
                 <p className="text-gray-300 mt-1">
-                  This is perfect! Thanks team and @genie - I'll build my presentation around these points.
+                  This is perfect! Thanks team and @genie - I'll build my presentation around these points. Can you add this to our meeting prep doc?
                 </p>
               </div>
             </div>
