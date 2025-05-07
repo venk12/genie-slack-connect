@@ -128,7 +128,7 @@ const Index = () => {
 
             {/* Center - Title */}
             <div className="absolute left-1/2 transform -translate-x-1/2">
-              <h1 className="text-xl sm:text-2xl font-league-spartan text-white tracking-tight">✨ genie/os</h1>
+              <h1 className="text-xl sm:text-2xl font-league-spartan text-white tracking-tight">✨ Genie</h1>
             </div>
 
             {/* Right - Empty to balance layout on larger screens */}
@@ -151,7 +151,7 @@ const Index = () => {
               </h1>
 
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-xl mx-auto lg:mx-0">
-                Bring any model, workflow, or custom agent you own straight into Slack so anyone can @mention insights on demand.
+                Bring any LLM, workflow, or custom agent you own - straight into Slack. Mention <span className="text-yellow-500"> @genie </span>
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 py-4">
@@ -196,7 +196,7 @@ const Index = () => {
                   <ChevronRight className="w-4 h-4" />
                 </Button>
               </form>
-              <span className="text-xs opacity-75 block">Currently limited to 100 workspaces!
+              <span className="text-xs opacity-75 block">Currently limited to 50 workspaces!
                  Get high-touch onboarding, priority slack support, and lifetime 15% discount by signing up here</span>
             </div>
 
@@ -431,7 +431,7 @@ const Index = () => {
               Get Early Access
             </h2>
             <p className="text-base md:text-lg lg:text-xl text-gray-300 mb-6 md:mb-8">
-              Limited to 100 workspaces! Receive concierge onboarding, priority support, and lifetime 20% discount.
+              Limited to 50 workspaces! Receive concierge onboarding, priority support, and lifetime 20% discount.
             </p>
             <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-3 max-w-md mx-auto">
               <div className="flex-grow">
