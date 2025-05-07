@@ -108,7 +108,7 @@ const Index = () => {
 
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-white/10">
-        <div className="container mx-auto px-8">
+        <div className="w-[70%] mx-auto">
           <div className="flex items-center justify-between h-16">
             <div className="flex-1" /> {/* Spacer */}
             <h1 className="text-2xl font-league-spartan text-center text-white tracking-tight">✨ genie/os</h1>
@@ -132,7 +132,7 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="hero-section relative min-h-screen flex flex-col items-center justify-center py-52 section-transition">
-        <div className="container mx-auto relative z-10 px-8">
+        <div className="w-[70%] mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 items-center gap-8">
             {/* Left Side - Text Content */}
             <div className="text-center lg:text-left mb-10 lg:mb-0 stagger-fade-in space-y-6 animate-on-scroll opacity-0 px-6 lg:px-0">
@@ -201,7 +201,7 @@ const Index = () => {
               <div className="relative w-full max-w-lg mx-auto lg:ml-0 transform lg:scale-90 font-league-spartan">
                 <div className="glass-card rounded-lg overflow-visible shadow-2xl">
                   {/* Chat Header */}
-                  <div className="bg-white/5 p-2 sm:p-3 border-b border-white/10">
+                  <div className="bg-[#3F0E40] p-2 sm:p-3 border-b border-white/10">
                     <div className="flex items-center">
                       <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-red-500 mr-2"></div>
                       <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-yellow-500 mr-2"></div>
@@ -211,7 +211,7 @@ const Index = () => {
                   </div>
 
                   {/* Chat Messages */}
-                  <div className="p-3 sm:p-4 space-y-3 sm:space-y-4">
+                  <div className="p-3 sm:p-4 space-y-3 sm:space-y-4 bg-[#1A1D21]">
                     {/* Human Message */}
                     <div className="flex items-start space-x-2 sm:space-x-3 animate-fade-in opacity-0" style={{ animationDelay: '0.2s' }}>
                       <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="User" className="w-6 h-6 sm:w-8 sm:h-8 rounded" />
@@ -281,7 +281,7 @@ const Index = () => {
 
       {/* Why Teams Choose Section */}
       <section className="py-16 bg-black/90 relative">
-        <div className="container mx-auto px-8">
+        <div className="w-[70%] mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center">Why teams choose genie/os</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -318,12 +318,9 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Proof Section */}
- 
-
       {/* Visual Workflow Element */}
       <section ref={howItWorksRef} className="py-20 bg-black relative">
-        <div className="container mx-auto px-8 relative z-10">
+        <div className="w-[70%] mx-auto relative z-10">
           <h2 className="text-3xl font-bold mb-12 text-center">How it works</h2>
           <WorkflowInfographic />
           
@@ -363,22 +360,12 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Security Section */}
-      <section className="py-16 bg-black/90 relative">
-        <div className="container mx-auto px-8">
-          <h2 className="text-3xl font-bold mb-12 text-center">Built for security</h2>
+      {/* Combined Security & Benefits Section */}
+      <section ref={benefitsRef} className="py-16 bg-black/90 relative">
+        <div className="w-[70%] mx-auto">
+          <h2 className="text-3xl font-bold mb-12 text-center">Built for security & productivity</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="bg-white/5 p-6 rounded-lg border border-white/10">
-              <div className="text-green-400 mb-4">
-                <Shield className="w-10 h-10" />
-              </div>
-              <h3 className="text-lg font-bold mb-3">SOC 2 Type II compliant</h3>
-              <p className="text-gray-300">
-                Enterprise-grade security standards you can trust.
-              </p>
-            </div>
-            
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
             <div className="bg-white/5 p-6 rounded-lg border border-white/10">
               <div className="text-blue-400 mb-4">
                 <Cloud className="w-10 h-10" />
@@ -398,40 +385,39 @@ const Index = () => {
                 Complete visibility into all interactions and usage.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section 
-        ref={benefitsRef}
-        className="py-20 bg-black relative overflow-hidden"
-      >
-        <div className="container mx-auto px-8 relative z-10">
-          <div className="mt-16 text-center" ref={benefitsRef}>
-            <h3 className="text-4xl font-bold mb-4 text-white">Benefits</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              <BenefitCard
-                icon={<Zap className="w-8 h-8 text-yellow-400" />}
-                title="Save Time"
-                description="Your team can use AI tools right in Slack without switching apps."
-              />
-              <BenefitCard
-                icon={<Shield className="w-8 h-8 text-green-400" />}
-                title="Easy Setup"
-                description="Connect all your AI tools in one place with no coding required."
-              />
-              <BenefitCard
-                icon={<Users className="w-8 h-8 text-blue-400" />}
-                title="Team Friendly"
-                description="Everyone can use AI tools with simple Slack commands they already know."
-              />
-              <BenefitCard
-                icon={<Database className="w-8 h-8 text-purple-400" />}
-                title="Works Anywhere"
-                description="Use with cloud tools or your own private AI models - your choice."
-              />
+            
+            <div className="bg-white/5 p-6 rounded-lg border border-white/10">
+              <div className="text-green-400 mb-4">
+                <Shield className="w-10 h-10" />
+              </div>
+              <h3 className="text-lg font-bold mb-3">Enterprise-grade security</h3>
+              <p className="text-gray-300">
+                Protection for your most sensitive company data.
+              </p>
             </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <BenefitCard
+              icon={<Zap className="w-8 h-8 text-yellow-400" />}
+              title="Save Time"
+              description="Your team can use AI tools right in Slack without switching apps."
+            />
+            <BenefitCard
+              icon={<Shield className="w-8 h-8 text-green-400" />}
+              title="Easy Setup"
+              description="Connect all your AI tools in one place with no coding required."
+            />
+            <BenefitCard
+              icon={<Users className="w-8 h-8 text-blue-400" />}
+              title="Team Friendly"
+              description="Everyone can use AI tools with simple Slack commands they already know."
+            />
+            <BenefitCard
+              icon={<Database className="w-8 h-8 text-purple-400" />}
+              title="Works Anywhere"
+              description="Use with cloud tools or your own private AI models - your choice."
+            />
           </div>
         </div>
       </section>
@@ -439,7 +425,7 @@ const Index = () => {
       {/* Final CTA Section */}
       <section className="py-20 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-purple-900/20 z-0" />
-        <div className="container mx-auto px-8 relative z-10">
+        <div className="w-[70%] mx-auto relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Get Early Access
@@ -480,7 +466,7 @@ const Index = () => {
                 <span className="text-gray-300 font-semibold">TechStartup</span>
                 <span className="text-gray-300 font-semibold">+ more</span>
               </div>
-              <p className="text-gray-400 mt-4 text-sm">Ready to add your logo?</p>
+              <p className="text-gray-400 mt-4 text-sm">Ready to summon the genie?</p>
             </div>
           </div>
         </div>
@@ -488,7 +474,7 @@ const Index = () => {
 
       {/* Footer */}
       <section className="py-8 border-t border-white/10">
-        <div className="container mx-auto px-8">
+        <div className="w-[70%] mx-auto">
           <div className="text-center text-gray-400 text-sm">
             <p>© {new Date().getFullYear()} genie/os. All rights reserved.</p>
           </div>

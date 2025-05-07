@@ -12,17 +12,26 @@ const GenieLogo = () => (
 // Integration logos
 const IntegrationLogos = () => (
   <div className="flex flex-wrap justify-center gap-4">
-    <div className="bg-white/10 p-3 rounded-lg">
+    <div className="bg-white p-3 rounded-lg">
       <img src="/lovable-uploads/5d9a871e-8766-443f-afa9-bd39d693e969.png" alt="Zapier" className="h-6 w-auto" />
     </div>
-    <div className="bg-white/10 p-3 rounded-lg">
+    <div className="bg-white p-3 rounded-lg">
       <img src="/lovable-uploads/8ae929a3-99a1-49bc-b593-21c8d5ea6edb.png" alt="Make" className="h-6 w-auto" />
     </div>
-    <div className="bg-white/10 p-3 rounded-lg">
+    <div className="bg-white p-3 rounded-lg">
       <img src="/lovable-uploads/3dd25075-1a49-4b19-bfc3-830d0274bdb1.png" alt="n8n" className="h-6 w-auto" />
     </div>
-    <div className="bg-white/10 p-3 rounded-lg">
-      <Server className="h-6 w-6 text-purple-400" />
+    <div className="bg-white p-3 rounded-lg">
+      <Server className="h-6 w-6 text-purple-600" />
+    </div>
+    <div className="bg-white p-3 rounded-lg">
+      <span className="text-purple-600 font-semibold">Claude</span>
+    </div>
+    <div className="bg-white p-3 rounded-lg">
+      <span className="text-purple-600 font-semibold">LMstudio</span>
+    </div>
+    <div className="bg-white p-3 rounded-lg">
+      <span className="text-purple-600 font-semibold">Agent.AI</span>
     </div>
   </div>
 );
@@ -30,12 +39,12 @@ const IntegrationLogos = () => (
 const WorkflowInfographic = () => {
   return (
     <div className="max-w-4xl mx-auto relative py-2">
-      <div className="glass-card p-6 md:p-8 rounded-lg border border-white/10 shadow-xl">
+      <div className="glass-card p-6 md:p-8 rounded-lg border border-white/10 shadow-xl bg-[#3F0E40]/10">
         <div className="flex flex-col md:flex-row justify-between items-center gap-12 md:gap-6">
           {/* Step 1: Slack */}
           <div className="flex flex-col items-center text-center flex-1 px-4">
             <div className="mb-6">
-              <div className="bg-white/10 p-3 rounded-lg">
+              <div className="bg-white p-3 rounded-lg">
                 <img 
                   src="https://freepnglogo.com/images/all_img/1707837044slack-icon-png.png" 
                   alt="Slack" 
@@ -105,6 +114,102 @@ const WorkflowInfographic = () => {
             <IntegrationLogos />
             <h3 className="text-xl font-semibold mb-3 mt-6">Bring your agents from anywhere</h3>
             <p className="text-sm text-gray-300 max-w-[250px]">Whether they are running on Zapier, Make, n8n, or your own servers</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Multi-user chat demo */}
+      <div className="mt-12 max-w-3xl mx-auto">
+        <div className="glass-card rounded-lg overflow-hidden shadow-xl bg-[#3F0E40]/10">
+          {/* Chat Header */}
+          <div className="bg-[#3F0E40] p-3 border-b border-[#522653]">
+            <div className="flex items-center">
+              <span className="text-white font-medium"># sales-team</span>
+              <span className="ml-2 text-xs text-gray-400">3 members</span>
+            </div>
+          </div>
+
+          {/* Chat Messages */}
+          <div className="p-4 space-y-4 bg-[#1A1D21]">
+            {/* Sarah's Message */}
+            <div className="flex items-start space-x-3">
+              <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah" alt="User" className="w-8 h-8 rounded" />
+              <div>
+                <div className="flex items-center">
+                  <span className="font-medium text-white">Sarah</span>
+                  <span className="ml-2 text-xs text-gray-400">10:15 AM</span>
+                </div>
+                <p className="text-gray-300 mt-1">
+                  Team, I need to prepare for the Acme Corp meeting tomorrow. Any insights on their recent tech infrastructure changes?
+                </p>
+              </div>
+            </div>
+
+            {/* Mike's Message */}
+            <div className="flex items-start space-x-3">
+              <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Mike" alt="User" className="w-8 h-8 rounded" />
+              <div>
+                <div className="flex items-center">
+                  <span className="font-medium text-white">Mike</span>
+                  <span className="ml-2 text-xs text-gray-400">10:17 AM</span>
+                </div>
+                <p className="text-gray-300 mt-1">
+                  I heard they might be shifting from AWS to Azure, but let's ask <span className="text-yellow-300">@genie</span> to confirm with the latest data.
+                </p>
+              </div>
+            </div>
+
+            {/* Team message asking Genie */}
+            <div className="flex items-start space-x-3">
+              <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Alex" alt="User" className="w-8 h-8 rounded" />
+              <div>
+                <div className="flex items-center">
+                  <span className="font-medium text-white">Alex</span>
+                  <span className="ml-2 text-xs text-gray-400">10:18 AM</span>
+                </div>
+                <p className="text-gray-300 mt-1">
+                  <span className="text-yellow-300">@genie</span> Can you analyze Acme Corp's tech stack changes in the last quarter and suggest discussion points for our sales pitch tomorrow?
+                </p>
+              </div>
+            </div>
+
+            {/* Genie Response */}
+            <div className="flex items-start space-x-3">
+              <div className="w-8 h-8 rounded bg-gradient-to-r from-yellow-600 to-amber-600 flex items-center justify-center">
+                <span className="text-white text-xs">✨</span>
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center">
+                  <span className="font-medium text-amber-500">genie</span>
+                  <span className="ml-2 text-xs text-gray-400">10:19 AM</span>
+                </div>
+                <div className="mt-1 p-3 bg-[#222529] rounded-lg border border-[#565856]/30">
+                  <p className="text-gray-300 text-sm">Based on recent news and our CRM data, Acme Corp is indeed transitioning from AWS to Azure over the next 6 months. Key points for your pitch:</p>
+                  <ul className="mt-2 text-sm text-gray-300 list-disc pl-5 space-y-1">
+                    <li>They're facing integration challenges with legacy systems</li>
+                    <li>CTO mentioned security concerns in their quarterly report</li>
+                    <li>Budget approved for cloud consulting ($2.4M)</li>
+                    <li>Current pain point: training their team on Azure</li>
+                  </ul>
+                  <p className="mt-3 text-sm text-gray-300">Recommended approach: Focus on how our solution bridges AWS-to-Azure transition with minimal disruption.</p>
+                </div>
+                <p className="text-xs text-gray-500 mt-2">@genie saved 3 hours of research in 20 seconds</p>
+              </div>
+            </div>
+
+            {/* Sarah's follow-up */}
+            <div className="flex items-start space-x-3">
+              <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah" alt="User" className="w-8 h-8 rounded" />
+              <div>
+                <div className="flex items-center">
+                  <span className="font-medium text-white">Sarah</span>
+                  <span className="ml-2 text-xs text-gray-400">10:21 AM</span>
+                </div>
+                <p className="text-gray-300 mt-1">
+                  This is perfect! Thanks team and @genie - I'll build my presentation around these points.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
