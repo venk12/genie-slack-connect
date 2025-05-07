@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Server, Cloud, Database, MessageSquare } from "lucide-react";
+import { Server } from "lucide-react";
 
 // Custom Genie logo
 const GenieLogo = () => (
@@ -13,13 +13,13 @@ const GenieLogo = () => (
 const IntegrationLogos = () => (
   <div className="flex flex-wrap justify-center gap-4">
     <div className="bg-white/10 p-3 rounded-lg">
-      <img src="https://cdn.zapier.com/zapier/images/logos/zapier-logo.svg" alt="Zapier" className="h-6 w-6" />
+      <img src="/lovable-uploads/5d9a871e-8766-443f-afa9-bd39d693e969.png" alt="Zapier" className="h-6 w-auto" />
     </div>
     <div className="bg-white/10 p-3 rounded-lg">
-      <img src="https://assets.website-files.com/62d79b591cae4a93e02d5213/6466327a5bfaa4f5162fda30_make-logo.svg" alt="Make" className="h-6 w-6" />
+      <img src="/lovable-uploads/8ae929a3-99a1-49bc-b593-21c8d5ea6edb.png" alt="Make" className="h-6 w-auto" />
     </div>
     <div className="bg-white/10 p-3 rounded-lg">
-      <img src="https://n8n.io/favicon.ico" alt="n8n" className="h-6 w-6" />
+      <img src="/lovable-uploads/3dd25075-1a49-4b19-bfc3-830d0274bdb1.png" alt="n8n" className="h-6 w-auto" />
     </div>
     <div className="bg-white/10 p-3 rounded-lg">
       <Server className="h-6 w-6 text-purple-400" />
@@ -30,19 +30,10 @@ const IntegrationLogos = () => (
 const WorkflowInfographic = () => {
   return (
     <div className="max-w-4xl mx-auto relative py-2">
-      <div className="text-center mb-16">
-        <h3 className="text-4xl font-bold mb-4 text-white bg-clip-text text-transparent">
-          Why use genie?
-        </h3>
-        <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-          Real work gets done with other humans in Slack, not in AI Platforms
-        </p>
-      </div>
-      
       <div className="glass-card p-6 md:p-8 rounded-lg border border-white/10 shadow-xl">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-12 md:gap-4">
-          {/* Step 1: Slack (previously Step 3) */}
-          <div className="flex flex-col items-center text-center flex-1">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-12 md:gap-6">
+          {/* Step 1: Slack */}
+          <div className="flex flex-col items-center text-center flex-1 px-4">
             <div className="mb-6">
               <div className="bg-white/10 p-3 rounded-lg">
                 <img 
@@ -78,7 +69,7 @@ const WorkflowInfographic = () => {
           </div>
           
           {/* Step 2: Genie (remains in middle) */}
-          <div className="flex flex-col items-center text-center flex-1">
+          <div className="flex flex-col items-center text-center flex-1 px-4">
             <div className="mb-6">
               <div className="p-3 rounded-lg bg-gradient-to-br from-yellow-500/5 via-amber-500/5 to-yellow-500/5 border border-yellow-500/20 shadow-[0_0_15px_rgba(234,179,8,0.1)]">
                 <GenieLogo />
@@ -109,8 +100,8 @@ const WorkflowInfographic = () => {
             <div className="w-1.5 h-1.5 rounded-full bg-gray-600"></div>
           </div>
           
-          {/* Step 3: AI Agents (previously Step 1) */}
-          <div className="flex flex-col items-center text-center flex-1">
+          {/* Step 3: AI Agents */}
+          <div className="flex flex-col items-center text-center flex-1 px-4">
             <IntegrationLogos />
             <h3 className="text-xl font-semibold mb-3 mt-6">Bring your agents from anywhere</h3>
             <p className="text-sm text-gray-300 max-w-[250px]">Whether they are running on Zapier, Make, n8n, or your own servers</p>

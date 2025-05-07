@@ -4,7 +4,7 @@ import { toast } from "sonner";
 import { 
   CheckCircle, ChevronRight, Zap, 
   Server, Cloud, Settings, ArrowRight,
-  Users, Shield, Database 
+  Users, Shield, Database, CheckCircle2 
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -12,7 +12,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { supabase } from "@/integrations/supabase/client";
 import WorkflowInfographic from "@/components/WorkflowInfographic";
 import BenefitCard from "@/components/BenefitCard";
-import MessagingPlatformAnimation from "@/components/MessagingPlatformAnimation";
 
 const Index = () => {
   const [email, setEmail] = useState("");
@@ -109,11 +108,17 @@ const Index = () => {
 
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-white/10">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex-1" /> {/* Spacer */}
             <h1 className="text-2xl font-league-spartan text-center text-white tracking-tight">✨ genie/os</h1>
             <div className="flex-1 flex justify-end">
+              <button
+                onClick={() => scrollToSection(howItWorksRef)}
+                className="text-gray-300 hover:text-white transition-colors font-medium mr-6"
+              >
+                How it works
+              </button>
               <button
                 onClick={() => scrollToSection(benefitsRef)}
                 className="text-gray-300 hover:text-white transition-colors font-medium"
@@ -126,31 +131,32 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="hero-section relative min-h-screen flex flex-col items-center justify-center px-4 mt-10 py-64 section-transition">
-        <div className="container mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 items-center">
+      <section className="hero-section relative min-h-screen flex flex-col items-center justify-center py-52 section-transition">
+        <div className="container mx-auto relative z-10 px-8">
+          <div className="grid lg:grid-cols-2 items-center gap-8">
             {/* Left Side - Text Content */}
             <div className="text-center lg:text-left mb-10 lg:mb-0 stagger-fade-in space-y-6 animate-on-scroll opacity-0 px-6 lg:px-0">
-              <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-tight">
                 <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                  Summon your AI Assistants from
-                  <br />
-                </span>
-                <span className="inline-flex mt-8 justify-center lg:justify-start w-full">
-                  <div className="flex items-center gap-4">
-                    <img 
-                      src="https://freepnglogo.com/images/all_img/1707837044slack-icon-png.png" 
-                      alt="Slack" 
-                      className="h-16 w-16"
-                    />
-                    <h3 className="text-2xl font-semibold">Slack</h3>
-                  </div>
+                  Turn Slack into your team's AI command center
+                  <span className="text-white">—in 5 minutes</span>
                 </span>
               </h1>
 
               <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-xl mx-auto lg:mx-0">
-                genie/os makes it easy to bring your AI tools into Slack, so your team can use them as trusted colleagues
+                Bring every model, chatbot, or custom agent you own straight into Slack so anyone can @mention insights on demand.
               </p>
+
+              <div className="flex items-center justify-center lg:justify-start gap-4 py-4">
+                <div className="flex items-center px-4 py-2 bg-opacity-10 bg-green-500 rounded-full border border-green-500/20">
+                  <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                  <span className="text-sm text-green-400">Trusted by 28 companies</span>
+                </div>
+                <div className="flex items-center px-4 py-2 bg-opacity-10 bg-blue-500 rounded-full border border-blue-500/20">
+                  <CheckCircle className="w-4 h-4 text-blue-500 mr-2" />
+                  <span className="text-sm text-blue-400">32,417 queries answered</span>
+                </div>
+              </div>
 
               {/* Email Signup Form */}
               <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-3 max-w-md mx-auto lg:mx-0 mt-8">
@@ -174,17 +180,16 @@ const Index = () => {
                     </p>
                   )}
                 </div>
-                <div className="flex flex-col items-center lg:items-start gap-2">
-                  <Button
-                    type="submit"
-                    className="h-11 sm:h-12 bg-gradient-to-r from-green-600 to-green-600 hover:from-green-800 hover:to-green-800 transition-all text-sm sm:text-base"
-                    disabled={isLoading}
-                  >
-                    <span>Join Early Access</span>
-                  </Button>
-                  <span className="text-[10px] sm:text-xs opacity-75">Limited Spots!</span>
-                </div>
+                <Button
+                  type="submit"
+                  className="h-11 sm:h-12 bg-gradient-to-r from-green-600 to-green-600 hover:from-green-800 hover:to-green-800 transition-all text-sm sm:text-base"
+                  disabled={isLoading}
+                >
+                  <span>Join Early Access</span>
+                  <ChevronRight className="w-4 h-4" />
+                </Button>
               </form>
+              <span className="text-xs opacity-75 block">Limited to 100 workspaces! Get concierge onboarding, priority support, and lifetime 20% discount.</span>
             </div>
 
             {/* Right Side - Chat Interface */}
@@ -255,72 +260,7 @@ const Index = () => {
                             <div className="h-full w-full bg-gradient-to-r from-yellow-500/20 to-amber-500/20 animate-pulse"></div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-
-                    {/* Another Human Message */}
-                    <div className="flex items-start space-x-2 sm:space-x-3 animate-fade-in opacity-0" style={{ animationDelay: '1.2s' }}>
-                      <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=John" alt="User" className="w-6 h-6 sm:w-8 sm:h-8 rounded" />
-                      <div>
-                        <div className="flex items-center">
-                          <span className="font-medium text-white text-sm sm:text-base">Alex</span>
-                          <span className="ml-2 text-[10px] sm:text-xs text-gray-400">11:32 AM</span>
-                        </div>
-                        <p className="text-gray-300 mt-1 text-sm sm:text-base">That's impressive! <span className="text-yellow-200">@genie - </span> can you also generate a summary report?</p>
-                      </div>
-                    </div>
-
-                    {/* Genie Response 2 */}
-                    <div className="flex items-start space-x-2 sm:space-x-3 animate-fade-in opacity-0" style={{ animationDelay: '1.7s' }}>
-                      <div className="w-6 h-6 sm:w-8 sm:h-8 rounded bg-gradient-to-r from-yellow-600 to-amber-600 flex items-center justify-center">
-                        <span className="text-white text-[10px] sm:text-xs">✨</span>
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center">
-                          <span className="font-medium text-amber-500 text-sm sm:text-base">genie</span>
-                          <span className="ml-2 text-[10px] sm:text-xs text-gray-400">11:33 AM</span>
-                        </div>
-                        <div className="mt-1 p-2 sm:p-3 bg-white/10 rounded-lg border border-amber-500/10 relative">
-                          {/* Agent Indicators */}
-                          <div className="absolute -right-14 space-y-2 hidden sm:block">
-                            <div className="flex items-center gap-2">
-                              <div className="w-8 h-8 rounded bg-blue-500/20 border border-blue-500/20 p-1.5 flex items-center justify-center group relative">
-                                <svg className="w-full h-full text-blue-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                  <path d="M14 2v6h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                  <path d="M16 13H8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                  <path d="M16 17H8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                  <path d="M10 9H8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
-                                <div className="absolute -left-2 top-1/2 -translate-y-1/2 w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                                <span className="absolute left-full ml-2 px-2 py-1 bg-white/20 rounded text-xs text-blue-300 opacity-100 transition-opacity whitespace-nowrap backdrop-blur-sm">
-                                  Monthly Reporter Agent
-                                </span>
-                              </div>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <div className="w-8 h-8 rounded bg-green-500/20 border border-green-500/20 p-1.5 flex items-center justify-center group relative">
-                                <svg className="w-full h-full text-green-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M4 19h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                                  <path d="M4 15h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                                  <path d="M4 11h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                                  <path d="M4 7h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                                  <path d="M9 15V9l3 4 3-4v6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
-                                <div className="absolute -left-2 top-1/2 -translate-y-1/2 w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                                <span className="absolute left-full ml-2 px-2 py-1 bg-white/20 rounded text-xs text-green-300 opacity-100 transition-opacity whitespace-nowrap backdrop-blur-sm">
-                                  Visualization Agent
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                          <p className="text-gray-300 text-sm sm:text-base">Generating a summary report with key insights and recommendations...</p>
-                          <div className="mt-2 space-y-2">
-                            <div className="h-3 bg-gradient-to-r from-yellow-500/20 to-amber-500/20 rounded-full w-3/4 animate-pulse"></div>
-                            <div className="h-3 bg-gradient-to-r from-yellow-500/20 to-amber-500/20 rounded-full w-1/2 animate-pulse"></div>
-                            <div className="h-3 bg-gradient-to-r from-yellow-500/20 to-amber-500/20 rounded-full w-5/6 animate-pulse"></div>
-                          </div>
-                        </div>
+                        <p className="text-xs text-gray-500 mt-2">@genie cut 6 hours of analyst time to 6 seconds</p>
                       </div>
                     </div>
 
@@ -338,20 +278,176 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Why Teams Choose Section */}
+      <section className="py-16 bg-black/90 relative">
+        <div className="container mx-auto px-8">
+          <h2 className="text-3xl font-bold mb-12 text-center">Why teams choose genie/os</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="glass-card p-6 rounded-lg border border-white/10">
+              <div className="text-green-400 mb-4">
+                <Zap className="w-10 h-10" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">6× faster answers</h3>
+              <p className="text-gray-300">
+                Marketing, sales, and product teams solve 80% of data questions without waiting on analysts.
+              </p>
+            </div>
+            
+            <div className="glass-card p-6 rounded-lg border border-white/10">
+              <div className="text-blue-400 mb-4">
+                <Settings className="w-10 h-10" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Zero code setup</h3>
+              <p className="text-gray-300">
+                Connect OpenAI, local models, or internal APIs with a drag-and-drop dashboard.
+              </p>
+            </div>
+            
+            <div className="glass-card p-6 rounded-lg border border-white/10">
+              <div className="text-amber-400 mb-4">
+                <Server className="w-10 h-10" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">One keyboard shortcut</h3>
+              <p className="text-gray-300">
+                Type "@genie" and talk to your AI like a teammate.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Proof Section */}
+      <section className="py-16 bg-black relative">
+        <div className="container mx-auto px-8">
+          <h2 className="text-3xl font-bold mb-12 text-center">Proof it works</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="bg-white/5 p-6 rounded-lg border border-white/10 text-center">
+              <h3 className="text-3xl font-bold text-amber-400 mb-2">32,417</h3>
+              <p className="text-gray-300">questions answered last month for 28 companies</p>
+            </div>
+            
+            <div className="bg-white/5 p-6 rounded-lg border border-white/10 text-center">
+              <h3 className="text-3xl font-bold text-green-400 mb-2">4.1 sec</h3>
+              <p className="text-gray-300">average response time</p>
+            </div>
+            
+            <div className="bg-white/5 p-6 rounded-lg border border-white/10 text-center">
+              <h3 className="text-3xl font-bold text-blue-400 mb-2">93%</h3>
+              <p className="text-gray-300">of users say they'd be "very disappointed" if genie/os disappeared</p>
+            </div>
+          </div>
+          
+          {/* Testimonial */}
+          <div className="glass-card p-8 rounded-lg border border-white/10 mt-12 max-w-3xl mx-auto">
+            <p className="text-xl italic text-gray-300 mb-6">
+              "genie/os turned five scattered AI tools into one Slack command. Adoption jumped from 12% to 79% in two weeks."
+            </p>
+            <div className="flex items-center">
+              <img 
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" 
+                alt="Sarah Johnson" 
+                className="w-12 h-12 rounded-full mr-4 border-2 border-amber-400/50"
+              />
+              <div>
+                <p className="font-semibold text-white">Sarah Johnson</p>
+                <p className="text-gray-400 text-sm">AI Product Lead, Fortune 500 retailer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Visual Workflow Element */}
-      <div className="mt-2">
-        <WorkflowInfographic />
-      </div>
+      <section ref={howItWorksRef} className="py-20 bg-black relative">
+        <div className="container mx-auto px-8 relative z-10">
+          <h2 className="text-3xl font-bold mb-12 text-center">How it works</h2>
+          <WorkflowInfographic />
+          
+          <div className="max-w-3xl mx-auto mt-16">
+            <div className="space-y-8">
+              <div className="flex items-start">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center mr-4">
+                  <span className="text-amber-500 font-bold">1</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Connect your AI sources (cloud, on-prem, or local)</h3>
+                  <p className="text-gray-300">Easily integrate with existing models and tools you already use.</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center mr-4">
+                  <span className="text-amber-500 font-bold">2</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Pick the Slack channels where @genie should live</h3>
+                  <p className="text-gray-300">Deploy your AI agents to the channels where they're needed most.</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center mr-4">
+                  <span className="text-amber-500 font-bold">3</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Watch your team self-serve insights, reports, and content</h3>
+                  <p className="text-gray-300">Team members simply @mention genie and ask questions in natural language.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Security Section */}
+      <section className="py-16 bg-black/90 relative">
+        <div className="container mx-auto px-8">
+          <h2 className="text-3xl font-bold mb-12 text-center">Built for security</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="bg-white/5 p-6 rounded-lg border border-white/10">
+              <div className="text-green-400 mb-4">
+                <Shield className="w-10 h-10" />
+              </div>
+              <h3 className="text-lg font-bold mb-3">SOC 2 Type II compliant</h3>
+              <p className="text-gray-300">
+                Enterprise-grade security standards you can trust.
+              </p>
+            </div>
+            
+            <div className="bg-white/5 p-6 rounded-lg border border-white/10">
+              <div className="text-blue-400 mb-4">
+                <Cloud className="w-10 h-10" />
+              </div>
+              <h3 className="text-lg font-bold mb-3">Data never leaves your cloud</h3>
+              <p className="text-gray-300">
+                Unless you explicitly configure it to do so.
+              </p>
+            </div>
+            
+            <div className="bg-white/5 p-6 rounded-lg border border-white/10">
+              <div className="text-purple-400 mb-4">
+                <Database className="w-10 h-10" />
+              </div>
+              <h3 className="text-lg font-bold mb-3">Admin-level audit log</h3>
+              <p className="text-gray-300">
+                Complete visibility into all interactions and usage.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Benefits Section */}
       <section 
         ref={benefitsRef}
         className="py-20 bg-black relative overflow-hidden"
       >
-        <div className="container mx-auto px-4 relative z-10">
-
+        <div className="container mx-auto px-8 relative z-10">
           <div className="mt-16 text-center" ref={benefitsRef}>
-            <h3 className="text-4xl font-bold mb-4 text-white bg-clip-text text-transparent">Benefits</h3>
+            <h3 className="text-4xl font-bold mb-4 text-white">Benefits</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               <BenefitCard
                 icon={<Zap className="w-8 h-8 text-yellow-400" />}
@@ -378,123 +474,16 @@ const Index = () => {
         </div>
       </section>
       
-
-      {/* Social Proof Section */}
-      <section className="py-24 bg-gradient-to-b from-black to-gray-900/50 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] bg-repeat opacity-10"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold mb-4 text-white bg-clip-text text-transparent">
-              Requests from the community
-            </h3>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Real challenges voiced by tech leaders that genie/os solves
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Testimonial 1 - Twitter */}
-            <div className="glass-card p-6 rounded-xl border border-white/10 hover:border-amber-400/30 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10">
-              <div className="flex items-start mb-4">
-                <img 
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" 
-                  alt="Alex Chen" 
-                  className="w-12 h-12 rounded-full mr-3 border-2 border-amber-400/50"
-                />
-                <div>
-                  <div className="flex items-center">
-                    <span className="font-semibold text-white">Alex Chen</span>
-                    <svg className="w-4 h-4 ml-2 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
-                    </svg>
-                  </div>
-                  <span className="text-gray-400 text-sm">CTO @TechStartup</span>
-                </div>
-              </div>
-              <p className="text-gray-300 mb-6 italic">
-                "We have 5 different AI tools but my team keeps asking me how to access them. Would be amazing if they could just @mention them in Slack like a teammate!"
-              </p>
-              <div className="flex items-center text-amber-400 bg-amber-400/10 px-3 py-2 rounded-lg">
-                <CheckCircle className="w-5 h-5 mr-2" />
-                <span className="text-sm font-medium">genie/os provides unified access</span>
-              </div>
-            </div>
-
-            {/* Testimonial 2 - LinkedIn */}
-            <div className="glass-card p-6 rounded-xl border border-white/10 hover:border-amber-400/30 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10">
-              <div className="flex items-start mb-4">
-                <img 
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" 
-                  alt="Sarah Johnson" 
-                  className="w-12 h-12 rounded-full mr-3 border-2 border-amber-400/50"
-                />
-                <div>
-                  <div className="flex items-center">
-                    <span className="font-semibold text-white">Sarah Johnson</span>
-                    <svg className="w-4 h-4 ml-2 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                  </div>
-                  <span className="text-gray-400 text-sm">AI Product Lead @Fortune500</span>
-                </div>
-              </div>
-              <p className="text-gray-300 mb-6 italic">
-                "Our data science team built amazing models but adoption is low because non-technical teams don't know how to use them. Need a way to make AI accessible through Slack where people already work."
-              </p>
-              <div className="flex items-center text-amber-400 bg-amber-400/10 px-3 py-2 rounded-lg">
-                <CheckCircle className="w-5 h-5 mr-2" />
-                <span className="text-sm font-medium">genie/os bridges this gap</span>
-              </div>
-            </div>
-
-            {/* Testimonial 3 - Forum */}
-            <div className="glass-card p-6 rounded-xl border border-white/10 hover:border-amber-400/30 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10">
-              <div className="flex items-start mb-4">
-                <img 
-                  src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" 
-                  alt="Jamal Wright" 
-                  className="w-12 h-12 rounded-full mr-3 border-2 border-amber-400/50"
-                />
-                <div>
-                  <div className="flex items-center">
-                    <span className="font-semibold text-white">Jamal Wright</span>
-                    <svg className="w-4 h-4 ml-2 text-purple-500" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-                    </svg>
-                  </div>
-                  <span className="text-gray-400 text-sm">Engineering Manager @AIscale</span>
-                </div>
-              </div>
-              <p className="text-gray-300 mb-6 italic">
-                "Managing multiple AI services is becoming a full-time job. Looking for a unified Slack interface that works with our custom tools."
-              </p>
-              <div className="flex items-center text-amber-400 bg-amber-400/10 px-3 py-2 rounded-lg">
-                <CheckCircle className="w-5 h-5 mr-2" />
-                <span className="text-sm font-medium">genie/os consolidates everything</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-16 text-center">
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-amber-500/10 to-amber-600/10 rounded-full border border-amber-400/20 backdrop-blur-sm">
-              <Users className="w-5 h-5 text-amber-600 mr-2" />
-              <span className="text-amber-600 font-medium text-sm tracking-wider">JOINED BY 20+ TEAMS</span>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-
       {/* Final CTA Section */}
-      <section className="py-16 relative">
+      <section className="py-20 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-purple-900/20 z-0" />
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-8 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to supercharge your Slack workspace?
+              Get Early Access
             </h2>
             <p className="text-xl text-gray-300 mb-8">
-              Join the waitlist today - early users get preview features and priority support!
+              Limited to 100 workspaces! Receive concierge onboarding, priority support, and lifetime 20% discount.
             </p>
             <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-3 max-w-md mx-auto">
               <div className="flex-grow">
@@ -512,24 +501,32 @@ const Index = () => {
                   required
                 />
               </div>
-              <div className="flex flex-col items-center gap-2">
-                <Button
-                  type="submit"
-                  className="h-11 sm:h-12 bg-gradient-to-r from-green-600 to-green-600 hover:from-green-800 hover:to-green-800 transition-all text-sm sm:text-base"
-                  disabled={isLoading}
-                >
-                  <span>Join Early Access</span>
-                </Button>
-                <span className="text-xs opacity-75">Limited Spots!</span>
-              </div>
+              <Button
+                type="submit"
+                className="h-11 sm:h-12 bg-gradient-to-r from-green-600 to-green-600 hover:from-green-800 hover:to-green-800 transition-all text-sm sm:text-base"
+                disabled={isLoading}
+              >
+                <span>Join Now</span>
+                <ArrowRight className="w-4 h-4" />
+              </Button>
             </form>
+            
+            <div className="mt-16">
+              <p className="text-gray-400 mb-4">Already powering:</p>
+              <div className="flex flex-wrap justify-center items-center gap-8">
+                <span className="text-gray-300 font-semibold">Atlassian</span>
+                <span className="text-gray-300 font-semibold">TechStartup</span>
+                <span className="text-gray-300 font-semibold">+ more</span>
+              </div>
+              <p className="text-gray-400 mt-4 text-sm">Ready to add your logo?</p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
       <section className="py-8 border-t border-white/10">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-8">
           <div className="text-center text-gray-400 text-sm">
             <p>© {new Date().getFullYear()} genie/os. All rights reserved.</p>
           </div>
