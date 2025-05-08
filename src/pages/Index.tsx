@@ -4,7 +4,7 @@ import { toast } from "sonner";
 import { 
   CheckCircle, ChevronRight, Zap, 
   Server, Cloud, Settings, ArrowRight,
-  Shield, Database
+  Shield, Database, Slack, MessageSquare
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -111,34 +111,16 @@ const Index = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* <div className="flex flex-1 space-x-4">
-              <button
-                onClick={() => scrollToSection(howItWorksRef)}
-                className="text-gray-300 hover:text-white transition-colors font-medium text-sm md:text-base"
-              >
-                How it works
-              </button>
-              <button
-                onClick={() => scrollToSection(benefitsRef)}
-                className="text-gray-300 hover:text-white transition-colors font-medium text-sm md:text-base"
-              >
-                Benefits
-              </button>
-            </div> */}
-
             {/* Center - Title */}
             <div className="absolute left-1/2 transform -translate-x-1/2">
               <h1 className="text-xl sm:text-2xl font-league-spartan text-white tracking-tight">✨ Genie</h1>
             </div>
-
-            {/* Right - Empty to balance layout on larger screens */}
-            {/* <div className="flex-1 hidden sm:block" /> */}
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="hero-section relative min-h-screen flex flex-col items-center justify-center py-20 md:py-32 lg:py-52 section-transition">
+      <section className="hero-section relative min-h-screen flex flex-col items-center justify-center py-20 md:py-28 lg:py-40 section-transition">
         <div className="container-fluid relative z-10">
           <div className="grid lg:grid-cols-2 items-center gap-8">
             {/* Left Side - Text Content */}
@@ -219,90 +201,108 @@ const Index = () => {
                     </div>
                   </div>
 
-                  {/* Chat Body */}
-                  <div className="p-4 space-y-4 bg-[#1a1d21]">
+                  {/* Chat Body - with individual fade-in animations */}
+                  <div className="p-4 space-y-4 bg-[#1a1d21] max-h-[70vh] md:max-h-[60vh] overflow-y-auto">
                     {/* Message - Sarah */}
-                    <Message
-                      avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah"
-                      name="Sarah"
-                      time="11:03 AM"
-                      text="Hey @raj @lena — we need to prep for the Acme Corp call tomorrow. Can someone pull highlights from their latest annual report?"
-                    />
+                    <div className="opacity-0 animate-fade-in" style={{animationDelay: '0.2s', animationFillMode: 'forwards'}}>
+                      <Message
+                        avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah"
+                        name="Sarah"
+                        time="11:03 AM"
+                        text="Hey @raj @lena — we need to prep for the Acme Corp call tomorrow. Can someone pull highlights from their latest annual report?"
+                      />
+                    </div>
 
                     {/* Message - Raj */}
-                    <Message
-                      avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Raj"
-                      name="Raj"
-                      time="11:04 AM"
-                      text="I downloaded the 2024 report but haven't read through it yet."
-                    />
+                    <div className="opacity-0 animate-fade-in" style={{animationDelay: '0.5s', animationFillMode: 'forwards'}}>
+                      <Message
+                        avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Raj"
+                        name="Raj"
+                        time="11:04 AM"
+                        text="I downloaded the 2024 report but haven't read through it yet."
+                      />
+                    </div>
 
                     {/* Message - Sarah calls genie */}
-                    <Message
-                      avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah"
-                      name="Sarah"
-                      time="11:04 AM"
-                      text="@genie can you summarize the key takeaways?"
-                    />
+                    <div className="opacity-0 animate-fade-in" style={{animationDelay: '0.8s', animationFillMode: 'forwards'}}>
+                      <Message
+                        avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah"
+                        name="Sarah"
+                        time="11:04 AM"
+                        text="@genie can you summarize the key takeaways?"
+                      />
+                    </div>
 
                     {/* genie summary */}
-                    <GenieMessage
-                      time="11:05 AM"
-                      title="Summary (2024 Annual Report):"
-                      bullets={[
-                        'Revenue: $245M (+8% YoY)',
-                        'Focus: automation for logistics',
-                        'Markets: LATAM, Southeast Asia',
-                        'Risks: margin pressure, supply chain'
-                      ]}
-                    />
+                    <div className="opacity-0 animate-fade-in" style={{animationDelay: '1.1s', animationFillMode: 'forwards'}}>
+                      <GenieMessage
+                        time="11:05 AM"
+                        title="Summary (2024 Annual Report):"
+                        bullets={[
+                          'Revenue: $245M (+8% YoY)',
+                          'Focus: automation for logistics',
+                          'Markets: LATAM, Southeast Asia',
+                          'Risks: margin pressure, supply chain'
+                        ]}
+                      />
+                    </div>
 
                     {/* Lena message */}
-                    <Message
-                      avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Lena"
-                      name="Lena"
-                      time="11:06 AM"
-                      text="@genie — what's our latest HubSpot activity with them?"
-                    />
+                    <div className="opacity-0 animate-fade-in" style={{animationDelay: '1.4s', animationFillMode: 'forwards'}}>
+                      <Message
+                        avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Lena"
+                        name="Lena"
+                        time="11:06 AM"
+                        text="@genie — what's our latest HubSpot activity with them?"
+                      />
+                    </div>
 
                     {/* genie CRM */}
-                    <GenieMessage
-                      time="11:06 AM"
-                      title="CRM Activity:"
-                      bullets={[
-                        'Mar 14: Email opened (no reply)',
-                        'Feb 22: Chat — asked about integrations',
-                        'Mar 20: Opp paused (stage 2)'
-                      ]}
-                    />
+                    <div className="opacity-0 animate-fade-in" style={{animationDelay: '1.7s', animationFillMode: 'forwards'}}>
+                      <GenieMessage
+                        time="11:06 AM"
+                        title="CRM Activity:"
+                        bullets={[
+                          'Mar 14: Email opened (no reply)',
+                          'Feb 22: Chat — asked about integrations',
+                          'Mar 20: Opp paused (stage 2)'
+                        ]}
+                      />
+                    </div>
 
                     {/* Raj - tech stack */}
-                    <Message
-                      avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Raj"
-                      name="Raj"
-                      time="11:07 AM"
-                      text="Can you confirm their tech stack too?"
-                    />
+                    <div className="opacity-0 animate-fade-in" style={{animationDelay: '2.0s', animationFillMode: 'forwards'}}>
+                      <Message
+                        avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Raj"
+                        name="Raj"
+                        time="11:07 AM"
+                        text="Can you confirm their tech stack too?"
+                      />
+                    </div>
 
                     {/* genie tech stack */}
-                    <GenieMessage
-                      time="11:07 AM"
-                      title="Tech Stack:"
-                      bullets={[
-                        'CRM: HubSpot',
-                        'Automation: Tray.io',
-                        'Analytics: Looker, Amplitude',
-                        'Support: Intercom'
-                      ]}
-                    />
+                    <div className="opacity-0 animate-fade-in" style={{animationDelay: '2.3s', animationFillMode: 'forwards'}}>
+                      <GenieMessage
+                        time="11:07 AM"
+                        title="Tech Stack:"
+                        bullets={[
+                          'CRM: HubSpot',
+                          'Automation: Tray.io',
+                          'Analytics: Looker, Amplitude',
+                          'Support: Intercom'
+                        ]}
+                      />
+                    </div>
 
                     {/* Sarah - wrap up */}
-                    <Message
-                      avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah"
-                      name="Sarah"
-                      time="11:08 AM"
-                      text="Perfect — saved me a deep dive. Let's move fast on this."
-                    />
+                    <div className="opacity-0 animate-fade-in" style={{animationDelay: '2.6s', animationFillMode: 'forwards'}}>
+                      <Message
+                        avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah"
+                        name="Sarah"
+                        time="11:08 AM"
+                        text="Perfect — saved me a deep dive. Let's move fast on this."
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -312,6 +312,31 @@ const Index = () => {
         </div>
       </section>
 
+      {/* New "AI is changing communication" section */}
+      <section className="py-16 md:py-20 bg-black/80 relative">
+        <div className="container-fluid">
+          <div className="max-w-4xl mx-auto text-left">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">
+              AI Is Changing Communication—But Let's Keep It Human.
+            </h2>
+            
+            <div className="text-gray-300 space-y-4 text-base md:text-lg">
+              <p>
+                In today's digital world, AI is everywhere. It writes emails, generates reports, summarizes meetings—but every new AI tool can create distance between teams and the conversations that matter most. Sales, marketing, product—everyone is siloed in different tools, and human connection starts to get lost in the mix.
+              </p>
+              
+              <p>
+                Genie solves this problem. It's a Slack-native command center where any team member can instantly access the right AI, model, or workflow—no more jumping between platforms. With just one Slack command, your team gets the insights they need, fast.
+              </p>
+              
+              <p>
+                The result? AI doesn't replace human interaction. It makes it easier, faster, and more meaningful. Teams are aligned, decisions happen quickly, and communication stays at the heart of everything.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       {/* Why Teams Choose Section */}
       <section className="py-12 md:py-16 bg-black/90 relative">
         <div className="container-fluid">
@@ -355,37 +380,132 @@ const Index = () => {
       <section ref={howItWorksRef} className="py-16 md:py-20 bg-black relative">
         <div className="container-fluid relative z-10">
           <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-center">How it works</h2>
-          {/* <WorkflowInfographic /> */}
           
           <div className="max-w-3xl mx-auto mt-12 md:mt-16 px-4 sm:px-0">
-            <div className="space-y-6 md:space-y-8">
-              <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-0">
+            <div className="space-y-6 md:space-y-12">
+              {/* Step 1 - Connect AI sources with integration logos */}
+              <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-6">
                 <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-amber-500/20 flex items-center justify-center mx-auto md:mx-0 md:mr-4">
                   <span className="text-amber-500 font-bold">1</span>
                 </div>
-                <div className="text-center md:text-left">
-                  <h3 className="text-lg md:text-xl font-semibold mb-2">Connect your AI sources (cloud, on-prem, or local)</h3>
-                  <p className="text-sm md:text-base text-gray-300">Easily integrate with existing models and tools you already use.</p>
+                <div className="md:flex-1">
+                  <h3 className="text-lg md:text-xl font-semibold mb-2 text-center md:text-left">Connect your AI sources (cloud, on-prem, or local)</h3>
+                  <p className="text-sm md:text-base text-gray-300 mb-4 text-center md:text-left">Easily integrate with existing models and tools you already use.</p>
+                  
+                  {/* Integration logos */}
+                  <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-4">
+                    {/* Zapier */}
+                    <div className="bg-white/10 p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16">
+                      <Slack className="w-8 h-8 text-blue-400" />
+                    </div>
+                    {/* n8n */}
+                    <div className="bg-white/10 p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16">
+                      <img src="/lovable-uploads/3dd25075-1a49-4b19-bfc3-830d0274bdb1.png" alt="n8n" className="h-10 w-auto" />
+                    </div>
+                    {/* Make */}
+                    <div className="bg-white/10 p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16">
+                      <img src="/lovable-uploads/8ae929a3-99a1-49bc-b593-21c8d5ea6edb.png" alt="Make" className="h-10 w-auto" />
+                    </div>
+                    {/* Claude */}
+                    <div className="bg-white/10 p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16">
+                      <img src="/lovable-uploads/d0576a9a-259f-4374-8e19-ce3c0217f161.png" alt="Claude" className="h-10 w-auto" />
+                    </div>
+                    {/* LLMstudio */}
+                    <div className="bg-white/10 p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16">
+                      <img src="/lovable-uploads/16d4d0e0-1d05-4fae-936e-67a30e7758f7.png" alt="LLMstudio" className="h-10 w-auto" />
+                    </div>
+                  </div>
                 </div>
               </div>
               
-              <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-0">
+              {/* Step 2 - Add to Slack channels with Slack channels infographic */}
+              <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-6">
                 <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-amber-500/20 flex items-center justify-center mx-auto md:mx-0 md:mr-4">
                   <span className="text-amber-500 font-bold">2</span>
                 </div>
-                <div className="text-center md:text-left">
-                  <h3 className="text-lg md:text-xl font-semibold mb-2">Pick the Slack channels where @genie should live</h3>
-                  <p className="text-sm md:text-base text-gray-300">Deploy your AI agents to the channels where they're needed most.</p>
+                <div className="md:flex-1">
+                  <h3 className="text-lg md:text-xl font-semibold mb-2 text-center md:text-left">Pick the Slack channels where @genie should live</h3>
+                  <p className="text-sm md:text-base text-gray-300 mb-4 text-center md:text-left">Deploy your AI agents to the channels where they're needed most.</p>
+                  
+                  {/* Slack channels infographic */}
+                  <div className="bg-[#1A1D21]/80 rounded-lg border border-white/10 p-4 mt-4">
+                    <div className="flex flex-col space-y-3">
+                      <div className="flex items-center space-x-2">
+                        <span className="text-gray-400 text-xs">#</span>
+                        <span className="text-white font-semibold">sales-team</span>
+                        <span className="ml-auto text-green-400 text-xs flex items-center">
+                          <span className="w-2 h-2 bg-green-400 rounded-full mr-1"></span>
+                          Active
+                        </span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <span className="text-gray-400 text-xs">#</span>
+                        <span className="text-white font-semibold">marketing</span>
+                        <span className="ml-auto text-green-400 text-xs flex items-center">
+                          <span className="w-2 h-2 bg-green-400 rounded-full mr-1"></span>
+                          Active
+                        </span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <span className="text-gray-400 text-xs">#</span>
+                        <span className="text-white font-semibold">product-team</span>
+                        <span className="ml-auto text-gray-400 text-xs flex items-center">
+                          <span className="w-2 h-2 bg-gray-400 rounded-full mr-1"></span>
+                          Inactive
+                        </span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <span className="text-gray-400 text-xs">#</span>
+                        <span className="text-white font-semibold">general</span>
+                        <span className="ml-auto text-green-400 text-xs flex items-center">
+                          <span className="w-2 h-2 bg-green-400 rounded-full mr-1"></span>
+                          Active
+                        </span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               
-              <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-0">
+              {/* Step 3 - Use @genie mention */}
+              <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-6">
                 <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-amber-500/20 flex items-center justify-center mx-auto md:mx-0 md:mr-4">
                   <span className="text-amber-500 font-bold">3</span>
                 </div>
-                <div className="text-center md:text-left">
-                  <h3 className="text-lg md:text-xl font-semibold mb-2">Watch your team self-serve insights, reports, and content</h3>
-                  <p className="text-sm md:text-base text-gray-300">Team members simply @mention genie and ask questions in natural language.</p>
+                <div className="md:flex-1">
+                  <h3 className="text-lg md:text-xl font-semibold mb-2 text-center md:text-left">Watch your team self-serve insights, reports, and content</h3>
+                  <p className="text-sm md:text-base text-gray-300 mb-4 text-center md:text-left">Team members simply @mention genie and ask questions in natural language.</p>
+                  
+                  {/* @genie mention infographic */}
+                  <div className="bg-[#1A1D21]/80 rounded-lg border border-white/10 p-4 mt-4">
+                    <div className="flex items-start space-x-3">
+                      <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Alex" alt="User" className="w-8 h-8 rounded" />
+                      <div>
+                        <div className="flex items-center">
+                          <span className="font-medium text-white">Alex</span>
+                          <span className="ml-2 text-xs text-gray-400">Just now</span>
+                        </div>
+                        <p className="text-gray-300 mt-1">
+                          <span className="text-yellow-300">@genie</span> Can you research Acme Corp's tech stack changes in the last quarter and suggest discussion points for tomorrow's meeting?
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start space-x-3 mt-3">
+                      <div className="w-8 h-8 rounded bg-gradient-to-r from-yellow-600 to-amber-600 flex items-center justify-center">
+                        <span className="text-white text-xs">✨</span>
+                      </div>
+                      <div>
+                        <div className="flex items-center">
+                          <span className="font-medium text-amber-500">genie</span>
+                          <span className="ml-2 text-xs text-gray-400">Just now</span>
+                        </div>
+                        <p className="text-gray-300 mt-1 italic">
+                          Looking up information...
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -485,3 +605,4 @@ const Index = () => {
 };
 
 export default Index;
+

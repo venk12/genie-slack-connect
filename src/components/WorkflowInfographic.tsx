@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Server } from "lucide-react";
 
@@ -117,21 +118,20 @@ const WorkflowInfographic = () => {
         </div>
       </div>
 
-      {/* Multi-user chat demo */}
+      {/* Multi-user chat demo - with reduced height and animated entries */}
       <div className="mt-12 max-w-3xl mx-auto">
         <div className="glass-card rounded-lg overflow-hidden shadow-xl bg-[#3F0E40]/10">
           {/* Chat Header */}
           <div className="bg-[#3F0E40] p-3 border-b border-[#522653]">
             <div className="flex items-center">
               <span className="text-white font-medium"># sales-team</span>
-              <span className="ml-2 text-xs text-gray-400">3 members</span>
             </div>
           </div>
 
-          {/* Chat Messages */}
-          <div className="p-4 space-y-4 bg-[#1A1D21]">
+          {/* Chat Messages - with individual fade-in animations */}
+          <div className="p-4 space-y-4 bg-[#1A1D21] max-h-[50vh] md:max-h-[40vh] overflow-y-auto">
             {/* Sarah's Message */}
-            <div className="flex items-start space-x-3 animate-fade-in opacity-0" style={{ animationDelay: '0.2s' }}>
+            <div className="flex items-start space-x-3 animate-fade-in opacity-0" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
               <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah" alt="User" className="w-8 h-8 rounded" />
               <div>
                 <div className="flex items-center">
@@ -145,7 +145,7 @@ const WorkflowInfographic = () => {
             </div>
 
             {/* Mike's Message */}
-            <div className="flex items-start space-x-3 animate-fade-in opacity-0" style={{ animationDelay: '0.4s' }}>
+            <div className="flex items-start space-x-3 animate-fade-in opacity-0" style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}>
               <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Mike" alt="User" className="w-8 h-8 rounded" />
               <div>
                 <div className="flex items-center">
@@ -159,7 +159,7 @@ const WorkflowInfographic = () => {
             </div>
 
             {/* Team message asking Genie */}
-            <div className="flex items-start space-x-3 animate-fade-in opacity-0" style={{ animationDelay: '0.6s' }}>
+            <div className="flex items-start space-x-3 animate-fade-in opacity-0" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
               <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Alex" alt="User" className="w-8 h-8 rounded" />
               <div>
                 <div className="flex items-center">
@@ -173,7 +173,7 @@ const WorkflowInfographic = () => {
             </div>
 
             {/* Genie Response */}
-            <div className="flex items-start space-x-3 animate-fade-in opacity-0" style={{ animationDelay: '0.8s' }}>
+            <div className="flex items-start space-x-3 animate-fade-in opacity-0" style={{ animationDelay: '1.1s', animationFillMode: 'forwards' }}>
               <div className="w-8 h-8 rounded bg-gradient-to-r from-yellow-600 to-amber-600 flex items-center justify-center">
                 <span className="text-white text-xs">✨</span>
               </div>
@@ -197,7 +197,7 @@ const WorkflowInfographic = () => {
             </div>
 
             {/* Sarah's follow-up */}
-            <div className="flex items-start space-x-3 animate-fade-in opacity-0" style={{ animationDelay: '1s' }}>
+            <div className="flex items-start space-x-3 animate-fade-in opacity-0" style={{ animationDelay: '1.4s', animationFillMode: 'forwards' }}>
               <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah" alt="User" className="w-8 h-8 rounded" />
               <div>
                 <div className="flex items-center">
