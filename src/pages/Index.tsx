@@ -554,15 +554,38 @@ const Index = () => {
                       <div className="w-8 h-8 rounded bg-gradient-to-r from-yellow-600 to-amber-600 flex items-center justify-center">
                         <span className="text-white text-xs">✨</span>
                       </div>
-                      <div>
+                      {/* start */}
+                      <div className="p-4 text-sm text-white font-sans max-w-md">
                         <div className="flex items-center">
                           <span className="font-medium text-amber-500">genie</span>
                           <span className="ml-2 text-xs text-gray-400">Just now</span>
                         </div>
-                        <p className="text-gray-300 mt-1 italic">
+                        <p className="text-gray-300 mt-1 italic animate-fadein opacity-0 animation-delay-0">
                           Looking up information...
                         </p>
+                        <div className="flex items-center mt-4 opacity-0 animate-fadein animation-delay-1500">
+                          <div className="w-4 h-4 mr-2">
+                            <div className="animate-spin h-4 w-4 border-2 border-white/40 border-t-white rounded-full"></div>
+                          </div>
+                          <p className="text-gray-200">Researching news articles (via Zapier)</p>
+                        </div>
+                        <div className="flex items-center mt-2 opacity-0 animate-fadein animation-delay-3000">
+                          <div className="w-4 h-4 mr-2">
+                            <div className="animate-spin h-4 w-4 border-2 border-white/40 border-t-white rounded-full"></div>
+                          </div>
+                          <p className="text-gray-200">Researching HubSpot context (via HubSpot MCP)</p>
+                        </div>
+                        <div className="flex items-center mt-2 opacity-0 animate-fadein animation-delay-4500">
+                          <div className="w-4 h-4 mr-2">
+                            <div className="animate-spin h-4 w-4 border-2 border-white/40 border-t-white rounded-full"></div>
+                          </div>
+                          <p className="text-gray-200">Consolidating all the information</p>
+                        </div>
+                        <div className="mt-4 text-green-300 opacity-0 animate-fadein animation-delay-6000">
+                          ✅ Here's the consolidated research from all sources.
+                        </div>
                       </div>
+                      {/* end */}
                     </div>
                   </div>
                 </div>
