@@ -392,7 +392,7 @@ const Index = () => {
                   <h3 className="text-lg md:text-xl font-semibold mb-2 text-center md:text-left">Connect your AI sources (cloud, on-prem, or local)</h3>
                   <p className="text-sm md:text-base text-gray-300 mb-4 text-center md:text-left">Easily integrate with existing models and tools you already use.</p>
                   
-                  {/* Integration logos */}
+                {/* Integration logos */}
                 <div className="flex flex-col gap-6 mt-4">
                   {/* AI Automation Tools */}
                   <div className="flex flex-col items-center w-full">
