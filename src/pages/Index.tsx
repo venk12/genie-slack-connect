@@ -556,7 +556,7 @@ const Index = () => {
                       </div>
                       {/* start */}
                       <div className="p-4 text-sm text-white font-sans max-w-md">
-                        <div className="flex items-center">
+                        <div className="flex items-top">
                           <span className="font-medium text-amber-500">genie</span>
                           <span className="ml-2 text-xs text-gray-400">Just now</span>
                         </div>
