@@ -182,131 +182,69 @@ const Index = () => {
                  Get high-touch onboarding, priority slack support for first 6 months by signing up here</span>
             </div>
 
-            {/* Right Side - Chat Interface */}
-            <div className="w-full lg:translate-x-8 xl:translate-x-12 lg:max-w-[90%] relative px-4 lg:px-0">
-              {/* Background Highlight */}
-              <div className="absolute -inset-4 bg-gradient-to-br from-yellow-400/5 via-amber-400/5 to-transparent rounded-2xl blur-3xl"></div>
+            {/* Right Side - Chat Infographic */}
+<div className="w-full lg:max-w-[95%] relative px-4 lg:px-0">
+  {/* Background Highlight */}
+  <div className="absolute -inset-4 bg-gradient-to-br from-yellow-400/5 via-amber-400/5 to-transparent rounded-2xl blur-3xl"></div>
 
-              {/* Animated Chat Interface */}
-              <div className="relative w-full max-w-lg mx-auto lg:ml-0 transform lg:scale-90 font-league-spartan">
-                <div className="glass-card rounded-lg overflow-visible shadow-2xl">
-                  
-                  {/* Chat Header */}
-                  <div className="bg-[#1d1f23] p-2 sm:p-3 border-b border-white/10">
-                    <div className="flex items-center">
-                      <div className="w-2.5 h-2.5 rounded-full bg-red-500 mr-2"></div>
-                      <div className="w-2.5 h-2.5 rounded-full bg-yellow-500 mr-2"></div>
-                      <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
-                      <span className="ml-3 text-xs text-gray-400">#research-acme</span>
-                    </div>
-                  </div>
+  {/* Chat Infographic Container */}
+  <div className="relative w-full max-w-2xl mx-auto lg:ml-0 transform lg:scale-100 font-league-spartan">
+    <div className="glass-card rounded-xl overflow-visible shadow-2xl border border-white/10 bg-[#1a1d21]">
 
-                  {/* Chat Body - with individual fade-in animations */}
-                  <div className="p-4 space-y-4 bg-[#1a1d21] max-h-[70vh] md:max-h-[60vh] overflow-y-auto">
-                    {/* Message - Sarah */}
-                    <div className="opacity-0 animate-fade-in" style={{animationDelay: '0.2s', animationFillMode: 'forwards'}}>
-                      <Message
-                        avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah"
-                        name="Sarah"
-                        time="11:03 AM"
-                        text="Hey @raj @lena — we need to prep for the Acme Corp call tomorrow. Can someone pull highlights from their latest annual report?"
-                      />
-                    </div>
+      {/* Chat Header */}
+      <div className="bg-[#1d1f23] p-3 border-b border-white/10 flex items-center rounded-t-xl">
+        <div className="flex space-x-2">
+          <div className="w-2.5 h-2.5 rounded-full bg-red-500" />
+          <div className="w-2.5 h-2.5 rounded-full bg-yellow-500" />
+          <div className="w-2.5 h-2.5 rounded-full bg-green-500" />
+        </div>
+        <span className="ml-3 text-xs text-gray-400">#research-acme</span>
+      </div>
 
-                    {/* Message - Raj */}
-                    <div className="opacity-0 animate-fade-in" style={{animationDelay: '0.5s', animationFillMode: 'forwards'}}>
-                      <Message
-                        avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Raj"
-                        name="Raj"
-                        time="11:04 AM"
-                        text="I downloaded the 2024 report but haven't read through it yet."
-                      />
-                    </div>
+      {/* Chat Body */}
+      <div className="p-6 space-y-5">
+        {/* Message - Sarah */}
+        <Message
+          avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah"
+          name="Sarah"
+          time="11:03 AM"
+          text="Hey @genie — can you give us a quick overview of Acme Corp?"
+        />
 
-                    {/* Message - Sarah calls genie */}
-                    <div className="opacity-0 animate-fade-in" style={{animationDelay: '0.8s', animationFillMode: 'forwards'}}>
-                      <Message
-                        avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah"
-                        name="Sarah"
-                        time="11:04 AM"
-                        text="@genie can you summarize the key takeaways?"
-                      />
-                    </div>
+        {/* Genie Summary */}
+        <GenieMessage
+          time="11:04 AM"
+          title="Acme Corp – 2024 Highlights:"
+          bullets={[
+            '📈 Revenue: $245M (+8% YoY)',
+            '🚚 Focus: Logistics automation',
+            '🌍 Markets: LATAM, Southeast Asia',
+            '⚠️ Risks: Margin pressure, supply chain'
+          ]}
+        />
 
-                    {/* genie summary */}
-                    <div className="opacity-0 animate-fade-in" style={{animationDelay: '1.1s', animationFillMode: 'forwards'}}>
-                      <GenieMessage
-                        time="11:05 AM"
-                        title="Summary (2024 Annual Report):"
-                        bullets={[
-                          'Revenue: $245M (+8% YoY)',
-                          'Focus: automation for logistics',
-                          'Markets: LATAM, Southeast Asia',
-                          'Risks: margin pressure, supply chain'
-                        ]}
-                      />
-                    </div>
+        {/* Message - Lena */}
+        <Message
+          avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Lena"
+          name="Lena"
+          time="11:05 AM"
+          text="@genie — what’s our last CRM activity with them?"
+        />
 
-                    {/* Lena message */}
-                    <div className="opacity-0 animate-fade-in" style={{animationDelay: '1.4s', animationFillMode: 'forwards'}}>
-                      <Message
-                        avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Lena"
-                        name="Lena"
-                        time="11:06 AM"
-                        text="@genie — what's our latest HubSpot activity with them?"
-                      />
-                    </div>
-
-                    {/* genie CRM */}
-                    <div className="opacity-0 animate-fade-in" style={{animationDelay: '1.7s', animationFillMode: 'forwards'}}>
-                      <GenieMessage
-                        time="11:06 AM"
-                        title="CRM Activity:"
-                        bullets={[
-                          'Mar 14: Email opened (no reply)',
-                          'Feb 22: Chat — asked about integrations',
-                          'Mar 20: Opp paused (stage 2)'
-                        ]}
-                      />
-                    </div>
-
-                    {/* Raj - tech stack */}
-                    <div className="opacity-0 animate-fade-in" style={{animationDelay: '2.0s', animationFillMode: 'forwards'}}>
-                      <Message
-                        avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Raj"
-                        name="Raj"
-                        time="11:07 AM"
-                        text="Can you confirm their tech stack too?"
-                      />
-                    </div>
-
-                    {/* genie tech stack */}
-                    <div className="opacity-0 animate-fade-in" style={{animationDelay: '2.3s', animationFillMode: 'forwards'}}>
-                      <GenieMessage
-                        time="11:07 AM"
-                        title="Tech Stack:"
-                        bullets={[
-                          'CRM: HubSpot',
-                          'Automation: Tray.io',
-                          'Analytics: Looker, Amplitude',
-                          'Support: Intercom'
-                        ]}
-                      />
-                    </div>
-
-                    {/* Sarah - wrap up */}
-                    <div className="opacity-0 animate-fade-in" style={{animationDelay: '2.6s', animationFillMode: 'forwards'}}>
-                      <Message
-                        avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah"
-                        name="Sarah"
-                        time="11:08 AM"
-                        text="Perfect — saved me a deep dive. Let's move fast on this."
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        {/* Genie CRM */}
+        <GenieMessage
+          time="11:06 AM"
+          title="CRM Timeline:"
+          bullets={[
+            '📅 Mar 14: Email opened (no reply)',
+            '💬 Feb 22: Chat — asked about integrations',
+            '⏸ Mar 20: Opp paused (stage 2)'
+          ]}
+        />
+      </div>
+    </div>
+  </div>
+</div>
 
           </div>
         </div>
