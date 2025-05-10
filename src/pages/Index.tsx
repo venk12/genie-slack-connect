@@ -174,7 +174,7 @@ const Index = () => {
                   className="h-11 sm:h-12 bg-gradient-to-r from-green-600 to-green-600 hover:from-green-800 hover:to-green-800 transition-all text-sm sm:text-base"
                   disabled={isLoading}
                 >
-                  <span>Join Early Access</span>
+                  <span>Try Early Access</span>
                   <ChevronRight className="w-4 h-4" />
                 </Button>
               </form>
