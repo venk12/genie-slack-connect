@@ -133,7 +133,7 @@ const Index = () => {
               </h1>
 
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-xl mx-auto lg:mx-0">
-                Bring any LLM, workflow, or custom agent you own - straight into Slack. Mention <span className="text-yellow-500"> @genie </span>
+                Bring any LLM, workflow, or custom agent you own - straight into Slack. Summon <span className="text-yellow-500"> @genie </span>
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 py-4">
