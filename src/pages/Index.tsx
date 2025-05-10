@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from "react";
 import { toast } from "sonner";
 import { 
@@ -209,7 +208,7 @@ const Index = () => {
                         avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah"
                         name="Sarah"
                         time="11:03 AM"
-                        text="Hey @raj @lena - we need to prep for the Acme Corp call tomorrow. Can someone pull highlights from their latest annual report?"
+                        text="Hey @raj @lena — we need to prep for the Acme Corp call tomorrow. Can someone pull highlights from their latest annual report?"
                       />
                     </div>
 
@@ -253,7 +252,7 @@ const Index = () => {
                         avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Lena"
                         name="Lena"
                         time="11:06 AM"
-                        text="@genie - what's our latest HubSpot activity with them?"
+                        text="@genie — what's our latest HubSpot activity with them?"
                       />
                     </div>
 
@@ -264,7 +263,7 @@ const Index = () => {
                         title="CRM Activity:"
                         bullets={[
                           'Mar 14: Email opened (no reply)',
-                          'Feb 22: Chat - asked about integrations',
+                          'Feb 22: Chat — asked about integrations',
                           'Mar 20: Opp paused (stage 2)'
                         ]}
                       />
@@ -300,7 +299,7 @@ const Index = () => {
                         avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah"
                         name="Sarah"
                         time="11:08 AM"
-                        text="Perfect - saved me a deep dive. Let's move fast on this."
+                        text="Perfect — saved me a deep dive. Let's move fast on this."
                       />
                     </div>
                   </div>
@@ -607,59 +606,4 @@ const Index = () => {
                   <p className="text-sm md:text-base text-gray-300 mb-4 text-center md:text-left">Easily add, update, or remove agents from a centralized dashboard - whether it's a Zapier automation or a local workflow.</p>
 
                   {/* Agent Management Infographic */}
-                  <div className="bg-[#1A1D21]/80 rounded-lg border border-white/10 p-4 mt-4">
-                    <div className="flex flex-col space-y-3">
-                      <div className="flex items-center">
-                        <span className="text-white font-semibold">Agent Management Dashboard</span>
-                      </div>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        <div className="bg-[#222529] p-3 rounded border border-white/10">
-                          <div className="flex items-center">
-                            <div className="w-6 h-6 rounded bg-blue-500/20 flex items-center justify-center mr-2">
-                              <Server className="w-4 h-4 text-blue-400" />
-                            </div>
-                            <span className="text-sm text-white">HubSpot CRM Bot</span>
-                            <span className="ml-auto text-xs text-green-400">Active</span>
-                          </div>
-                        </div>
-                        <div className="bg-[#222529] p-3 rounded border border-white/10">
-                          <div className="flex items-center">
-                            <div className="w-6 h-6 rounded bg-purple-500/20 flex items-center justify-center mr-2">
-                              <Database className="w-4 h-4 text-purple-400" />
-                            </div>
-                            <span className="text-sm text-white">Sales Data Agent</span>
-                            <span className="ml-auto text-xs text-green-400">Active</span>
-                          </div>
-                        </div>
-                        <div className="bg-[#222529] p-3 rounded border border-white/10">
-                          <div className="flex items-center">
-                            <div className="w-6 h-6 rounded bg-amber-500/20 flex items-center justify-center mr-2">
-                              <MessageSquare className="w-4 h-4 text-amber-400" />
-                            </div>
-                            <span className="text-sm text-white">Meeting Summarizer</span>
-                            <span className="ml-auto text-xs text-gray-400">Inactive</span>
-                          </div>
-                        </div>
-                        <div className="bg-[#222529] p-3 rounded border border-white/10">
-                          <div className="flex items-center">
-                            <div className="w-6 h-6 rounded bg-green-500/20 flex items-center justify-center mr-2">
-                              <Slack className="w-4 h-4 text-green-400" />
-                            </div>
-                            <span className="text-sm text-white">Product Research</span>
-                            <span className="ml-auto text-xs text-green-400">Active</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
-};
-
-export default Index;
+                  <div className="bg-[#1A1D21
