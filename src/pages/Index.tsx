@@ -595,7 +595,6 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-              {/*Step 4 */}
               {/* Step 4 - Centralized agent management */}  
               <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-6">
                 <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-amber-500/20 flex items-center justify-center mx-auto md:mx-0 md:mr-4">
@@ -617,9 +616,9 @@ const Index = () => {
 
                       {/* Sample row - Zapier Agent */}
                       <div className="grid grid-cols-4 items-center py-2 border-b border-white/5">
-                        <div>Lead Enrichment</div>
+                        <div>Account Research</div>
                         <div><span className="text-green-400">Active</span></div>
-                        <div>Zapier</div>
+                        <div>Zapier Automation</div>
                         <div className="text-right text-white/50 space-x-2">
                           <button className="hover:text-amber-400">✏️</button>
                           <button className="hover:text-red-400">🗑️</button>
@@ -628,9 +627,9 @@ const Index = () => {
 
                       {/* Sample row - Custom Agent */}
                       <div className="grid grid-cols-4 items-center py-2 border-b border-white/5">
-                        <div>HubSpot Context</div>
+                        <div>HubSpot Context Server</div>
                         <div><span className="text-green-400">Active</span></div>
-                        <div>Custom MCP</div>
+                        <div>MCP</div>
                         <div className="text-right text-white/50 space-x-2">
                           <button className="hover:text-amber-400">✏️</button>
                           <button className="hover:text-red-400">🗑️</button>
