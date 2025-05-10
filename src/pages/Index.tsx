@@ -104,8 +104,8 @@ const Index = () => {
     <div className="min-h-screen bg-black text-white overflow-x-hidden font-['Segoe_UI',-apple-system,BlinkMacSystemFont,'Helvetica_Neue',Helvetica,Arial,sans-serif]">
       {/* Animated gradient background */}
       <div className="fixed inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-black to-blue-900/10" />
-        <div className="absolute inset-0 bg-gradient-to-tr from-rose-900/5 via-transparent to-amber-900/5" />
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-black to-blue-900/10" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-rose-600/5 via-transparent to-amber-900/5" />
       </div>
 
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-white/10">
