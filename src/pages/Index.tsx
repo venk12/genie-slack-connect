@@ -317,20 +317,20 @@ const Index = () => {
         <div className="container-fluid">
           <div className="max-w-4xl mx-auto text-left">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">
-              AI Is Changing Communication - But Let's Keep It Human.
+              AI is changing collaboration - But let's keep it human.
             </h2>
             
             <div className="text-gray-300 space-y-4 text-base md:text-lg">
               <p>
-                In today's digital world, AI is everywhere. It writes emails, generates reports, summarizes meetings - but every new AI tool can create distance between teams and the conversations that matter most. Sales, marketing, product—everyone is siloed in different tools, and human connection starts to get lost in the mix.
+                In today's digital world, AI is everywhere. It writes emails, generates reports, summarizes meetings - but every new AI tool can create distance between teams and the conversations that matter most. Sales, marketing, product - everyone is siloed in different tools, and human connection starts to get lost in the mix.
               </p>
               
               <p>
-                Genie solves this problem. It's a Slack-native command center where any team member can instantly access the right AI, model, or workflow—no more jumping between platforms. With just one Slack command, your team gets the insights they need, fast.
+                Genie solves this problem. It's a Slack-native command center where any team member can instantly access the right AI, model, or workflow — no more jumping between platforms. With just one Slack command, your team gets the insights they need, fast.
               </p>
               
               <p>
-                The result? AI doesn't replace human interaction. It makes it easier, faster, and more meaningful. Teams are aligned, decisions happen quickly, and communication stays at the heart of everything.
+                The result? AI doesn't replace human interaction. It makes it easier, faster, and more meaningful. Teams are aligned, decisions happen quickly and are more data-driven, and communication stays at the heart of everything.
               </p>
             </div>
           </div>
