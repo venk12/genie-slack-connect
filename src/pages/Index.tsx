@@ -202,7 +202,7 @@ const Index = () => {
                   </div>
 
                   {/* Chat Body - with individual fade-in animations */}
-                  <div className="p-4 space-y-4 bg-[#1a1d21] max-h-[70vh] md:max-h-[60vh]">
+                  <div className="p-4 space-y-4 bg-[#1a1d21] max-h-[70vh] md:max-h-[60vh] overflow-y-auto">
                     {/* Message - Sarah */}
                     <div className="opacity-0 animate-fade-in" style={{animationDelay: '0.2s', animationFillMode: 'forwards'}}>
                       <Message
