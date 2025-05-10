@@ -114,8 +114,10 @@ const Index = () => {
             {/* Center - Title */}
             <div className="absolute left-1/2 transform -translate-x-1/2">
             
-              <h1 className="text-xl sm:text-2xl font-league-spartan text-white tracking-tight">
-                <span> <img src="/genie-logo.png"></img> Genie </span> </h1>
+              <h1 className="flex items-center space-x-2 text-xl sm:text-2xl font-league-spartan text-white tracking-tight">
+                <img src="/genie-logo.png" alt="Genie logo" className="h-6 sm:h-8 w-auto" />
+                <span>Genie</span>
+              </h1>
             </div>
           </div>
         </div>
