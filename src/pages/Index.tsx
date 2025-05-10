@@ -393,28 +393,65 @@ const Index = () => {
                   <p className="text-sm md:text-base text-gray-300 mb-4 text-center md:text-left">Easily integrate with existing models and tools you already use.</p>
                   
                   {/* Integration logos */}
-                  <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-4">
-                    {/* Zapier */}
-                    <div className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16">
-                      <Slack className="w-8 h-8 text-blue-400" />
+                <div className="flex flex-col gap-6 mt-4">
+                  {/* AI Automation Tools */}
+                  <div className="flex flex-col items-center w-full">
+                    <div className="flex flex-wrap justify-center md:justify-start gap-4">
+                      {/* Zapier */}
+                      <div
+                        className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16"
+                        title="Zapier"
+                      >
+                        <Slack className="w-8 h-8" />
+                      </div>
+                      {/* n8n */}
+                      <div
+                        className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16"
+                        title="n8n"
+                      >
+                        <img src="/lovable-uploads/3dd25075-1a49-4b19-bfc3-830d0274bdb1.png" alt="n8n" className="h-10 w-auto" />
+                      </div>
+                      {/* Make */}
+                      <div
+                        className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16"
+                        title="Make"
+                      >
+                        <img src="/lovable-uploads/8ae929a3-99a1-49bc-b593-21c8d5ea6edb.png" alt="Make" className="h-10 w-auto" />
+                      </div>
                     </div>
-                    {/* n8n */}
-                    <div className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16">
-                      <img src="/lovable-uploads/3dd25075-1a49-4b19-bfc3-830d0274bdb1.png" alt="n8n" className="h-10 w-auto" />
-                    </div>
-                    {/* Make */}
-                    <div className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16">
-                      <img src="/lovable-uploads/8ae929a3-99a1-49bc-b593-21c8d5ea6edb.png" alt="Make" className="h-10 w-auto" />
-                    </div>
-                    {/* Claude */}
-                    <div className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16">
-                      <img src="/lovable-uploads/d0576a9a-259f-4374-8e19-ce3c0217f161.png" alt="Claude" className="h-10 w-auto" />
-                    </div>
-                    {/* LLMstudio */}
-                    <div className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16">
-                      <img src="/lovable-uploads/16d4d0e0-1d05-4fae-936e-67a30e7758f7.png" alt="LLMstudio" className="h-10 w-auto" />
-                    </div>
+                    <div className="w-full border-b border-white/10 mt-2"></div>
+                    <p className="text-xs text-center text-white/60 mt-1">AI Automation Tools</p>
                   </div>
+
+                  {/* Cloud LLM Provider */}
+                  <div className="flex flex-col items-center w-full">
+                    <div className="flex justify-center md:justify-start gap-4">
+                      {/* Claude */}
+                      <div
+                        className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16"
+                        title="Claude"
+                      >
+                        <img src="/lovable-uploads/d0576a9a-259f-4374-8e19-ce3c0217f161.png" alt="Claude" className="h-10 w-auto" />
+                      </div>
+                    </div>
+                    <div className="w-full border-b border-white/10 mt-2"></div>
+                    <p className="text-xs text-center text-white/60 mt-1">Cloud LLM Provider</p>
+                  </div>
+
+                  {/* Local LLMs */}
+                  <div className="flex flex-col items-center w-full">
+                    <div className="flex justify-center md:justify-start gap-4">
+                      {/* LLMstudio */}
+                      <div
+                        className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16"
+                        title="LLMstudio"
+                      >
+                        <img src="/lovable-uploads/16d4d0e0-1d05-4fae-936e-67a30e7758f7.png" alt="LLMstudio" className="h-10 w-auto" />
+                      </div>
+                    </div>
+                    <p className="text-xs text-center text-white/60 mt-1">Local LLMs</p>
+                  </div>
+                </div>
                 </div>
               </div>
               
