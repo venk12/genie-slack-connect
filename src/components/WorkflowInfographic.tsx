@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Server } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 // Custom Genie logo
 const GenieLogo = () => (
@@ -9,30 +10,120 @@ const GenieLogo = () => (
   </div>
 );
 
-// Integration logos
+// Integration logos with tooltips
 const IntegrationLogos = () => (
   <div className="flex flex-wrap justify-center gap-4">
-    <div className="bg-white p-3 rounded-lg">
-      <img src="/lovable-uploads/5d9a871e-8766-443f-afa9-bd39d693e969.png" alt="Zapier" className="h-6 w-auto" />
-    </div>
-    <div className="bg-white p-3 rounded-lg">
-      <img src="/lovable-uploads/8ae929a3-99a1-49bc-b593-21c8d5ea6edb.png" alt="Make" className="h-6 w-auto" />
-    </div>
-    <div className="bg-white p-3 rounded-lg">
-      <img src="/lovable-uploads/3dd25075-1a49-4b19-bfc3-830d0274bdb1.png" alt="n8n" className="h-6 w-auto" />
-    </div>
-    <div className="bg-white p-3 rounded-lg">
-      <img src="/lovable-uploads/d0576a9a-259f-4374-8e19-ce3c0217f161.png" alt="Claude" className="h-6 w-auto" />
-    </div>
-    <div className="bg-white p-3 rounded-lg">
-      <img src="/lovable-uploads/16d4d0e0-1d05-4fae-936e-67a30e7758f7.png" alt="LMstudio" className="h-6 w-auto" />
-    </div>
-    <div className="bg-white p-3 rounded-lg">
-      <img src="/lovable-uploads/5eb51efa-680e-4a02-9d38-a2886a13f9c5.png" alt="Agent.AI" className="h-6 w-auto" />
-    </div>
-    <div className="bg-white p-3 rounded-lg">
-      <Server className="h-6 w-6 text-purple-600" />
-    </div>
+    {/* Slack */}
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <div className="bg-white p-3 rounded-lg hover:shadow-lg transition-all">
+            <img src="/lovable-uploads/5d9a871e-8766-443f-afa9-bd39d693e969.png" alt="Zapier" className="h-6 w-auto" />
+          </div>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>Zapier - Automation workflow</p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
+
+    {/* Make */}
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <div className="bg-white p-3 rounded-lg hover:shadow-lg transition-all">
+            <img src="/lovable-uploads/8ae929a3-99a1-49bc-b593-21c8d5ea6edb.png" alt="Make" className="h-6 w-auto" />
+          </div>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>Make - Automation workflow</p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
+
+    {/* n8n */}
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <div className="bg-white p-3 rounded-lg hover:shadow-lg transition-all">
+            <img src="/lovable-uploads/3dd25075-1a49-4b19-bfc3-830d0274bdb1.png" alt="n8n" className="h-6 w-auto" />
+          </div>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>n8n - Automation workflow</p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
+
+    {/* Claude */}
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <div className="bg-white p-3 rounded-lg hover:shadow-lg transition-all">
+            <img src="/lovable-uploads/d0576a9a-259f-4374-8e19-ce3c0217f161.png" alt="Claude" className="h-6 w-auto" />
+          </div>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>Claude - Cloud-based LLM provider</p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
+
+    {/* LMstudio */}
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <div className="bg-white p-3 rounded-lg hover:shadow-lg transition-all">
+            <img src="/lovable-uploads/16d4d0e0-1d05-4fae-936e-67a30e7758f7.png" alt="LMstudio" className="h-6 w-auto" />
+          </div>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>LMStudio - Local LLM provider</p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
+
+    {/* MCP */}
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <div className="bg-white p-3 rounded-lg hover:shadow-lg transition-all">
+            <img src="/lovable-uploads/54ddb87d-0d54-4de5-ae35-6d5bc8c6fd4d.png" alt="MCP" className="h-6 w-auto" />
+          </div>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>MCP</p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
+
+    {/* Agent.AI */}
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <div className="bg-white p-3 rounded-lg hover:shadow-lg transition-all">
+            <img src="/lovable-uploads/5eb51efa-680e-4a02-9d38-a2886a13f9c5.png" alt="Agent.AI" className="h-6 w-auto" />
+          </div>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>Agent.AI</p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
+
+    {/* OpenAI */}
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <div className="bg-white p-3 rounded-lg hover:shadow-lg transition-all">
+            <Server className="h-6 w-6 text-purple-600" />
+          </div>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>OpenAI - Cloud-based LLM provider</p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
   </div>
 );
 
@@ -113,12 +204,12 @@ const WorkflowInfographic = () => {
           <div className="flex flex-col items-center text-center flex-1 px-4">
             <IntegrationLogos />
             <h3 className="text-xl font-semibold mb-3 mt-6">Bring your agents from anywhere</h3>
-            <p className="text-sm text-gray-300 max-w-[250px]">Whether they are running on Zapier, Make, n8n, or your own servers</p>
+            <p className="text-sm text-gray-300 max-w-[250px]">Cloud-based LLMs, local models, or automation workflows</p>
           </div>
         </div>
       </div>
 
-      {/* Multi-user chat demo - with reduced height and animated entries */}
+      {/* Multi-user chat demo - Condensed with shorter height */}
       <div className="mt-12 max-w-3xl mx-auto">
         <div className="glass-card rounded-lg overflow-hidden shadow-xl bg-[#3F0E40]/10">
           {/* Chat Header */}
@@ -128,8 +219,8 @@ const WorkflowInfographic = () => {
             </div>
           </div>
 
-          {/* Chat Messages - with individual fade-in animations */}
-          <div className="p-4 space-y-4 bg-[#1A1D21] max-h-[50vh] md:max-h-[40vh] overflow-y-auto">
+          {/* Chat Messages - Condensed with combined threads */}
+          <div className="p-4 space-y-4 bg-[#1A1D21] max-h-[40vh] md:max-h-[30vh] overflow-y-auto">
             {/* Sarah's Message */}
             <div className="flex items-start space-x-3 animate-fade-in opacity-0" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
               <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah" alt="User" className="w-8 h-8 rounded" />
@@ -144,36 +235,22 @@ const WorkflowInfographic = () => {
               </div>
             </div>
 
-            {/* Mike's Message */}
+            {/* Mike and Alex combined thread */}
             <div className="flex items-start space-x-3 animate-fade-in opacity-0" style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}>
-              <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Mike" alt="User" className="w-8 h-8 rounded" />
-              <div>
-                <div className="flex items-center">
-                  <span className="font-medium text-white">Mike</span>
-                  <span className="ml-2 text-xs text-gray-400">10:17 AM</span>
-                </div>
-                <p className="text-gray-300 mt-1">
-                  I heard they might be shifting from AWS to Azure, but let's ask <span className="text-yellow-300">@genie</span> to pull data from Hubspot and recent news.
-                </p>
-              </div>
-            </div>
-
-            {/* Team message asking Genie */}
-            <div className="flex items-start space-x-3 animate-fade-in opacity-0" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
               <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Alex" alt="User" className="w-8 h-8 rounded" />
               <div>
                 <div className="flex items-center">
                   <span className="font-medium text-white">Alex</span>
-                  <span className="ml-2 text-xs text-gray-400">10:18 AM</span>
+                  <span className="ml-2 text-xs text-gray-400">10:17 AM</span>
                 </div>
                 <p className="text-gray-300 mt-1">
-                  <span className="text-yellow-300">@genie</span> Can you research Acme Corp's tech stack changes in the last quarter and suggest discussion points for Sarah's meeting tomorrow? Check both Hubspot and recent news.
+                  <span className="text-yellow-300">@genie</span> Can you research Acme Corp's tech stack changes in the last quarter and suggest discussion points for Sarah's meeting tomorrow?
                 </p>
               </div>
             </div>
 
             {/* Genie Response */}
-            <div className="flex items-start space-x-3 animate-fade-in opacity-0" style={{ animationDelay: '1.1s', animationFillMode: 'forwards' }}>
+            <div className="flex items-start space-x-3 animate-fade-in opacity-0" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
               <div className="w-8 h-8 rounded bg-gradient-to-r from-yellow-600 to-amber-600 flex items-center justify-center">
                 <span className="text-white text-xs">✨</span>
               </div>
@@ -182,31 +259,29 @@ const WorkflowInfographic = () => {
                   <span className="font-medium text-amber-500">genie</span>
                   <span className="ml-2 text-xs text-gray-400">10:19 AM</span>
                 </div>
-                <div className="mt-1 p-3 bg-[#222529] rounded-lg border border-[#565856]/30">
-                  <p className="text-gray-300 text-sm">Based on Hubspot data and recent news, here's what I found about Acme Corp:</p>
+                
+                <div className="mt-1 opacity-0 animate-fade-in" style={{animationDelay: '1.1s', animationFillMode: 'forwards'}}>
+                  <p className="text-gray-400 text-xs italic">1. Researching news articles via Zapier...</p>
+                </div>
+                
+                <div className="mt-1 opacity-0 animate-fade-in" style={{animationDelay: '1.4s', animationFillMode: 'forwards'}}>
+                  <p className="text-gray-400 text-xs italic">2. Checking Hubspot data via MCP...</p>
+                </div>
+                
+                <div className="mt-1 opacity-0 animate-fade-in" style={{animationDelay: '1.7s', animationFillMode: 'forwards'}}>
+                  <p className="text-gray-400 text-xs italic">3. Consolidating information...</p>
+                </div>
+                
+                <div className="mt-2 p-3 bg-[#222529] rounded-lg border border-[#565856]/30 opacity-0 animate-fade-in" style={{animationDelay: '2s', animationFillMode: 'forwards'}}>
+                  <p className="text-gray-300 text-sm">Here's what I found about Acme Corp:</p>
                   <ul className="mt-2 text-sm text-gray-300 list-disc pl-5 space-y-1">
-                    <li>Transitioning from AWS to Azure over the next 6 months (confirmed in their Q2 earnings call)</li>
-                    <li>HubSpot notes: 3 meetings with their CTO about integration challenges</li>
-                    <li>Recent press release mentioned a $2.4M budget for cloud consulting</li>
-                    <li>Their LinkedIn shows 5 new Azure engineer hires in the last month</li>
+                    <li>Transitioning from AWS to Azure (confirmed in Q2 earnings call)</li>
+                    <li>3 meetings with their CTO about integration challenges</li>
+                    <li>$2.4M budget for cloud consulting</li>
+                    <li>5 new Azure engineer hires last month</li>
                   </ul>
-                  <p className="mt-3 text-sm text-gray-300">Recommended approach: Focus on our Azure migration services and training programs. Their CTO (James Wilson) is particularly concerned about security during the transition.</p>
                 </div>
                 <p className="text-xs text-gray-500 mt-2">@genie saved 3 hours of research in 20 seconds</p>
-              </div>
-            </div>
-
-            {/* Sarah's follow-up */}
-            <div className="flex items-start space-x-3 animate-fade-in opacity-0" style={{ animationDelay: '1.4s', animationFillMode: 'forwards' }}>
-              <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah" alt="User" className="w-8 h-8 rounded" />
-              <div>
-                <div className="flex items-center">
-                  <span className="font-medium text-white">Sarah</span>
-                  <span className="ml-2 text-xs text-gray-400">10:21 AM</span>
-                </div>
-                <p className="text-gray-300 mt-1">
-                  This is perfect! Thanks team and @genie - I'll build my presentation around these points. Can you add this to our meeting prep doc?
-                </p>
               </div>
             </div>
           </div>
