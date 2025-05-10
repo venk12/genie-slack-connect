@@ -126,7 +126,7 @@ const Index = () => {
       {/* Hero Section */}
       <section className="hero-section relative min-h-screen flex flex-col items-center justify-center py-20 md:py-28 lg:py-40 section-transition">
         <div className="container-fluid relative z-10">
-          <div className="grid lg:grid-cols-2 items-center gap-8">
+            <div className="grid lg:grid-cols-2 items-center gap-8 lg:gap-16">
             {/* Left Side - Text Content */}
             <div className="text-center lg:text-left mb-10 lg:mb-0 stagger-fade-in space-y-4 md:space-y-6 animate-on-scroll opacity-0 px-4 sm:px-6 lg:px-0">
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight">
