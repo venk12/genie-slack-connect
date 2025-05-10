@@ -401,10 +401,10 @@ const Index = () => {
                       <div className="flex gap-4">
                         {/* Zapier */}
                         <div
-                          className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16"
+                          className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center h-16"
                           title="Zapier"
                         >
-                          <Slack className="w-8 h-8" />
+                          <img src="/lovable-uploads/5d9a871e-8766-443f-afa9-bd39d693e969.png" alt="n8n" className="h-10 w-auto" />
                         </div>
                         {/* n8n */}
                         <div
@@ -457,6 +457,21 @@ const Index = () => {
                       </div>
                       <p className="text-xs text-white/60 mt-1">Local LLMs</p>
                     </div>
+                    
+                    {/* MCP Servers */}
+                    <div className="flex flex-col items-center gap-2">
+                      <div className="flex gap-4">
+                        {/* MCP Servers */}
+                        <div
+                          className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16"
+                          title="MCPservers"
+                        >
+                          <img src="/lovable-uploads/sd982398-2319-4323-349as-3014716730.png" alt="MCP Servers" className="h-10 w-auto" />
+                        </div>
+                      </div>
+                      <p className="text-xs text-white/60 mt-1">MCP Servers</p>
+                    </div>
+                    
                   </div>
                 </div>
                 </div>
