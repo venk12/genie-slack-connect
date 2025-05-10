@@ -627,7 +627,7 @@ const Index = () => {
 
                       {/* Sample row - Custom Agent */}
                       <div className="grid grid-cols-4 items-center py-2 border-b border-white/5">
-                        <div>HubSpot Context Server</div>
+                        <div>HubSpot Agent</div>
                         <div><span className="text-green-400">Active</span></div>
                         <div>MCP</div>
                         <div className="text-right text-white/50 space-x-2">
