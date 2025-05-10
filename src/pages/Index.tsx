@@ -595,6 +595,58 @@ const Index = () => {
                   </div>
                 </div>
               </div>
+              {/*Step 4 */}
+              {/* Step 4 - Centralized agent management */}  
+              <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-6">
+                <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-amber-500/20 flex items-center justify-center mx-auto md:mx-0 md:mr-4">
+                  <span className="text-amber-500 font-bold">4</span>
+                </div>
+                <div className="md:flex-1">
+                  <h3 className="text-lg md:text-xl font-semibold mb-2 text-center md:text-left">Manage all your agents and automations in one place</h3>
+                  <p className="text-sm md:text-base text-gray-300 mb-4 text-center md:text-left">Easily add, update, or remove agents from a centralized dashboard—whether it's a Zapier automation or a local workflow.</p>
+
+                  {/* Agent Management Infographic */}
+                  <div className="bg-[#1A1D21]/80 rounded-lg border border-white/10 p-4 mt-4">
+                    <div className="text-white text-sm font-mono">
+                      <div className="grid grid-cols-4 text-xs text-white/60 border-b border-white/10 pb-2 mb-2">
+                        <div>Agent</div>
+                        <div>Status</div>
+                        <div>Type</div>
+                        <div className="text-right">Actions</div>
+                      </div>
+
+                      {/* Sample row - Zapier Agent */}
+                      <div className="grid grid-cols-4 items-center py-2 border-b border-white/5">
+                        <div>Lead Enrichment</div>
+                        <div><span className="text-green-400">Active</span></div>
+                        <div>Zapier</div>
+                        <div className="text-right text-white/50 space-x-2">
+                          <button className="hover:text-amber-400">✏️</button>
+                          <button className="hover:text-red-400">🗑️</button>
+                        </div>
+                      </div>
+
+                      {/* Sample row - Custom Agent */}
+                      <div className="grid grid-cols-4 items-center py-2 border-b border-white/5">
+                        <div>HubSpot Context</div>
+                        <div><span className="text-green-400">Active</span></div>
+                        <div>Custom MCP</div>
+                        <div className="text-right text-white/50 space-x-2">
+                          <button className="hover:text-amber-400">✏️</button>
+                          <button className="hover:text-red-400">🗑️</button>
+                        </div>
+                      </div>
+
+                      {/* Add New Agent Button */}
+                      <div className="mt-3 text-center">
+                        <button className="bg-amber-500/10 text-amber-400 px-3 py-1 text-xs rounded hover:bg-amber-500/20">
+                          + Add New Agent
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
