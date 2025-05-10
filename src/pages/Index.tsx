@@ -560,28 +560,33 @@ const Index = () => {
                           <span className="font-medium text-amber-500">genie</span>
                           <span className="ml-2 text-xs text-gray-400">Just now</span>
                         </div>
-                        <p className="text-gray-300 mt-1 italic animate-fadein opacity-0 animation-delay-0">
+
+                        <p className="text-gray-300 mt-1 italic">
                           Looking up information...
                         </p>
-                        <div className="flex items-center mt-4 opacity-0 animate-fadein animation-delay-1500">
+
+                        <div className="flex items-center mt-4">
                           <div className="w-4 h-4 mr-2">
-                            <div className="animate-spin h-4 w-4 border-2 border-white/40 border-t-white rounded-full"></div>
+                            <div className="h-4 w-4 border-2 border-white/40 border-t-white rounded-full"></div>
                           </div>
                           <p className="text-gray-200">Researching news articles (via Zapier)</p>
                         </div>
-                        <div className="flex items-center mt-2 opacity-0 animate-fadein animation-delay-3000">
+
+                        <div className="flex items-center mt-2">
                           <div className="w-4 h-4 mr-2">
-                            <div className="animate-spin h-4 w-4 border-2 border-white/40 border-t-white rounded-full"></div>
+                            <div className="h-4 w-4 border-2 border-white/40 border-t-white rounded-full"></div>
                           </div>
                           <p className="text-gray-200">Researching HubSpot context (via HubSpot MCP)</p>
                         </div>
-                        <div className="flex items-center mt-2 opacity-0 animate-fadein animation-delay-4500">
+
+                        <div className="flex items-center mt-2">
                           <div className="w-4 h-4 mr-2">
-                            <div className="animate-spin h-4 w-4 border-2 border-white/40 border-t-white rounded-full"></div>
+                            <div className="h-4 w-4 border-2 border-white/40 border-t-white rounded-full"></div>
                           </div>
                           <p className="text-gray-200">Consolidating all the information</p>
                         </div>
-                        <div className="mt-4 text-green-300 opacity-0 animate-fadein animation-delay-6000">
+
+                        <div className="mt-4 text-green-300">
                           ✅ Here's the consolidated research from all sources.
                         </div>
                       </div>
@@ -633,7 +638,7 @@ const Index = () => {
               Get Early Access
             </h2>
             <p className="text-base md:text-lg lg:text-xl text-gray-300 mb-6 md:mb-8">
-              Limited to 50 workspaces! Receive concierge onboarding, priority support, and lifetime 20% discount.
+              Limited to 20 workspaces! Receive custom onboarding, priority support, and lifetime 10% discount.
             </p>
             <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-3 max-w-md mx-auto">
               <div className="flex-grow">
@@ -656,12 +661,12 @@ const Index = () => {
                 className="h-11 sm:h-12 bg-gradient-to-r from-green-600 to-green-600 hover:from-green-800 hover:to-green-800 transition-all text-sm sm:text-base"
                 disabled={isLoading}
               >
-                <span>Join Now</span>
+                <span>Try Early Access</span>
                 <ArrowRight className="w-4 h-4" />
               </Button>
             </form>
             
-            <div className="mt-12 md:mt-16">
+            {/* <div className="mt-12 md:mt-16">
               <p className="text-gray-400 mb-4">Already powering:</p>
               <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
                 <span className="text-gray-300 font-semibold">Atlassian</span>
@@ -669,7 +674,7 @@ const Index = () => {
                 <span className="text-gray-300 font-semibold">+ more</span>
               </div>
               <p className="text-gray-400 mt-4 text-sm">Ready to summon the genie?</p>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
