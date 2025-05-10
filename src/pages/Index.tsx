@@ -113,7 +113,9 @@ const Index = () => {
           <div className="flex items-center justify-between h-16">
             {/* Center - Title */}
             <div className="absolute left-1/2 transform -translate-x-1/2">
-              <h1 className="text-xl sm:text-2xl font-league-spartan text-white tracking-tight">✨ Genie</h1>
+            
+              <h1 className="text-xl sm:text-2xl font-league-spartan text-white tracking-tight">
+                <span> <img src="/genie-logo.png"></img> Genie </span> </h1>
             </div>
           </div>
         </div>
@@ -178,73 +180,73 @@ const Index = () => {
                   <ChevronRight className="w-4 h-4" />
                 </Button>
               </form>
-              <span className="text-xs opacity-75 block">Currently limited to 20 workspaces!
+              <span className="text-xs opacity-75 block">Currently limited to 20 teams!
                  Get high-touch onboarding, priority slack support for first 6 months by signing up here</span>
             </div>
 
             {/* Right Side - Chat Infographic */}
-<div className="w-full lg:max-w-[95%] relative px-4 lg:px-0">
-  {/* Background Highlight */}
-  <div className="absolute -inset-4 bg-gradient-to-br from-yellow-400/5 via-amber-400/5 to-transparent rounded-2xl blur-3xl"></div>
+            <div className="w-full lg:max-w-[95%] relative px-4 lg:px-0">
+              {/* Background Highlight */}
+              <div className="absolute -inset-4 bg-gradient-to-br from-yellow-400/5 via-amber-400/5 to-transparent rounded-2xl blur-3xl"></div>
 
-  {/* Chat Infographic Container */}
-  <div className="relative w-full max-w-2xl mx-auto lg:ml-0 transform lg:scale-100 font-league-spartan">
-    <div className="glass-card rounded-xl overflow-visible shadow-2xl border border-white/10 bg-[#1a1d21]">
+              {/* Chat Infographic Container */}
+              <div className="relative w-full max-w-2xl mx-auto lg:ml-0 transform lg:scale-100 font-league-spartan">
+                <div className="glass-card rounded-xl overflow-visible shadow-2xl border border-white/10 bg-[#1a1d21]">
 
-      {/* Chat Header */}
-      <div className="bg-[#1d1f23] p-3 border-b border-white/10 flex items-center rounded-t-xl">
-        <div className="flex space-x-2">
-          <div className="w-2.5 h-2.5 rounded-full bg-red-500" />
-          <div className="w-2.5 h-2.5 rounded-full bg-yellow-500" />
-          <div className="w-2.5 h-2.5 rounded-full bg-green-500" />
-        </div>
-        <span className="ml-3 text-xs text-gray-400">#research-acme</span>
-      </div>
+                  {/* Chat Header */}
+                  <div className="bg-[#1d1f23] p-3 border-b border-white/10 flex items-center rounded-t-xl">
+                    <div className="flex space-x-2">
+                      <div className="w-2.5 h-2.5 rounded-full bg-red-500" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-yellow-500" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-green-500" />
+                    </div>
+                    <span className="ml-3 text-xs text-gray-400">#research-acme</span>
+                  </div>
 
-      {/* Chat Body */}
-      <div className="p-6 space-y-5">
-        {/* Message - Sarah */}
-        <Message
-          avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah"
-          name="Sarah"
-          time="11:03 AM"
-          text="Hey @genie — can you give us a quick overview of Acme Corp?"
-        />
+                  {/* Chat Body */}
+                  <div className="p-6 space-y-5">
+                    {/* Message - Sarah */}
+                    <Message
+                      avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah"
+                      name="Sarah"
+                      time="11:03 AM"
+                      text="Hey @genie — can you give us a quick overview of Acme Corp?"
+                    />
 
-        {/* Genie Summary */}
-        <GenieMessage
-          time="11:04 AM"
-          title="Acme Corp – 2024 Highlights:"
-          bullets={[
-            '📈 Revenue: $245M (+8% YoY)',
-            '🚚 Focus: Logistics automation',
-            '🌍 Markets: LATAM, Southeast Asia',
-            '⚠️ Risks: Margin pressure, supply chain'
-          ]}
-        />
+                    {/* Genie Summary */}
+                    <GenieMessage
+                      time="11:04 AM"
+                      title="Acme Corp – 2024 Highlights:"
+                      bullets={[
+                        '📈 Revenue: $245M (+8% YoY)',
+                        '🚚 Focus: Logistics automation',
+                        '🌍 Markets: LATAM, Southeast Asia',
+                        '⚠️ Risks: Margin pressure, supply chain'
+                      ]}
+                    />
 
-        {/* Message - Lena */}
-        <Message
-          avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Lena"
-          name="Lena"
-          time="11:05 AM"
-          text="@genie — what’s our last CRM activity with them?"
-        />
+                    {/* Message - Lena */}
+                    <Message
+                      avatar="https://api.dicebear.com/7.x/avataaars/svg?seed=Lena"
+                      name="Lena"
+                      time="11:05 AM"
+                      text="@genie — what’s our last CRM activity with them?"
+                    />
 
-        {/* Genie CRM */}
-        <GenieMessage
-          time="11:06 AM"
-          title="CRM Timeline:"
-          bullets={[
-            '📅 Mar 14: Email opened (no reply)',
-            '💬 Feb 22: Chat — asked about integrations',
-            '⏸ Mar 20: Opp paused (stage 2)'
-          ]}
-        />
-      </div>
-    </div>
-  </div>
-</div>
+                    {/* Genie CRM */}
+                    <GenieMessage
+                      time="11:06 AM"
+                      title="CRM Timeline:"
+                      bullets={[
+                        '📅 Mar 14: Email opened (no reply)',
+                        '💬 Feb 22: Chat — asked about integrations',
+                        '⏸ Mar 20: Opp paused (stage 2)'
+                      ]}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
 
           </div>
         </div>
