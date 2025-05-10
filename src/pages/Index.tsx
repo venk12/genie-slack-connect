@@ -270,15 +270,15 @@ const Index = () => {
             
             <div className="text-gray-300 space-y-4 text-base md:text-lg">
               <p>
-                In today's digital world, AI is everywhere. It writes emails, generates reports, summarizes meetings—but every new AI tool can create distance between teams and the conversations that matter most. Sales, marketing, product—everyone is siloed in different tools, and human connection starts to get lost in the mix.
+                In today's digital world, AI is everywhere - writing emails, summarizing meetings, generating ideas. But with every new tool, teams end up more scattered, jumping between apps and losing the thread of real conversation.
               </p>
               
               <p>
-                Genie solves this problem. It's a Slack-native command center where any team member can instantly access the right AI, model, or workflow — no more jumping between platforms. With just one Slack command, your team gets the insights they need, fast.
+                That’s why we’re building Genie. It lives right inside Slack and helps anyone on your team call up the right AI or workflow with a simple command. No tabs. No toggling. Just answers, fast.
               </p>
               
               <p>
-                The result? AI doesn't replace human interaction. It makes it easier, faster, and more meaningful. Teams are aligned, decisions happen quickly and are more data-driven, and communication stays at the heart of everything.
+                Because AI should make teamwork easier - not more complicated. With Genie, teams stay in sync, move faster, and keep the human connection at the center of it all.
               </p>
             </div>
           </div>
