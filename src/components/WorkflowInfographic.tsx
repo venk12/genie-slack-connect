@@ -31,7 +31,7 @@ const IntegrationLogos = () => (
       <img src="/lovable-uploads/5eb51efa-680e-4a02-9d38-a2886a13f9c5.png" alt="Agent.AI" className="h-6 w-auto" />
     </div>
     <div className="bg-white p-3 rounded-lg">
-      <Server className="h-6 w-6 text-purple-600" />
+      <Server className="h-6 w-6 text-[#4A154B]" />
     </div>
   </div>
 );
@@ -80,7 +80,7 @@ const WorkflowInfographic = () => {
           {/* Step 2: Genie (remains in middle) */}
           <div className="flex flex-col items-center text-center flex-1 px-4">
             <div className="mb-6">
-              <div className="p-3 rounded-lg bg-gradient-to-br from-[#4A154B]/10 via-[#4A154B]/15 to-[#4A154B]/10 border border-[#4A154B]/20 shadow-[0_0_15px_rgba(74,21,75,0.2)]">
+              <div className="p-3 rounded-lg bg-gradient-to-br from-[#4A154B]/20 via-[#4A154B]/30 to-[#4A154B]/20 border border-[#4A154B]/30 shadow-[0_0_15px_rgba(74,21,75,0.3)]">
                 <GenieLogo />
               </div>
             </div>
@@ -128,8 +128,8 @@ const WorkflowInfographic = () => {
             </div>
           </div>
 
-          {/* Chat Messages - with individual fade-in animations */}
-          <div className="p-4 space-y-4 bg-[#1A1D21] max-h-[50vh] md:max-h-[40vh] overflow-y-auto">
+          {/* Chat Messages - with individual fade-in animations - no scrolling */}
+          <div className="p-4 space-y-4 bg-[#1A1D21] overflow-hidden">
             {/* Sarah's Message */}
             <div className="flex items-start space-x-3 animate-fade-in opacity-0" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
               <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah" alt="User" className="w-8 h-8 rounded" />
@@ -139,7 +139,7 @@ const WorkflowInfographic = () => {
                   <span className="ml-2 text-xs text-gray-400">10:15 AM</span>
                 </div>
                 <p className="text-gray-300 mt-1">
-                  Team, I need to prepare for the Acme Corp meeting tomorrow. Any insights on their recent tech infrastructure changes?
+                  Team, I need to prepare for the Acme Corp meeting tomorrow. Any insights on their recent tech changes?
                 </p>
               </div>
             </div>
@@ -153,21 +153,7 @@ const WorkflowInfographic = () => {
                   <span className="ml-2 text-xs text-gray-400">10:17 AM</span>
                 </div>
                 <p className="text-gray-300 mt-1">
-                  I heard they might be shifting from AWS to Azure, but let's ask <span className="text-yellow-300">@genie</span> to pull data from Hubspot and recent news.
-                </p>
-              </div>
-            </div>
-
-            {/* Team message asking Genie */}
-            <div className="flex items-start space-x-3 animate-fade-in opacity-0" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
-              <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Alex" alt="User" className="w-8 h-8 rounded" />
-              <div>
-                <div className="flex items-center">
-                  <span className="font-medium text-white">Alex</span>
-                  <span className="ml-2 text-xs text-gray-400">10:18 AM</span>
-                </div>
-                <p className="text-gray-300 mt-1">
-                  <span className="text-yellow-300">@genie</span> Can you research Acme Corp's tech stack changes in the last quarter and suggest discussion points for Sarah's meeting tomorrow? Check both Hubspot and recent news.
+                  Let's ask <span className="text-yellow-300">@genie</span> to pull data from Hubspot and recent news.
                 </p>
               </div>
             </div>
@@ -182,31 +168,15 @@ const WorkflowInfographic = () => {
                   <span className="font-medium text-amber-500">genie</span>
                   <span className="ml-2 text-xs text-gray-400">10:19 AM</span>
                 </div>
-                <div className="mt-1 p-3 bg-[#222529] rounded-lg border border-[#565856]/30">
-                  <p className="text-gray-300 text-sm">Based on Hubspot data and recent news, here's what I found about Acme Corp:</p>
+                <div className="mt-1 p-3 bg-[#222529] rounded-lg border border-[#4A154B]/30">
+                  <p className="text-gray-300 text-sm">Based on Hubspot data and recent news:</p>
                   <ul className="mt-2 text-sm text-gray-300 list-disc pl-5 space-y-1">
-                    <li>Transitioning from AWS to Azure over the next 6 months (confirmed in their Q2 earnings call)</li>
-                    <li>HubSpot notes: 3 meetings with their CTO about integration challenges</li>
-                    <li>Recent press release mentioned a $2.4M budget for cloud consulting</li>
-                    <li>Their LinkedIn shows 5 new Azure engineer hires in the last month</li>
+                    <li>Transitioning from AWS to Azure (Q2 earnings call)</li>
+                    <li>$2.4M budget for cloud consulting</li>
+                    <li>5 new Azure engineer hires last month</li>
                   </ul>
-                  <p className="mt-3 text-sm text-gray-300">Recommended approach: Focus on our Azure migration services and training programs. Their CTO (James Wilson) is particularly concerned about security during the transition.</p>
                 </div>
                 <p className="text-xs text-gray-500 mt-2">@genie saved 3 hours of research in 20 seconds</p>
-              </div>
-            </div>
-
-            {/* Sarah's follow-up */}
-            <div className="flex items-start space-x-3 animate-fade-in opacity-0" style={{ animationDelay: '1.4s', animationFillMode: 'forwards' }}>
-              <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah" alt="User" className="w-8 h-8 rounded" />
-              <div>
-                <div className="flex items-center">
-                  <span className="font-medium text-white">Sarah</span>
-                  <span className="ml-2 text-xs text-gray-400">10:21 AM</span>
-                </div>
-                <p className="text-gray-300 mt-1">
-                  This is perfect! Thanks team and @genie - I'll build my presentation around these points. Can you add this to our meeting prep doc?
-                </p>
               </div>
             </div>
           </div>

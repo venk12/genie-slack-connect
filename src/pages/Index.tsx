@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from "react";
 import { toast } from "sonner";
 import { 
@@ -183,26 +182,26 @@ const Index = () => {
             </div>
 
             {/* Right Side - Chat Interface */}
-            <div className="w-full lg:translate-x-8 xl:translate-x-12 lg:max-w-[90%] relative px-4 lg:px-0">
+            <div className="w-full lg:translate-x-8 xl:translate-x-12 lg:max-w-[100%] relative px-4 lg:px-0">
               {/* Background Highlight */}
-              <div className="absolute -inset-4 bg-gradient-to-br from-yellow-400/5 via-amber-400/5 to-transparent rounded-2xl blur-3xl"></div>
+              <div className="absolute -inset-4 bg-gradient-to-br from-[#4A154B]/10 via-[#4A154B]/5 to-transparent rounded-2xl blur-3xl"></div>
 
               {/* Animated Chat Interface */}
-              <div className="relative w-full max-w-lg mx-auto lg:ml-0 transform lg:scale-90 font-league-spartan">
+              <div className="relative w-full max-w-xl mx-auto lg:ml-0 transform lg:scale-90 font-league-spartan">
                 <div className="glass-card rounded-lg overflow-visible shadow-2xl">
                   
                   {/* Chat Header */}
-                  <div className="bg-[#1d1f23] p-2 sm:p-3 border-b border-white/10">
+                  <div className="bg-[#4A154B] p-2 sm:p-3 border-b border-white/10">
                     <div className="flex items-center">
                       <div className="w-2.5 h-2.5 rounded-full bg-red-500 mr-2"></div>
                       <div className="w-2.5 h-2.5 rounded-full bg-yellow-500 mr-2"></div>
                       <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
-                      <span className="ml-3 text-xs text-gray-400">#research-acme</span>
+                      <span className="ml-3 text-xs text-gray-200">#research-acme</span>
                     </div>
                   </div>
 
                   {/* Chat Body - with individual fade-in animations */}
-                  <div className="p-4 space-y-4 bg-[#1a1d21] max-h-[70vh] md:max-h-[60vh] overflow-y-auto">
+                  <div className="p-4 space-y-4 bg-[#1a1d21] max-h-[60vh] md:max-h-[50vh] overflow-hidden">
                     {/* Message - Sarah */}
                     <div className="opacity-0 animate-fade-in" style={{animationDelay: '0.2s', animationFillMode: 'forwards'}}>
                       <Message
@@ -317,16 +316,16 @@ const Index = () => {
         <div className="container-fluid">
           <div className="max-w-4xl mx-auto text-left">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">
-              AI Is Changing Communication—But Let's Keep It Human.
+              AI Is Changing Communication - But Let's Keep It Human.
             </h2>
             
             <div className="text-gray-300 space-y-4 text-base md:text-lg">
               <p>
-                In today's digital world, AI is everywhere. It writes emails, generates reports, summarizes meetings—but every new AI tool can create distance between teams and the conversations that matter most. Sales, marketing, product—everyone is siloed in different tools, and human connection starts to get lost in the mix.
+                In today's digital world, AI is everywhere. It writes emails, generates reports, summarizes meetings - but every new AI tool can create distance between teams and the conversations that matter most. Sales, marketing, product - everyone is siloed in different tools, and human connection starts to get lost in the mix.
               </p>
               
               <p>
-                Genie solves this problem. It's a Slack-native command center where any team member can instantly access the right AI, model, or workflow—no more jumping between platforms. With just one Slack command, your team gets the insights they need, fast.
+                Genie solves this problem. It's a Slack-native command center where any team member can instantly access the right AI, model, or workflow - no more jumping between platforms. With just one Slack command, your team gets the insights they need, fast.
               </p>
               
               <p>
@@ -536,7 +535,7 @@ const Index = () => {
                   <p className="text-sm md:text-base text-gray-300 mb-4 text-center md:text-left">Team members simply @mention genie and ask questions in natural language.</p>
                   
                   {/* @genie mention infographic */}
-                  <div className="bg-[#1A1D21]/80 rounded-lg border border-white/10 p-4 mt-4">
+                  <div className="bg-[#1A1D21]/80 rounded-lg border border-[#4A154B]/40 p-4 mt-4">
                     <div className="flex items-start space-x-3">
                       <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Alex" alt="User" className="w-8 h-8 rounded" />
                       <div>
@@ -551,7 +550,7 @@ const Index = () => {
                     </div>
                     
                     <div className="flex items-start space-x-3 mt-3">
-                      <div className="w-8 h-8 rounded bg-gradient-to-r from-yellow-600 to-amber-600 flex items-center justify-center">
+                      <div className="w-8 h-8 rounded bg-gradient-to-r from-[#4A154B] to-[#611f61] flex items-center justify-center">
                         <span className="text-white text-xs">✨</span>
                       </div>
                       {/* start */}
@@ -567,21 +566,21 @@ const Index = () => {
 
                         <div className="flex items-center mt-4">
                           <div className="w-4 h-4 mr-2">
-                            <div className="h-4 w-4 border-2 border-white/40 border-t-white rounded-full"></div>
+                            <div className="h-4 w-4 border-2 border-white/40 border-t-white rounded-full animate-spin"></div>
                           </div>
                           <p className="text-gray-200">Researching news articles (via Zapier)</p>
                         </div>
 
                         <div className="flex items-center mt-2">
                           <div className="w-4 h-4 mr-2">
-                            <div className="h-4 w-4 border-2 border-white/40 border-t-white rounded-full"></div>
+                            <div className="h-4 w-4 border-2 border-white/40 border-t-white rounded-full animate-spin"></div>
                           </div>
                           <p className="text-gray-200">Researching HubSpot context (via HubSpot MCP)</p>
                         </div>
 
                         <div className="flex items-center mt-2">
                           <div className="w-4 h-4 mr-2">
-                            <div className="h-4 w-4 border-2 border-white/40 border-t-white rounded-full"></div>
+                            <div className="h-4 w-4 border-2 border-white/40 border-t-white rounded-full animate-spin"></div>
                           </div>
                           <p className="text-gray-200">Consolidating all the information</p>
                         </div>
@@ -595,6 +594,7 @@ const Index = () => {
                   </div>
                 </div>
               </div>
+              
               {/*Step 4 */}
               {/* Step 4 - Centralized agent management */}  
               <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-6">
@@ -603,146 +603,7 @@ const Index = () => {
                 </div>
                 <div className="md:flex-1">
                   <h3 className="text-lg md:text-xl font-semibold mb-2 text-center md:text-left">Manage all your agents and automations in one place</h3>
-                  <p className="text-sm md:text-base text-gray-300 mb-4 text-center md:text-left">Easily add, update, or remove agents from a centralized dashboard—whether it's a Zapier automation or a local workflow.</p>
+                  <p className="text-sm md:text-base text-gray-300 mb-4 text-center md:text-left">Easily add, update, or remove agents from a centralized dashboard - whether it's a Zapier automation or a local workflow.</p>
 
                   {/* Agent Management Infographic */}
-                  <div className="bg-[#1A1D21]/80 rounded-lg border border-white/10 p-4 mt-4">
-                    <div className="text-white text-sm font-mono">
-                      <div className="grid grid-cols-4 text-xs text-white/60 border-b border-white/10 pb-2 mb-2">
-                        <div>Agent</div>
-                        <div>Status</div>
-                        <div>Type</div>
-                        <div className="text-right">Actions</div>
-                      </div>
-
-                      {/* Sample row - Zapier Agent */}
-                      <div className="grid grid-cols-4 items-center py-2 border-b border-white/5">
-                        <div>Lead Enrichment</div>
-                        <div><span className="text-green-400">Active</span></div>
-                        <div>Zapier</div>
-                        <div className="text-right text-white/50 space-x-2">
-                          <button className="hover:text-amber-400">✏️</button>
-                          <button className="hover:text-red-400">🗑️</button>
-                        </div>
-                      </div>
-
-                      {/* Sample row - Custom Agent */}
-                      <div className="grid grid-cols-4 items-center py-2 border-b border-white/5">
-                        <div>HubSpot Context</div>
-                        <div><span className="text-green-400">Active</span></div>
-                        <div>Custom MCP</div>
-                        <div className="text-right text-white/50 space-x-2">
-                          <button className="hover:text-amber-400">✏️</button>
-                          <button className="hover:text-red-400">🗑️</button>
-                        </div>
-                      </div>
-
-                      {/* Add New Agent Button */}
-                      <div className="mt-3 text-center">
-                        <button className="bg-amber-500/10 text-amber-400 px-3 py-1 text-xs rounded hover:bg-amber-500/20">
-                          + Add New Agent
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Security Section - Streamlined */}
-      <section ref={benefitsRef} className="py-12 md:py-16 bg-black/90 relative">
-        <div className="container-fluid">
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-center">Built for productivity, ease of use & security</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto mb-8 md:mb-16">
-            <div className="bg-white/5 p-5 md:p-6 rounded-lg border border-white/10">
-              <div className="text-purple-400 mb-4">
-                <Database className="w-8 md:w-10 h-8 md:h-10" />
-              </div>
-              <h3 className="text-lg font-bold mb-2 md:mb-3">Admin-level audit log</h3>
-              <p className="text-sm md:text-base text-gray-300">
-                Complete visibility into all interactions and usage.
-              </p>
-            </div>
-            
-            <div className="bg-white/5 p-5 md:p-6 rounded-lg border border-white/10">
-              <div className="text-green-400 mb-4">
-                <Shield className="w-8 md:w-10 h-8 md:h-10" />
-              </div>
-              <h3 className="text-lg font-bold mb-2 md:mb-3">Enterprise-grade security</h3>
-              <p className="text-sm md:text-base text-gray-300">
-                Protection for your most sensitive company data.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Final CTA Section */}
-      <section className="py-16 md:py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-purple-900/20 z-0" />
-        <div className="container-fluid relative z-10">
-          <div className="max-w-3xl mx-auto text-center px-4 sm:px-0">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">
-              Get Early Access
-            </h2>
-            <p className="text-base md:text-lg lg:text-xl text-gray-300 mb-6 md:mb-8">
-              Limited to 20 workspaces! Receive custom onboarding, priority support, and lifetime 10% discount.
-            </p>
-            <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-3 max-w-md mx-auto">
-              <div className="flex-grow">
-                <Input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                    if (!isValid) setIsValid(validateEmail(e.target.value));
-                  }}
-                  className={`bg-white/10 border-white/20 text-white h-11 sm:h-12 ${
-                    !isValid ? "border-red-500" : ""
-                  }`}
-                  required
-                />
-              </div>
-              <Button
-                type="submit"
-                className="h-11 sm:h-12 bg-gradient-to-r from-green-600 to-green-600 hover:from-green-800 hover:to-green-800 transition-all text-sm sm:text-base"
-                disabled={isLoading}
-              >
-                <span>Try Early Access</span>
-                <ArrowRight className="w-4 h-4" />
-              </Button>
-            </form>
-            
-            {/* <div className="mt-12 md:mt-16">
-              <p className="text-gray-400 mb-4">Already powering:</p>
-              <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
-                <span className="text-gray-300 font-semibold">Atlassian</span>
-                <span className="text-gray-300 font-semibold">TechStartup</span>
-                <span className="text-gray-300 font-semibold">+ more</span>
-              </div>
-              <p className="text-gray-400 mt-4 text-sm">Ready to summon the genie?</p>
-            </div> */}
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <section className="py-6 md:py-8 border-t border-white/10">
-        <div className="container-fluid">
-          <div className="text-center text-gray-400 text-xs md:text-sm">
-            <p>© {new Date().getFullYear()} genie/os. All rights reserved.</p>
-          </div>
-        </div>
-      </section>
-      
-    </div>
-  );
-};
-
-export default Index;
-
+                  <div className="bg-[#1A1D21
