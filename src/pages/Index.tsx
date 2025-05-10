@@ -342,86 +342,63 @@ const Index = () => {
                   
                 {/* Integration logos */}
                 <div className="flex flex-col items-center mt-4">
-                  {/* Icons Row */}
-                  <div className="flex justify-center gap-6">
-                    {/* AI Automation Tools */}
-                    <div className="flex flex-col items-center gap-2">
-                      <div className="flex gap-4">
-                        {/* Zapier */}
-                        <div
-                          className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center h-16"
-                          title="Zapier"
-                        >
-                          <img src="/lovable-uploads/5d9a871e-8766-443f-afa9-bd39d693e969.png" alt="n8n" className="h-10 w-auto" />
-                        </div>
-                        {/* n8n */}
-                        <div
-                          className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16"
-                          title="n8n"
-                        >
-                          <img src="/lovable-uploads/3dd25075-1a49-4b19-bfc3-830d0274bdb1.png" alt="n8n" className="h-10 w-auto" />
-                        </div>
-                        {/* Make */}
-                        <div
-                          className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16"
-                          title="Make"
-                        >
-                          <img src="/lovable-uploads/8ae929a3-99a1-49bc-b593-21c8d5ea6edb.png" alt="Make" className="h-10 w-auto" />
-                        </div>
-                      </div>
-                      <p className="text-xs text-white/60 mt-1">AI Automation Tools</p>
-                    </div>
+  {/* Icons Container */}
+  <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
+    
+    {/* AI Automation Tools */}
+    <div className="flex flex-col items-center gap-2 w-full sm:w-auto">
+      <div className="flex gap-4 justify-center flex-wrap">
+        {/* Zapier */}
+        <div className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16" title="Zapier">
+          <img src="/lovable-uploads/5d9a871e-8766-443f-afa9-bd39d693e969.png" alt="Zapier" className="h-10 w-auto" />
+        </div>
+        {/* n8n */}
+        <div className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16" title="n8n">
+          <img src="/lovable-uploads/3dd25075-1a49-4b19-bfc3-830d0274bdb1.png" alt="n8n" className="h-10 w-auto" />
+        </div>
+        {/* Make */}
+        <div className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16" title="Make">
+          <img src="/lovable-uploads/8ae929a3-99a1-49bc-b593-21c8d5ea6edb.png" alt="Make" className="h-10 w-auto" />
+        </div>
+      </div>
+      <p className="text-xs text-white/60 mt-1 text-center">AI Automation Tools</p>
+    </div>
 
-                    {/* Divider */}
-                    <div className="border-l border-white/20 h-16 mx-2"></div>
+    {/* Cloud LLM Provider */}
+    <div className="flex flex-col items-center gap-2 w-full sm:w-auto">
+      <div className="flex gap-4 justify-center">
+        {/* Claude */}
+        <div className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16" title="Claude">
+          <img src="/lovable-uploads/d0576a9a-259f-4374-8e19-ce3c0217f161.png" alt="Claude" className="h-10 w-auto" />
+        </div>
+      </div>
+      <p className="text-xs text-white/60 mt-1 text-center">Cloud LLM Provider</p>
+    </div>
 
-                    {/* Cloud LLM Provider */}
-                    <div className="flex flex-col items-center gap-2">
-                      <div className="flex gap-4">
-                        {/* Claude */}
-                        <div
-                          className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16"
-                          title="Claude"
-                        >
-                          <img src="/lovable-uploads/d0576a9a-259f-4374-8e19-ce3c0217f161.png" alt="Claude" className="h-10 w-auto" />
-                        </div>
-                      </div>
-                      <p className="text-xs text-white/60 mt-1">Cloud LLM Provider</p>
-                    </div>
+    {/* Local LLMs */}
+    <div className="flex flex-col items-center gap-2 w-full sm:w-auto">
+      <div className="flex gap-4 justify-center">
+        {/* LLMstudio */}
+        <div className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16" title="LLMstudio">
+          <img src="/lovable-uploads/16d4d0e0-1d05-4fae-936e-67a30e7758f7.png" alt="LLMstudio" className="h-10 w-auto" />
+        </div>
+      </div>
+      <p className="text-xs text-white/60 mt-1 text-center">Local LLMs</p>
+    </div>
 
-                    {/* Divider */}
-                    <div className="border-l border-white/20 h-16 mx-2"></div>
+    {/* MCP Servers */}
+    <div className="flex flex-col items-center gap-2 w-full sm:w-auto">
+      <div className="flex gap-4 justify-center">
+        {/* MCP Servers */}
+        <div className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16" title="MCP Servers">
+          <img src="/lovable-uploads/sd982398-2319-4323-349as-3014716730.png" alt="MCP Servers" className="h-10 w-auto" />
+        </div>
+      </div>
+      <p className="text-xs text-white/60 mt-1 text-center">MCP Servers</p>
+    </div>
+  </div>
+</div>
 
-                    {/* Local LLMs */}
-                    <div className="flex flex-col items-center gap-2">
-                      <div className="flex gap-4">
-                        {/* LLMstudio */}
-                        <div
-                          className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16"
-                          title="LLMstudio"
-                        >
-                          <img src="/lovable-uploads/16d4d0e0-1d05-4fae-936e-67a30e7758f7.png" alt="LLMstudio" className="h-10 w-auto" />
-                        </div>
-                      </div>
-                      <p className="text-xs text-white/60 mt-1">Local LLMs</p>
-                    </div>
-                    
-                    {/* MCP Servers */}
-                    <div className="flex flex-col items-center gap-2">
-                      <div className="flex gap-4">
-                        {/* MCP Servers */}
-                        <div
-                          className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16"
-                          title="MCPservers"
-                        >
-                          <img src="/lovable-uploads/sd982398-2319-4323-349as-3014716730.png" alt="MCP Servers" className="h-10 w-auto" />
-                        </div>
-                      </div>
-                      <p className="text-xs text-white/60 mt-1">MCP Servers</p>
-                    </div>
-                    
-                  </div>
-                </div>
                 </div>
               </div>
               
