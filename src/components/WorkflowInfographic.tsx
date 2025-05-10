@@ -39,7 +39,7 @@ const IntegrationLogos = () => (
 const WorkflowInfographic = () => {
   return (
     <div className="max-w-4xl mx-auto relative py-2">
-      <div className="glass-card p-6 md:p-8 rounded-lg border border-white/10 shadow-xl bg-[#3F0E40]/10">
+      <div className="glass-card p-6 md:p-8 rounded-lg border border-white/10 shadow-xl bg-[#4A154B]/10">
         <div className="flex flex-col md:flex-row justify-between items-center gap-12 md:gap-6">
           {/* Step 1: Slack */}
           <div className="flex flex-col items-center text-center flex-1 px-4">
@@ -80,7 +80,7 @@ const WorkflowInfographic = () => {
           {/* Step 2: Genie (remains in middle) */}
           <div className="flex flex-col items-center text-center flex-1 px-4">
             <div className="mb-6">
-              <div className="p-3 rounded-lg bg-gradient-to-br from-yellow-500/5 via-amber-500/5 to-yellow-500/5 border border-yellow-500/20 shadow-[0_0_15px_rgba(234,179,8,0.1)]">
+              <div className="p-3 rounded-lg bg-gradient-to-br from-[#4A154B]/10 via-[#4A154B]/15 to-[#4A154B]/10 border border-[#4A154B]/20 shadow-[0_0_15px_rgba(74,21,75,0.2)]">
                 <GenieLogo />
               </div>
             </div>
@@ -120,9 +120,9 @@ const WorkflowInfographic = () => {
 
       {/* Multi-user chat demo - with reduced height and animated entries */}
       <div className="mt-12 max-w-3xl mx-auto">
-        <div className="glass-card rounded-lg overflow-hidden shadow-xl bg-[#3F0E40]/10">
+        <div className="glass-card rounded-lg overflow-hidden shadow-xl bg-[#4A154B]/10">
           {/* Chat Header */}
-          <div className="bg-[#3F0E40] p-3 border-b border-[#522653]">
+          <div className="bg-[#4A154B] p-3 border-b border-[#5D2D5D]">
             <div className="flex items-center">
               <span className="text-white font-medium"># sales-team</span>
             </div>
@@ -174,7 +174,7 @@ const WorkflowInfographic = () => {
 
             {/* Genie Response */}
             <div className="flex items-start space-x-3 animate-fade-in opacity-0" style={{ animationDelay: '1.1s', animationFillMode: 'forwards' }}>
-              <div className="w-8 h-8 rounded bg-gradient-to-r from-yellow-600 to-amber-600 flex items-center justify-center">
+              <div className="w-8 h-8 rounded bg-gradient-to-r from-[#4A154B] to-[#611f61] flex items-center justify-center">
                 <span className="text-white text-xs">✨</span>
               </div>
               <div className="flex-1 min-w-0">
