@@ -128,7 +128,7 @@ const Index = () => {
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight">
                 <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
                   Turn Slack into your team's AI command center
-                  <span className="text-white"> - in 5 minutes</span>
+                  <span className="text-white"> - in 10 minutes</span>
                 </span>
               </h1>
 
@@ -139,11 +139,11 @@ const Index = () => {
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 py-4">
                 <div className="flex items-center px-4 py-2 bg-opacity-10 bg-green-500 rounded-full border border-green-500/20 w-full sm:w-auto">
                   <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                  <span className="text-xs sm:text-sm text-green-400">Trusted by 28 companies</span>
+                  <span className="text-xs sm:text-sm text-green-400">Trusted by 4 companies</span>
                 </div>
                 <div className="flex items-center px-4 py-2 bg-opacity-10 bg-blue-500 rounded-full border border-blue-500/20 w-full sm:w-auto">
                   <CheckCircle className="w-4 h-4 text-blue-500 mr-2 flex-shrink-0" />
-                  <span className="text-xs sm:text-sm text-blue-400">32,417 queries answered</span>
+                  <span className="text-xs sm:text-sm text-blue-400">1,387 queries answered</span>
                 </div>
               </div>
 
@@ -178,8 +178,8 @@ const Index = () => {
                   <ChevronRight className="w-4 h-4" />
                 </Button>
               </form>
-              <span className="text-xs opacity-75 block">Currently limited to 50 workspaces!
-                 Get high-touch onboarding, priority slack support, and lifetime 15% discount by signing up here</span>
+              <span className="text-xs opacity-75 block">Currently limited to 20 workspaces!
+                 Get high-touch onboarding, priority slack support for first 6 months by signing up here</span>
             </div>
 
             {/* Right Side - Chat Interface */}
@@ -690,7 +690,7 @@ const Index = () => {
               Get Early Access
             </h2>
             <p className="text-base md:text-lg lg:text-xl text-gray-300 mb-6 md:mb-8">
-              Limited to 20 workspaces! Receive custom onboarding, priority support, and lifetime 10% discount.
+              Free custom onboarding, priority support for early users.
             </p>
             <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-3 max-w-md mx-auto">
               <div className="flex-grow">
