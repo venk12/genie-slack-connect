@@ -1,6 +1,5 @@
 
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import { 
   CheckCircle, ChevronRight, Zap, 
@@ -179,7 +178,8 @@ const Index = () => {
                   <ChevronRight className="w-4 h-4" />
                 </Button>
               </form>
-              <span className="text-xs opacity-75 block">Limited to 20 seats! Join the beta.</span>
+              <span className="text-xs opacity-75 block">Currently limited to 50 workspaces!
+                 Get high-touch onboarding, priority slack support, and lifetime 15% discount by signing up here</span>
             </div>
 
             {/* Right Side - Chat Interface */}
@@ -312,7 +312,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* AI is changing communication section */}
+      {/* New "AI is changing communication" section */}
       <section className="py-16 md:py-20 bg-black/80 relative">
         <div className="container-fluid">
           <div className="max-w-4xl mx-auto text-left">
@@ -337,19 +337,19 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Why Teams Choose Section - Updated for GTM teams */}
+      {/* Why Teams Choose Section */}
       <section className="py-12 md:py-16 bg-black/90 relative">
         <div className="container-fluid">
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-center">Why GTM teams choose genie/os</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-center">Why teams choose genie/os</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
             <div className="glass-card p-5 md:p-6 rounded-lg border border-white/10">
               <div className="text-green-400 mb-4">
                 <Zap className="w-8 md:w-10 h-8 md:h-10" />
               </div>
-              <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">Context-switching solved</h3>
+              <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">6× faster answers</h3>
               <p className="text-sm md:text-base text-gray-300">
-                Access customer data, competitor insights and market research all from the same Slack conversation.
+                Marketing, sales, and product teams solve 80% of data questions without waiting on analysts.
               </p>
             </div>
             
@@ -357,9 +357,9 @@ const Index = () => {
               <div className="text-blue-400 mb-4">
                 <Settings className="w-8 md:w-10 h-8 md:h-10" />
               </div>
-              <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">Human-first collaboration</h3>
+              <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">Zero code setup</h3>
               <p className="text-sm md:text-base text-gray-300">
-                AI that enhances your team's natural workflow instead of disrupting it with yet another tool.
+                Connect OpenAI, local models, or internal APIs with an easy interface.
               </p>
             </div>
             
@@ -369,7 +369,7 @@ const Index = () => {
               </div>
               <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">One keyboard shortcut</h3>
               <p className="text-sm md:text-base text-gray-300">
-                Type "@genie" and talk to your AI like a teammate who has all the answers.
+                Type "@genie" and talk to your AI like a teammate.
               </p>
             </div>
           </div>
@@ -390,29 +390,29 @@ const Index = () => {
                 </div>
                 <div className="md:flex-1">
                   <h3 className="text-lg md:text-xl font-semibold mb-2 text-center md:text-left">Connect your AI sources (cloud, on-prem, or local)</h3>
-                  <p className="text-sm md:text-base text-gray-300 mb-4 text-center md:text-left">Cloud-based LLM providers, automation workflows, and local models in one place.</p>
+                  <p className="text-sm md:text-base text-gray-300 mb-4 text-center md:text-left">Easily integrate with existing models and tools you already use.</p>
                   
                   {/* Integration logos */}
                   <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-4">
-                    {/* Slack */}
-                    <div className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16 transition-all hover:shadow-lg">
-                      <Slack className="w-8 h-8 text-blue-500" />
-                    </div>
                     {/* Zapier */}
-                    <div className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16 transition-all hover:shadow-lg">
-                      <img src="/lovable-uploads/5d9a871e-8766-443f-afa9-bd39d693e969.png" alt="Zapier" className="h-10 w-auto" />
+                    <div className="bg-white/10 p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16">
+                      <Slack className="w-8 h-8 text-blue-400" />
                     </div>
                     {/* n8n */}
-                    <div className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16 transition-all hover:shadow-lg">
+                    <div className="bg-white/10 p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16">
                       <img src="/lovable-uploads/3dd25075-1a49-4b19-bfc3-830d0274bdb1.png" alt="n8n" className="h-10 w-auto" />
                     </div>
-                    {/* MCP */}
-                    <div className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16 transition-all hover:shadow-lg">
-                      <img src="/lovable-uploads/54ddb87d-0d54-4de5-ae35-6d5bc8c6fd4d.png" alt="MCP" className="h-10 w-auto" />
+                    {/* Make */}
+                    <div className="bg-white/10 p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16">
+                      <img src="/lovable-uploads/8ae929a3-99a1-49bc-b593-21c8d5ea6edb.png" alt="Make" className="h-10 w-auto" />
                     </div>
-                    {/* Agent.AI */}
-                    <div className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16 transition-all hover:shadow-lg">
-                      <img src="/lovable-uploads/5eb51efa-680e-4a02-9d38-a2886a13f9c5.png" alt="Agent.AI" className="h-10 w-auto" />
+                    {/* Claude */}
+                    <div className="bg-white/10 p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16">
+                      <img src="/lovable-uploads/d0576a9a-259f-4374-8e19-ce3c0217f161.png" alt="Claude" className="h-10 w-auto" />
+                    </div>
+                    {/* LLMstudio */}
+                    <div className="bg-white/10 p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16">
+                      <img src="/lovable-uploads/16d4d0e0-1d05-4fae-936e-67a30e7758f7.png" alt="LLMstudio" className="h-10 w-auto" />
                     </div>
                   </div>
                 </div>
@@ -503,18 +503,6 @@ const Index = () => {
                         <p className="text-gray-300 mt-1 italic">
                           Looking up information...
                         </p>
-                        
-                        <div className="mt-2 opacity-0 animate-fade-in" style={{animationDelay: '0.3s', animationFillMode: 'forwards'}}>
-                          <p className="text-gray-400 text-xs italic">1. Researching news articles through Zapier...</p>
-                        </div>
-                        
-                        <div className="mt-1 opacity-0 animate-fade-in" style={{animationDelay: '0.6s', animationFillMode: 'forwards'}}>
-                          <p className="text-gray-400 text-xs italic">2. Researching Hubspot context through MCP...</p>
-                        </div>
-                        
-                        <div className="mt-1 opacity-0 animate-fade-in" style={{animationDelay: '0.9s', animationFillMode: 'forwards'}}>
-                          <p className="text-gray-400 text-xs italic">3. Consolidating all information...</p>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -563,7 +551,7 @@ const Index = () => {
               Get Early Access
             </h2>
             <p className="text-base md:text-lg lg:text-xl text-gray-300 mb-6 md:mb-8">
-              Limited to 20 seats! Join the beta. If you are excited about this - you can register here.
+              Limited to 50 workspaces! Receive concierge onboarding, priority support, and lifetime 20% discount.
             </p>
             <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-3 max-w-md mx-auto">
               <div className="flex-grow">
@@ -590,25 +578,25 @@ const Index = () => {
                 <ArrowRight className="w-4 h-4" />
               </Button>
             </form>
+            
+            <div className="mt-12 md:mt-16">
+              <p className="text-gray-400 mb-4">Already powering:</p>
+              <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
+                <span className="text-gray-300 font-semibold">Atlassian</span>
+                <span className="text-gray-300 font-semibold">TechStartup</span>
+                <span className="text-gray-300 font-semibold">+ more</span>
+              </div>
+              <p className="text-gray-400 mt-4 text-sm">Ready to summon the genie?</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Footer with Article Links */}
+      {/* Footer */}
       <section className="py-6 md:py-8 border-t border-white/10">
         <div className="container-fluid">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-center md:text-left text-gray-400 text-xs md:text-sm mb-4 md:mb-0">
-              <p>© {new Date().getFullYear()} genie/os. All rights reserved.</p>
-            </div>
-            <div className="flex flex-col md:flex-row gap-4 md:gap-8">
-              <Link to="/article1" className="text-gray-300 hover:text-white text-sm text-center md:text-right">
-                Collaboration UX for the Age of AI
-              </Link>
-              <Link to="/article2" className="text-gray-300 hover:text-white text-sm text-center md:text-right">
-                "AI Doing Things For Us" to "AI Working Alongside Us"
-              </Link>
-            </div>
+          <div className="text-center text-gray-400 text-xs md:text-sm">
+            <p>© {new Date().getFullYear()} genie/os. All rights reserved.</p>
           </div>
         </div>
       </section>
@@ -617,3 +605,4 @@ const Index = () => {
 };
 
 export default Index;
+
