@@ -254,36 +254,33 @@ const Index = () => {
         </div>
       </section>
 
-      {/* New "AI is changing communication" section */}
-      <section className="py-16 md:py-20 bg-black/80 relative">
-        <div className="container-fluid">
-          <div className="max-w-4xl mx-auto text-left">
-            
-            {/* Intro Heading */}
-            <p className="text-sm md:text-base uppercase tracking-wide text-purple-300 mb-2">
-              Why are we building Genie?
-            </p>
+      <section className="py-16 md:py-20 bg-black/80 relative px-4">
+  <div className="max-w-4xl mx-auto text-left">
+    
+    {/* Intro Heading */}
+    <p className="text-xs md:text-sm uppercase tracking-wide text-purple-300 mb-2">
+      Why are we building Genie?
+    </p>
 
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">
-              AI is reshaping teamwork. We’re here to keep it grounded in people.
-            </h2>
-            
-            <div className="text-gray-300 space-y-4 text-base md:text-lg">
-              <p>
-                In today's digital world, AI is everywhere - writing emails, summarizing meetings, generating ideas. But with every new tool, teams end up more scattered, jumping between apps and losing the thread of real conversation.
-              </p>
-              
-              <p>
-                That’s why we’re building Genie. It lives right inside Slack and helps anyone on your team call up the right AI or workflow with a simple command. No tabs. No toggling. Just answers, fast.
-              </p>
-              
-              <p>
-                Because AI should make teamwork easier - not more complicated. With Genie, teams stay in sync, move faster, and keep the human connection at the center of it all.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+    <h2 className="text-xl md:text-2xl lg:text-4xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">
+      AI is reshaping teamwork. We’re here to keep it grounded in people.
+    </h2>
+    
+    <div className="text-gray-300 space-y-4 text-sm md:text-base">
+      <p>
+        In today's digital world, AI is everywhere - writing emails, summarizing meetings, generating ideas. But with every new tool, teams end up more scattered, jumping between apps and losing the thread of real conversation.
+      </p>
+      
+      <p>
+        That’s why we’re building Genie. It lives right inside Slack and helps anyone on your team call up the right AI or workflow with a simple command. No tabs. No toggling. Just answers, fast.
+      </p>
+      
+      <p>
+        Because AI should make teamwork easier - not more complicated. With Genie, teams stay in sync, move faster, and keep the human connection at the center of it all.
+      </p>
+    </div>
+  </div>
+</section>
       
       {/* Why Teams Choose Section */}
       <section className="py-12 md:py-16 bg-black/90 relative">
