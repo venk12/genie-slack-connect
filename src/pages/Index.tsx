@@ -395,23 +395,23 @@ const Index = () => {
                   {/* Integration logos */}
                   <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-4">
                     {/* Zapier */}
-                    <div className="bg-white/10 p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16">
+                    <div className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16">
                       <Slack className="w-8 h-8 text-blue-400" />
                     </div>
                     {/* n8n */}
-                    <div className="bg-white/10 p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16">
+                    <div className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16">
                       <img src="/lovable-uploads/3dd25075-1a49-4b19-bfc3-830d0274bdb1.png" alt="n8n" className="h-10 w-auto" />
                     </div>
                     {/* Make */}
-                    <div className="bg-white/10 p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16">
+                    <div className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16">
                       <img src="/lovable-uploads/8ae929a3-99a1-49bc-b593-21c8d5ea6edb.png" alt="Make" className="h-10 w-auto" />
                     </div>
                     {/* Claude */}
-                    <div className="bg-white/10 p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16">
+                    <div className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16">
                       <img src="/lovable-uploads/d0576a9a-259f-4374-8e19-ce3c0217f161.png" alt="Claude" className="h-10 w-auto" />
                     </div>
                     {/* LLMstudio */}
-                    <div className="bg-white/10 p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16">
+                    <div className="bg-white p-3 rounded-lg border border-white/20 flex items-center justify-center w-16 h-16">
                       <img src="/lovable-uploads/16d4d0e0-1d05-4fae-936e-67a30e7758f7.png" alt="LLMstudio" className="h-10 w-auto" />
                     </div>
                   </div>
