@@ -258,13 +258,19 @@ const Index = () => {
       <section className="py-16 md:py-20 bg-black/80 relative">
         <div className="container-fluid">
           <div className="max-w-4xl mx-auto text-left">
+            
+            {/* Intro Heading */}
+            <p className="text-sm md:text-base uppercase tracking-wide text-purple-300 mb-2">
+              Why are we building Genie?
+            </p>
+
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">
-              AI is changing collaboration - But let's keep it human.
+              AI is reshaping teamwork. We’re here to keep it grounded in people.
             </h2>
             
             <div className="text-gray-300 space-y-4 text-base md:text-lg">
               <p>
-                In today's digital world, AI is everywhere. It writes emails, generates reports, summarizes meetings - but every new AI tool can create distance between teams and the conversations that matter most. Sales, marketing, product - everyone is siloed in different tools, and human connection starts to get lost in the mix.
+                In today's digital world, AI is everywhere. It writes emails, generates reports, summarizes meetings—but every new AI tool can create distance between teams and the conversations that matter most. Sales, marketing, product—everyone is siloed in different tools, and human connection starts to get lost in the mix.
               </p>
               
               <p>
